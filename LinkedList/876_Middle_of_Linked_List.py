@@ -63,6 +63,11 @@ def middleNode(head):
 # ✅ Approach 2: Two Pointer (Fast and Slow)
 # Time: O(N), Space: O(1)
 
+Logic:
+-->  Move slow by 1 step
+-->  Move fast by 2 steps
+-->  When fast reaches end, slow will be at the middle
+
 def middleNode_2pointer(head):
     slow = fast = head
     while fast and fast.next:
