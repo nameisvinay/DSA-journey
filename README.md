@@ -2,7 +2,7 @@
 
 📌 Purpose:
 Solving DSA problems daily with a focus on core topics like arrays, linked lists, stacks, queues, trees, etc.  
-My goal is to break into a product-based company despite a 6-year career gap.
+My goal is to break into a product-based company.
 
 📈 Topics Covered:
 - [x] Arrays
