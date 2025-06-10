@@ -9,7 +9,7 @@ My goal is to break into a product-based company.
 - [x] Strings
 - [x] Stacks
 - [x] Queues
-- [ ] Linked Lists (In Progress)
+- [x] Linked Lists (In Progress)
 - [ ] Trees
 - [ ] Graphs
 - [ ] Dynamic Programming
