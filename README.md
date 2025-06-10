@@ -1,13 +1,20 @@
-# DSA-problems
+# 🚀 DSA Journey – From Scratch to SDE
 
-This repository contains solutions to various Data Structures and Algorithms problems, organized by topic.
+📌 Purpose:
+Solving DSA problems daily with a focus on core topics like arrays, linked lists, stacks, queues, trees, etc.  
+My goal is to break into a product-based company despite a 6-year career gap.
 
-Topics covered:
-- Arrays
-- Strings
-- Queues
-- Linked Lists
-- Trees (in progress)
-- Graphs (in progress)
+📈 Topics Covered:
+- [x] Arrays
+- [x] Strings
+- [x] Stacks
+- [x] Queues
+- [ ] Linked Lists (In Progress)
+- [ ] Trees
+- [ ] Graphs
+- [ ] Dynamic Programming
 
-Solutions are implemented in Python and include explanations where necessary.
+🧠 Strategy:
+- Learn concepts topic-wise
+- Solve 5–10 core problems per topic
+- Track mistakes + debugging journey in `debug_notes.md`
