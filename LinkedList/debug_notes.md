@@ -1,7 +1,7 @@
 ## 🧠 Problem: Reverse Linked List (LeetCode 206)
 
 ### ❌ First Attempt
-python
+```python
 dummy = None
 while head.next:
     head.next = dummy
