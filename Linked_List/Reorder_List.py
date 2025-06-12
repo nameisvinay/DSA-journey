@@ -34,16 +34,16 @@ just like connecting two linkedlist. [1 -> 5 -> 2 -> 4 -> 3 -> None]
 
 Now separate list into two halves.
 
-   --> disconnect at mid. for that find length and take length//2
+       --> disconnect at mid. for that find length and take length//2
 
             length = 0
             while head:
                head = head.next
                length += 1
 
-            mistake 1: moved head upto length which means head is None now. so always store orginal head in other variables.('ptr' as of now)
+mistake 1: moved head upto length which means head is None now. so always store orginal head in other variables.('ptr' as of now)
 
-         Fix --->
+Fix --->
             length = 0
             ptr = head
             while ptr:
@@ -52,7 +52,7 @@ Now separate list into two halves.
 
          Find mid now:    mid = length//2
             
-   --> loop head upto mid and at last in mid position connect to None.
+    --> loop head upto mid and at last in mid position connect to None.
 
             temp = curr = head
             for _ in range(mid):  # we got mid=2
@@ -65,11 +65,11 @@ Now separate list into two halves.
 
             list:  1 -> 2 -> 3      
             index: 0    1    2     #loop till mid+1 so reaches to 3 where our first half needs to be.
+            
 
-      mistake 2:
-            moves to mid times(2nd half) but doesn't break the list.it will create cycle during merge.
+mistake 2: moves to mid times(2nd half) but doesn't break the list.it will create cycle during merge.
 
-      Fix ---->
+Fix ---->
             when temp reached mid+1 times then at last position connect to None.
 
                       |
@@ -84,6 +84,8 @@ Now separate list into two halves.
 
             First half : 1 -> 2 -> 3 -> None
 
+            
+
    ---> Reverse 2nd half
 
            rev_temp = None
@@ -94,6 +96,8 @@ Now separate list into two halves.
                temp = next_node
 
             second half : 5 -> 4 -> None
+            
+            
       
    ---> now merge two halfs.                                   first
                                                                 ↓ 
@@ -110,6 +114,7 @@ Now separate list into two halves.
                second = tmp2                             5 -> 4 -> None
                                                               ↑
                                                             tmp2
+
 
 
    ------> code worked <-----
@@ -134,19 +139,16 @@ Now separate list into two halves.
       ---> this helps me to get to mid position.
 
 ==================================================================
-🚧 Where I Got Stuck:
+🚧 Where I Went Wrong:
 
-- ❌ Used `mid` directly instead of `mid + 1`, caused merge issues.
-- ❌ Forgot to break the first half → caused infinite loop.
-- ❌ Incomplete merge logic → missed edge cases with odd/even length.
+❌ Mistake 1: Used `length//2` and looped up to mid — worked for some cases, failed in others.  
+✅ Fix 1   : Used slow/fast pointer approach to accurately find mid for both odd/even lists.
 
-==================================================================
-✅ Fixes Applied:
+❌ Mistake 2: Didn't disconnect the first half from the second → led to cycles while merging.  
+✅ Fix 2   : Used `prev.next = None` to properly break the list at mid.
 
-- Used `slow` and `fast` pointer to find mid node.
-- Did `prev.next = None` to split first half cleanly.
-- Reversed second half safely.
-- Wrote clear merge logic with temporary pointers.
+❌ Mistake 3: Merge logic incorrect for odd-length list.  
+✅ Fix 3   : Carefully merged nodes and broke when necessary to avoid dangling pointers.
 
 ==================================================================
 """
