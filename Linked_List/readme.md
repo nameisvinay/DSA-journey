@@ -2,7 +2,7 @@
 
 | # | Problem Name                  | Code Link                       |
 |---|-------------------------------|----------------------------------|
-| 1 | Reorder List                  | [reorder_list.py](Linked_List/reorder_list.py) |
+| 1 | Reorder List                  | [reorder_list.py](reorder_list.py) |
 | 2 | Linked List Cycle             | [linked_list_cycle.py](LinkedList/linked_list_cycle.py)     |
 | 3 | Linked List Cycle II          | [linked_list_cycle_ii.py](LinkedList/linked_list_cycle_ii.py) |
 | 4 | Middle of the Linked List     | [middle_of_linked_list.py](LinkedList/middle_of_linked_list.py) |
