@@ -1,6 +1,6 @@
 """
 🧩 Problem: Reorder List  
-🔗 Leetcode: https://leetcode.com/problems/reorder-list/  
+🔗 Leetcode: [Reorder List](https://leetcode.com/problems/reorder-list/)  
 📘 Category: Linked List  
 📈 Difficulty: Medium
 
