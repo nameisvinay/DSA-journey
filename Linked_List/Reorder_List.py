@@ -1,48 +1,46 @@
 """
-🧩 Problem: Reorder List  
-🔗 Leetcode: https://leetcode.com/problems/reorder-list/
-📘 Category: Linked List  
-📈 Difficulty: Medium
+==================================================================
+🧩 Problem: Reorder List
+🔗 Link    : https://leetcode.com/problems/reorder-list/
+📚 Topic   : Linked List
+📈 Level   : Medium
+==================================================================
 
----
+📄 Description:
+Reorder the given singly linked list in-place such that:
+L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …
 
-📝 Problem Statement:
-You are given the head of a singly linked list.  
-Reorder the list in-place as:  
-`L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …`
+You must not modify the values in the nodes, only node connections.
 
-### Example:
-Input:  1 -> 2 -> 3 -> 4 -> 5  
-Output: 1 -> 5 -> 2 -> 4 -> 3
+📌 Example:
+Input  : [1, 2, 3, 4, 5]
+Output : [1, 5, 2, 4, 3]
 
-Constraints:
-- Do not modify the values in the list’s nodes, only the pointers.
+==================================================================
+🧠 Thought Process:
 
----
+1. This is a merge of first & last, second & second-last, etc.
+2. So, I planned 3 steps:
+   - Find the middle of the list.
+   - Reverse the second half.
+   - Merge both halves alternately.
 
-🚀 My Thought Process:
-1. This looks like combining first and last, second and second last, etc.
-2. I thought of **splitting the list into two halves**.
-3. Then **reversing the second half**.
-4. Finally, **merging** both halves alternatively.
+==================================================================
+🚧 Where I Got Stuck:
 
----
+- ❌ Used `mid` directly instead of `mid + 1`, caused merge issues.
+- ❌ Forgot to break the first half → caused infinite loop.
+- ❌ Incomplete merge logic → missed edge cases with odd/even length.
 
-🧗 Where I Got Stuck:
-- My code didn’t work when I used `mid` instead of `mid + 1`.
-- In some cases, I didn’t properly disconnect the two halves — it formed a cycle.
-- Forgot to `prev.next = None` after finding the middle to separate halves.
+==================================================================
+✅ Fixes Applied:
 
----
+- Used `slow` and `fast` pointer to find mid node.
+- Did `prev.next = None` to split first half cleanly.
+- Reversed second half safely.
+- Wrote clear merge logic with temporary pointers.
 
-✅ Modifications I Did:
-- Used slow and fast pointer to find the middle.
-- Broke the list into two parts with `prev.next = None`.
-- Reversed the second half.
-- Carefully merged both lists node by node.
-
----
-
+==================================================================
 """
 
 # Definition for singly-linked list.
@@ -55,43 +53,44 @@ def reorderList(head):
     if not head or not head.next:
         return
 
-    # Step 1: Find the middle
+    # Step 1: Find middle using slow-fast
     slow, fast = head, head
     prev = None
     while fast and fast.next:
         prev = slow
         slow = slow.next
         fast = fast.next.next
-
-    prev.next = None  # Break the list into two halves
+    prev.next = None  # break list into two parts
 
     # Step 2: Reverse second half
     prev_rev = None
     curr = slow
     while curr:
-        next_temp = curr.next
+        nxt = curr.next
         curr.next = prev_rev
         prev_rev = curr
-        curr = next_temp
+        curr = nxt
 
-    # Step 3: Merge both halves
+    # Step 3: Merge two halves
     first, second = head, prev_rev
     while second:
         tmp1, tmp2 = first.next, second.next
         first.next = second
-        if tmp1 is None:
+        if not tmp1:
             break
         second.next = tmp1
         first, second = tmp1, tmp2
 
 """
+==================================================================
 🧪 Test Case:
-Input:  [1, 2, 3, 4, 5]
+Input : [1, 2, 3, 4, 5]
 Output: [1, 5, 2, 4, 3]
 
-🧠 Notes:
-- Useful for questions involving LL manipulation in-place.
-- Mastering this helps in problems like:
+📝 Notes:
+- Pointer manipulation heavy — draw on paper helps.
+- Variants:
   - Palindrome Linked List
-  - Rearranging Odd-Even LL
+  - Rearranging List in Zig-Zag
+==================================================================
 """
