@@ -63,27 +63,33 @@ Fix --->
 
             but we need to disconnect at 2nd position that means mid+1.so loop till mid+1(3)
 
-            list:  1 -> 2 -> 3      
-            index: 0    1    2     #loop till mid+1 so reaches to 3 where our first half needs to be.
+            
+            list:  1 -> 2 -> 3       
+            index: 0    1    2     #loop till mid+1 so reaches to 3 where our first half needs to be end.
+
+            At '2' first start loop ends and At '3' second half start.
             
 
-mistake 2: moves to mid times(2nd half) but doesn't break the list.it will create cycle during merge.
+mistake 2: moves to mid times(start of 2nd half) but doesn't break the list.it will create cycle during merge.
 
 Fix ---->
             when temp reached mid+1 times then at last position connect to None.
 
-                      |
-            1 -> 2 -> 3 -> None    #disconects first half.
-            0    1    2
+                 |
+            1 -> 2 -> None    #disconects first half.
+            0    1   
 
             temp = curr = head
             for _ in range(mid+1):
-               prev = temp   #store temp to prev until mid times
+               prev = temp   #store temp to prev until mid, first half stops at before mid
                temp = temp.next
-            prev.next = None  #when reached mid position then connect to None
+            prev.next = None  #when reached before to mid position then connect to None
 
-            First half : 1 -> 2 -> 3 -> None
+            First half : 1 -> 2 -> None
 
+        In both odd and even length lists, we treat mid as the boundary where we split the list into:
+                        First Half → Nodes before mid
+                        Second Half → Starts at mid
             
 
    ---> Reverse 2nd half
@@ -95,14 +101,14 @@ Fix ---->
                rev_temp = temp
                temp = next_node
 
-            second half : 5 -> 4 -> None
+            second half : 5 -> 4 -> 3 -> None
             
             
       
    ---> now merge two halfs.                                   first
                                                                 ↓ 
-           first = curr                                         1 -> 2 -> 3 -> None
-           second = rev_temp                                    5 -> 4 -> None
+           first = curr                                         1 -> 2 -> None
+           second = rev_temp                                    5 -> 4 -> 3 -> None
            while second:                                        ↑
                tmp1 = first.next                              second
                tmp2 = second.next
@@ -128,11 +134,21 @@ Fix ---->
          
       use slow/fast pointer ---> gives middle exactly for both even and odd.
 
-      slow = fast = curr
+      slow = fast = head
       while fast and fast.next:
+         prev = slow  
          slow = slow.next
          fast = fast.next.next
-
+      prev.next = None   
+      
+            prev  slow
+             |    |  
+        1 -> 2 -> 3 -> 4 -> 5 -> None
+        
+        
+      # Now `slow` is at start of 2nd half
+      # `prev` is at end of 1st half
+     
       slow is at mid position even / odd exactly
       temp = slow   #store slow in temp
 
@@ -171,6 +187,11 @@ def reorderList(head):
         slow = slow.next
         fast = fast.next.next
     prev.next = None  # break list into two parts
+
+    # When loop ends, slow is at middle (i.e., start of second half).
+    # prev is the last node of first half → we do prev.next = None to split the list.
+
+
 
     # Step 2: Reverse second half
     #reverse temp
