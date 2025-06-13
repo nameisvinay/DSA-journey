@@ -142,7 +142,7 @@ step1 : Find mid and separate two halfs.
 
             ### 🛡️ Edge Case Handling
 
-                    If list has 0 or 1 node, don't do anything:
+                    If list has 0 or 1 nodes, no need to reorder.
                     
                     ```python
                     if not head or not head.next:
