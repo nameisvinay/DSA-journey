@@ -222,6 +222,7 @@ step3:  merging two halfs
 ===============================================================================
 """
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -233,41 +234,39 @@ def reorderList(head):
         return
 
     # Step 1: Find middle using slow-fast
-    slow, fast = head
+    slow = fast = head
     prev = None
     while fast and fast.next:
         prev = slow
         slow = slow.next
         fast = fast.next.next
-    prev.next = None  # break list into two parts
-
-    # When loop ends, slow is at middle (i.e., start of second half).
-    # prev is the last node of first half → we do prev.next = None to split the list.
+    if prev:
+        prev.next = None  # break list into two parts
 
     # Step 2: Reverse second half
-    #reverse temp
-      rev_temp = None
-      while slow:
-            next_node = slow.next
-            slow.next = rev_temp
-            rev_temp = slow
-            slow = next_node
+    rev_temp = None
+    while slow:
+        next_node = slow.next
+        slow.next = rev_temp
+        rev_temp = slow
+        slow = next_node
 
+    # Step 3: Merge two halves
+    first = head
+    second = rev_temp
+    while first and second:
+        tmp1 = first.next
+        tmp2 = second.next
 
-        first = head
-        second = rev_temp
-        while first and second:  
-            tmp1 = first.next
-            tmp2 = second.next
+        first.next = second
+        if tmp1 is None:
+            second.next = tmp1
+        else:
+            second.next = tmp1
 
-            first.next = second
-            if tmp1 is None:
-                second.next = tmp1
-            else:
-                second.next = tmp2
+        first = tmp1
+        second = tmp2
 
-            first = tmp1
-            second = tmp2
 
 """
 ==================================================================
