@@ -260,7 +260,7 @@ def reorderList(head):
 
         first.next = second
         if tmp1 is None:
-            second.next = tmp1
+            second.next = tmp2
         else:
             second.next = tmp1
 
