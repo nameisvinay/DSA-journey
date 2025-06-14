@@ -18,4 +18,25 @@
 ## Sliding Window
 - [ ] Sliding Max (#239) — ❌ Forgot, 🔁 Revisit
 
+# 🔁 DSA Progress by Topic
+
+## 📂 Linked List
+✅ Reverse LL (#206)  
+✅ Cycle I (#141)  
+🔁 Cycle II (#142) – need 2nd round  
+✅ Middle LL (#876)  
+🔁 Remove Nth (#19) – minor mistakes  
+🔁 Reorder LL (#143) – tricky merge logic  
+❌ Add Two Num (#2) – couldn't recall approach
+
+## 📂 Arrays
+✅ Two Sum (#1)
+
+## 📂 Stack
+✅ Valid Parens (#20)
+
+## 📂 Sliding Window
+❌ Sliding Max (#239)
+
+
 
