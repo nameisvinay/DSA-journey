@@ -1,42 +1,19 @@
-# 📘 DSA Revision Tracker (Bullet Format)
+# ✍️ DSA Revision Log
 
-## Arrays
-- [x] Two Sum (#1) — ✅ Confident
+**#Arrays**  
+- Two Sum (#1) — ✅ Confident  
 
-## Linked List
-- [x] Reverse LL (#206) — ✅ Confident
-- [x] Cycle I (#141) — ✅ Confident
-- [ ] Cycle II (#142) — ⚠️ Partial, 🔁 Revisit
-- [x] Middle LL (#876) — ✅ Confident
-- [ ] Remove Nth (#19) — ⚠️ Partial, 🔁 Revisit
-- [ ] Reorder LL (#143) — ⚠️ Partial, 🔁 Revisit
-- [ ] Add Two Num (#2) — ❌ Forgot, 🔁 Revisit
+**#LinkedList**  
+- Reverse LL (#206) — ✅ Confident  
+- Cycle I (#141) — ✅ Confident  
+- Cycle II (#142) — ⚠️ Needs revisit  
+- Middle LL (#876) — ✅ Confident  
+- Remove Nth (#19) — ⚠️ Edge cases missed  
+- Reorder LL (#143) — ⚠️ Merge logic tricky  
+- Add Two Num (#2) — ❌ Forgot logic  
 
-## Stack
-- [x] Valid Parens (#20) — ✅ Confident
+**#Stack**  
+- Valid Parens (#20) — ✅ Clean  
 
-## Sliding Window
-- [ ] Sliding Max (#239) — ❌ Forgot, 🔁 Revisit
-
-# 🔁 DSA Progress by Topic
-
-## 📂 Linked List
-✅ Reverse LL (#206)  
-✅ Cycle I (#141)  
-🔁 Cycle II (#142) – need 2nd round  
-✅ Middle LL (#876)  
-🔁 Remove Nth (#19) – minor mistakes  
-🔁 Reorder LL (#143) – tricky merge logic  
-❌ Add Two Num (#2) – couldn't recall approach
-
-## 📂 Arrays
-✅ Two Sum (#1)
-
-## 📂 Stack
-✅ Valid Parens (#20)
-
-## 📂 Sliding Window
-❌ Sliding Max (#239)
-
-
-
+**#SlidingWindow**  
+- Sliding Max (#239) — ❌ Need full revisit
