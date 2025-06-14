@@ -1,70 +1,19 @@
-# 🚀 DSA Revision Journey
-
-A clean and structured roadmap of my DSA mastery — focused, consistent, and built after overcoming a long gap.
-
----
+# 📘 DSA Progress Tracker
 
 ## 📂 Arrays
-
-✅ Two Sum (#1)  
-🗒️ Status: Confident  
-💡 Notes: One of the first I solved cleanly after restarting. Nailed logic.
-
----
+✅ #1   - Two Sum
 
 ## 📂 Linked List
-
-✅ Reverse LL (#206)  
-🗒️ Status: Confident  
-💡 Notes: Simple and solid — 3-pointer pattern clicked well.
-
-✅ Cycle I (#141)  
-🗒️ Status: Confident  
-💡 Notes: Fast-slow pointer intuition is sharp now.
-
-🔁 Cycle II (#142)  
-🗒️ Status: Needs Revisit  
-💡 Notes: Forgot the distance math. Need 1 more pass.
-
-✅ Middle LL (#876)  
-🗒️ Status: Confident  
-💡 Notes: Easy — direct use of slow pointer.
-
-🔁 Remove Nth (#19)  
-🗒️ Status: Buggy Indexing  
-💡 Notes: Edge case off-by-one, revisit soon.
-
-🔁 Reorder LL (#143)  
-🗒️ Status: Merge part tricky  
-💡 Notes: Need one more clean dry-run.
-
-❌ Add Two Numbers (#2)  
-🗒️ Status: Forgot Logic  
-💡 Notes: Felt blank. Prioritize in next round.
-
----
+✅ #206 - Reverse Linked List  
+✅ #141 - Linked List Cycle I  
+🔁 #142 - Linked List Cycle II  
+✅ #876 - Middle of the Linked List  
+🔁 #19  - Remove Nth Node From End  
+🔁 #143 - Reorder List  
+❌ #2   - Add Two Numbers
 
 ## 📂 Stack
-
-✅ Valid Parentheses (#20)  
-🗒️ Status: Confident  
-💡 Notes: Classic stack problem — clean and fast.
-
----
+✅ #20  - Valid Parentheses
 
 ## 📂 Sliding Window
-
-❌ Sliding Max (#239)  
-🗒️ Status: Need Full Revisit  
-💡 Notes: Forgot deque handling — revisit from scratch.
-
----
-
-### 🔄 Status Key:
-- ✅ Confident → Can solve without help  
-- 🔁 Needs Revisit → Bugs, unclear logic, needs one more pass  
-- ❌ Forgot → Need full rework, didn't remember approach
-
----
-
-📌 *Tracking every challenge — not just problems, but my growth too.*
+❌ #239 - Sliding Window Maximum
