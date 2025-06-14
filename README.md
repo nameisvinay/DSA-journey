@@ -1,20 +1,14 @@
-# 🚀 My DSA Journey – Documented from Scratch
+# 🚀 DSA Preparation Journey
 
-I’ve solved many DSA problems before — but without proper documentation or structure.
+📅 Started: May 2025
 
-Now, starting fresh from may 2025:
-- Every problem is re-solved from scratch
-- Notes include thought process, dry runs, mistakes, and final clean code
-- This GitHub repo will serve as my **personal guide + portfolio**
+I had explored DSA earlier, but from **May 2025**, I restarted with a clear plan:
 
-🎯 Goal: Crack product-based company interviews with clear understanding and solid revision.
+- Solving every problem from scratch
+- Writing clean, structured code
+- Documenting approach, mistakes, and key takeaways
+- Organizing everything topic-wise for easy revision
 
----
+This repo is my **complete DSA track record** — built with consistency, depth, and clarity.
 
-📂 Folder structure:
-- One folder per topic (e.g., Arrays, Linked List, Bit Manipulation)
-- Each file has:
-  - Problem statement link
-  - Step-by-step reasoning
-  - All attempts + debugging
-  - Final clean code
+🎯 Goal: Crack interviews at product-based companies with strong fundamentals and problem-solving skills.
