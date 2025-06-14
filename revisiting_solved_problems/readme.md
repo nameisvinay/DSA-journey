@@ -1,13 +1,5 @@
-# 📊 Progress Summary
+# 📅 June 13, 2025
 
-Linked List:
-[■■■■■□□□] 5/8 done confidently
-
-Stack:
-[■■■■■■■] 1/1 confident
-
-Sliding Window:
-[■□□□□□□□] 1/6 solved, needs work
-
-Arrays:
-[■■■■■■■] 1/1 confident
+- ✅ Solved “Middle of LL” — fast and clean.
+- ❌ Failed to recall “Add Two Numbers” logic. Will revisit this weekend.
+- ⚠️ “Remove Nth” — took 2 tries. Bug in index counting.
