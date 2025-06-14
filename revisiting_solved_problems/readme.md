@@ -1,19 +1,33 @@
-# 📘 DSA Progress Tracker
+<details>
+<summary>📂 Arrays</summary>
 
-## 📂 Arrays
-✅ #1   - Two Sum
+- [x] #1 - Two Sum
 
-## 📂 Linked List
-✅ #206 - Reverse Linked List  
-✅ #141 - Linked List Cycle I  
-🔁 #142 - Linked List Cycle II  
-✅ #876 - Middle of the Linked List  
-🔁 #19  - Remove Nth Node From End  
-🔁 #143 - Reorder List  
-❌ #2   - Add Two Numbers
+</details>
 
-## 📂 Stack
-✅ #20  - Valid Parentheses
+<details>
+<summary>📂 Linked List</summary>
 
-## 📂 Sliding Window
-❌ #239 - Sliding Window Maximum
+- [x] #206 - Reverse LL  
+- [x] #141 - Cycle I  
+- [ ] #142 - Cycle II ❗ revisit  
+- [x] #876 - Middle LL  
+- [ ] #19  - Remove Nth ❗ edge case  
+- [ ] #143 - Reorder List ❗ merge logic  
+- [ ] #2   - Add Two Numbers ❌
+
+</details>
+
+<details>
+<summary>📂 Stack</summary>
+
+- [x] #20 - Valid Parentheses
+
+</details>
+
+<details>
+<summary>📂 Sliding Window</summary>
+
+- [ ] #239 - Sliding Window Max ❌
+
+</details>
