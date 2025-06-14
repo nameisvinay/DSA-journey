@@ -10,7 +10,6 @@ Tracking my progress, understanding, and mistakes while solving bit manipulation
 - [1009. Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/) – Easy  
 - [136. Single Number](https://leetcode.com/problems/single-number/) – Easy  
 - [137. Single Number II](https://leetcode.com/problems/single-number-ii/) – Medium  
-- [138. Single Number III](https://leetcode.com/problems/single-number-iii/) – Medium  
 - [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) – Easy  
 - [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) – Easy  
 - [201. Bitwise AND of Numbers Range](https://leetcode.com/problems/bitwise-and-of-numbers-range/) – Medium  
