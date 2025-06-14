@@ -1,5 +1,19 @@
-# 📅 June 13, 2025
+# 🧠 DSA Revision Mindmap
 
-- ✅ Solved “Middle of LL” — fast and clean.
-- ❌ Failed to recall “Add Two Numbers” logic. Will revisit this weekend.
-- ⚠️ “Remove Nth” — took 2 tries. Bug in index counting.
+Arrays
+├── ✅ Two Sum (#1)
+
+Linked List
+├── ✅ Reverse LL (#206)
+├── ✅ Cycle I (#141)
+├── 🔁 Cycle II (#142)
+├── ✅ Middle LL (#876)
+├── 🔁 Remove Nth (#19)
+├── 🔁 Reorder LL (#143)
+└── ❌ Add Two Numbers (#2)
+
+Stack
+└── ✅ Valid Parentheses (#20)
+
+Sliding Window
+└── ❌ Sliding Window Max (#239)
