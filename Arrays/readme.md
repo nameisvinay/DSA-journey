@@ -1,4 +1,4 @@
-🔗 Array – Problem Tracker  
+## 🔗 Array – Problem Tracker  
 Tracking my progress, understanding, and mistakes while solving array problems.
 
 ✅ Solved Problems  
