@@ -70,8 +70,8 @@ Explanation: There is a 132 pattern in the sequence: [1, 4, 2].
 mistake i didn't notice before:
       here we're taking minimum which takes O(N) per operation - as it checks all over loop. which affects TC badly.
           min() + nested loop --> O(N^2) 
-                  need to optimize here while finding minimum . for that we go to prefix sum pattern. compare previous minium to curr.and update
-                  and then compare prefix_minimum with nums.here only one comparsion for each iteration so reduced bad affect of tc.
+            need to optimize here while finding minimum . for that we go to prefix sum pattern. compare previous minium to curr.and update
+        and then compare prefix_minimum with nums.here only one comparsion for each iteration so reduced bad affect of tc.
       
 ==================================================================
 💡 Approach / Intuition:
@@ -224,8 +224,8 @@ at index 0:
 
 and we can do more optimized(chatgpt helped to strike that idea..)
 
-      - push into stack when found less than last top element (stack[-1]).
-      - if found greater than stack[-1], pop from stack by storing popped element as second(2)
+      - element in stack is nums[j] - j is fixed here
+      - last popped element from stack is stored second of 132 pattern. so if we found nums[i] < second. we got 132 pattern.
 
 
       Step-by-step:
