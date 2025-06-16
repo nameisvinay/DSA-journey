@@ -1,5 +1,5 @@
 
-🧩 Sliding Window – Problem Tracker  
+## 🧩 Sliding Window – Problem Tracker  
 Tracking my progress, understanding, and mistakes while solving sliding window problems.  
 
 
