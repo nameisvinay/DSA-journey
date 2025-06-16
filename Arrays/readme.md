@@ -14,6 +14,7 @@ Tracking my progress, understanding, and mistakes while solving array problems.
 [2012. Sum of Beauty in the Array – Medium](https://leetcode.com/problems/sum-of-beauty-in-the-array/)  
 [915. Partition Array into Disjoint Intervals – Medium](https://leetcode.com/problems/partition-array-into-disjoint-intervals/)  
 [287. Find the Duplicate Number – Medium](https://leetcode.com/problems/find-the-duplicate-number/)
+
 [1493. Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/is-subsequence/description/)
 
 ✅ Completed  
