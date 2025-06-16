@@ -1,7 +1,6 @@
 
-🧩 Two Pointers – Problem Tracker  
+🔗 Two Pointers – Problem Tracker  
 Tracking my progress, understanding, and mistakes while solving two pointer problems.  
-
 
 
 ✅ Solved Problems  
