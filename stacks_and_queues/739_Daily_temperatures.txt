@@ -18,53 +18,150 @@ Output: [1, 1, 4, 2, 1, 1, 0, 0]
 ==================================================================
 🧠 My Initial Idea:
 
-Naive way: For each day, loop forward to find next warmer day → O(n²)
+   if found next greater element than present element then get [greater element index - current index].
 
-✅ Optimization using Monotonic Stack:
-- Maintain a **stack of indices** in **decreasing order of temperature**
-- For each `i`, pop from stack while `T[i] > T[stack[-1]]`
-  → means we found a warmer day for stack[-1]
+   bruteforce Approach: 
 
-- Then answer[stack[-1]] = i - stack[-1] (number of days waited)
+  ```python
+     ans = [0]*len(temperatures)
+     for i in range(len(temperatures)):
+         for j in range(i+1 , len(temperatures)):  #i+1 --> because checks from next element
+             if temperatures[i] < temperatures[j]:
+                  ans[i] = j-i # once i reach next greater then break the loop and take in ans within i-th index
+                  break
+      return ans
+  ```
+- here in these approach time complexity is O(N^2) and space complexity is O(N) -> we took extra space to store days inbetween both.
 
-🔁 Stack stores indices, not temperatures — so we can calculate distance!
+   👉 We don’t need to compare with every next element.
+      If an element is less than or equal to the current one, it can’t affect the result, so we safely ignore it.
+      That’s why we don’t need a full O(N) scan — we only keep useful elements and discard the rest.
+      
+      This helps reduce unnecessary comparisons and improves efficiency. 
 
-==================================================================
-🧮 Dry Run:
+*** ✅ This key observation leads us to use a stack.
+Since we’re only interested in the most recent greater elements, a stack helps us efficiently track and discard irrelevant values while maintaining the right order.
 
-T = [73, 74, 75, 71, 69, 72, 76, 73]
 
-i = 0, T[i] = 73 → stack = [0]  
-i = 1, T[i] = 74 → 74 > 73 → pop 0, ans[0] = 1 → stack = [1]  
-i = 2, T[i] = 75 → 75 > 74 → pop 1, ans[1] = 1 → stack = [2]  
-i = 3, T[i] = 71 → 71 < 75 → stack = [2,3]  
-i = 4, T[i] = 69 → 69 < 71 → stack = [2,3,4]  
-i = 5, T[i] = 72 → 72 > 69 → pop 4, ans[4] = 1  
-                     → 72 > 71 → pop 3, ans[3] = 2 → stack = [2,5]  
-i = 6, T[i] = 76 → pop 5, ans[5] = 1 → pop 2, ans[2] = 4 → stack = [6]  
-i = 7, T[i] = 73 → 73 < 76 → stack = [6,7]
+  Dry-run:
 
-Final Stack: [6,7] → No warmer days → ans[6] = 0, ans[7] = 0
+    stack = []
+    here im taking element into stack   ** but need to use indices to stack 
+    our condition to get next warmer day:  stack[-1] < temp[i]
 
-==================================================================
-🚧 Where I Went Wrong:
 
-| Mistake                                   | Fix                                                   |
-|-------------------------------------------|--------------------------------------------------------|
-| ❌ Tried to compare all future days        | ✅ Used stack to keep indices of unresolved temperatures |
-| ❌ Forgot to push current index to stack   | ✅ Always push `i` at end of loop                      |
-| ❌ Calculated `T[i] - T[stack[-1]]`        | ✅ Correct: `i - stack[-1]` gives number of days       |
+answer = [0   0   0   0   0   0   0   0]
+          0   1   2   3   4   5   6   7
+         [73, 74, 75, 71, 69, 72, 76, 73]
+          ↑
+              
+at index 0: 
+        stack is empty                                               
+        push 73 into stack                
+                 0
+      stack =   [73]
+
+
+at index 1:
+              0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                   ↑
+
+        check stack[-1] < temp[1]
+        [73] < 74 yes . so pop 73 and replace 73 index at answer with 74 index - 73 index => 1-0 in ans[0] -> 73 gets popped.
+
+                       1
+              stack = [74]
+
+      answer = [1   0   0   0   0   0   0   0]
+      index     0   1   2   3   4   5   6   7
+
+at index 2:
+              0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                       ↑
+
+          check stack[-1] < temp[2]
+          [74] < 75. yes .now pop 74 , and no other elements in stack less than 75 to get popped.
+
+                       2
+              stack = [75]   replace 74 index at answer with 75index - 74index => ans[1] = 2-1 -> 74 popped
+  
+        answer = [1   1   0   0   0   0   0   0]
+         index    0   1   2   3   4   5   6   7  
+
+at index 3:
+              0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                          ↑
+
+        check stack[-1] < temp[3].
+        [75] < 71   NO. 71 cannot pop 75 ,so push 71 into stack
+
+                     2     3
+            stack = [75 , 71]
+
+at index 4 : 
+              0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                               ↑
+
+                [75 , 71] > 69. so 69 cannot pop both.push into stack
+
+                                  2   3   4
+                         stack = [75, 71, 69]
+
+at index 5: 
+              0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                                   ↑
+               2   3   4     5
+              [75, 71, 69] < 72. 72 can pop 71 and 69. 
+                                 so at answer[3] = 5-3 = 2
+                                       answer[4] = 5-4 = 1
+
+              stack after popping and appending new :  [75,72]
+
+        answer = [1   1   0   2   1   0   0   0]
+         index    0   1   2   3   4   5   6   7
+
+at index 6:
+               0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                                       ↑
+               2   5     6
+              [75, 72] < 76 , 76 can pop 75 and 72.
+                              so at answer[2] = 6-2 = 4
+                                    answer[5] = 6-5 = 1
+
+              stack after popping and adding: [76]
+
+        answer = [1   1   4   2   1   1   0   0]
+        index     0   1   2   3   4   5   6   7
+
+at index 7:
+               0   1   2   3   4   5   6   7
+             [73, 74, 75, 71, 69, 72, 76, 73]
+                                           ↑
+               6 
+              [76] > 73. 73 cannot pop 76. so both [76,73] be in stack which means 0
+
+
+
+final answer:   
+
+        answer = [1   1   4   2   1   1   0   0]    
+         index    0   1   2   3   4   5   6   7
+
 
 ==================================================================
 🛠️ Final Code (Python):
 
-```python
-def dailyTemperatures(T):
-    res = [0] * len(T)
-    stack = []  # store indices
-    for i, temp in enumerate(T):
-        while stack and T[i] > T[stack[-1]]:
-            prev = stack.pop()
-            res[prev] = i - prev
-        stack.append(i)
-    return res
+      ```python
+        ans=[0]*len(temp)
+        stack = []
+        for i in range(len(temp)):
+            while stack and temp[stack[-1]] < temp[i]:
+                ans[stack.pop()] = i-stack[-1]
+            stack.append(i)
+        return ans
