@@ -1,7 +1,7 @@
-==================================================================
+
 🧩 Sliding Window – Problem Tracker  
 Tracking my progress, understanding, and mistakes while solving sliding window problems.  
-==================================================================
+
 
 ✅ Solved Problems  
 [209. Minimum Size Subarray Sum – Medium](https://leetcode.com/problems/minimum-size-subarray-sum/)  
