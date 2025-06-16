@@ -55,6 +55,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/) – Medium
 * [2958. Length of Longest Subarray With at Most K Frequency](https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/) – Medium
 * [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) – Medium
+* [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) – Hard
 
 ### 📁 Prefix Sum
 
@@ -105,6 +106,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/) – Medium
 * [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) – Medium
 * [974. Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/) – Medium
+*  [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) – Hard
 
 ### 📁 Recursion
 
@@ -130,7 +132,6 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 * [155. Min Stack](https://leetcode.com/problems/min-stack/) – Medium
 * [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
-* [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) – Hard
 * [496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) – Easy
 * [503. Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) – Medium
 * [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) – Medium
