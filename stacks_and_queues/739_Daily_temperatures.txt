@@ -193,3 +193,16 @@ modify the code like this:
                      ans[prev] = i - prev  # ✅ safest and correct
 
 
+==================================================================
+🔁 TL;DR Summary:
+
+- We're looking for the **Next Warmer Day** for each day.
+- Brute force → O(N²), compares with all future days.
+- Optimized → Use **Monotonic Decreasing Stack** to keep indices.
+- Whenever we find a warmer temperature, we **pop** from the stack and calculate the day difference.
+- Key trap to avoid: **Don’t use `stack.pop()` and then `stack[-1]` in the same line.**
+
+Time: O(N)  
+Space: O(N)
+
+
