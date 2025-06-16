@@ -6,11 +6,50 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 ### ✅ Completed
 
-(To be filled as you complete problems.)
+### 📁 Linkedlist
+* [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) – Easy  
+* [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) – Easy  
+* [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) – Medium  
+* [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) – Medium  
+* [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) – Hard  
+* [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) – Medium  
+* [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) – Medium  
+* [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) – Easy  
+* [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) – Easy
+
+### 📁 Queues
+
+* [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) – Easy
+* [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) – Easy
+* [933. Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) – Easy
+* [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard
+* [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
+* [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
+
+### 📁 Stacks
+
+* [155. Min Stack](https://leetcode.com/problems/min-stack/) – Medium
+* [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
+* [496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) – Easy
+* [503. Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) – Medium
+* [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) – Medium
+* [735. Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) – Medium
+* [456. 132 Pattern](https://leetcode.com/problems/132-pattern/) – Medium
+* [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) – Hard
+* [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) – Hard
+
 
 ### 🔁 Revisit Needed
 
-(To be filled as you identify problems you need to revisit.)
+* [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) – Hard
+* [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard
+* [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
+* [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
+* [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
+* [456. 132 Pattern](https://leetcode.com/problems/132-pattern/) – Medium
+* [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) – Hard
+* [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) – Hard
+
 
 ### ❌ Full Rework
 
