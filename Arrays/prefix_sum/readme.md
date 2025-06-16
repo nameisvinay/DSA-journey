@@ -11,7 +11,9 @@ Tracking my progress, understanding, and mistakes while solving prefix sum–bas
 - [1422. Maximum Score After Splitting a String – Easy](https://leetcode.com/problems/maximum-score-after-splitting-a-string/)
 - [1991. Find the Middle Index in Array – Easy](https://leetcode.com/problems/find-the-middle-index-in-array/)
 - [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
+- [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
 
+  
 ---
 
 ### ✅ Completed
