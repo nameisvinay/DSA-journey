@@ -16,12 +16,12 @@ Tracking my progress, understanding, and mistakes while solving array problems.
 [287. Find the Duplicate Number – Medium](https://leetcode.com/problems/find-the-duplicate-number/)  
 
 ✅ Completed  
-<!-- Add completed problems here as you confirm them -->
+<-- Add completed problems here as you confirm them -->
 
 🔁 Revisit Needed  
-<!-- Add revisit problems here during your revision -->
+<-- Add revisit problems here during your revision -->
 
 ❌ Full Rework  
-<!-- Add problems here that need full rework -->
+<-- Add problems here that need full rework -->
 
 📝 Updated on: 2025-06-14
