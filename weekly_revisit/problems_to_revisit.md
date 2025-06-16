@@ -66,13 +66,3 @@ All problems here are selected based on frequency in interviews, pattern depth, 
 - [ ] [1. Two Sum](https://leetcode.com/problems/two-sum/) – #TIQ #HashMap
 - [ ] [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/) – #TIQ
 
-
-
-
-| # | Problem Title               | Topic         | Status     | Last Revised | Notes                        |
-|---|-----------------------------|---------------|------------|---------------|------------------------------|
-| 1 | Two Sum                     | Hashing       | ✅ Confident | June 5        | Covered edge cases well     |
-| 2 | Daily Temperatures          | Monotonic Stack | 🟡 Revisit | June 10       | Mistake in stack logic      |
-| 3 | Longest Subarray Sum = K   | Prefix + Hash | 🟡 Revisit | June 9        | Tricky negative values case |
-| 4 | 132 Pattern                | Stack + Logic | ✅ Confident | June 16       | Understood after dry-run    |
-
