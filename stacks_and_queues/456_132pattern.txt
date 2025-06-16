@@ -1,0 +1,328 @@
+==================================================================
+🧩 Problem: 132 Pattern  
+🔗 Link    : https://leetcode.com/problems/132-pattern/  
+📚 Topic   : Stack (Monotonic Stack / Pattern Detection)  
+📈 Level   : Medium  
+==================================================================
+
+📄 Description:
+Given an array of `n` integers `nums`, a **132 pattern** is a subsequence of three integers `nums[i]`, `nums[j]`, and `nums[k]` such that:
+
+- `i < j < k`
+- `nums[i] < nums[k] < nums[j]`
+
+Return `true` if there is a 132 pattern in `nums`, otherwise return `false`.
+
+📌 Example:
+Input : nums = [1, 2, 3, 4]  
+Output: false
+
+Input : nums = [3, 1, 4, 2]  
+Output: true  
+Explanation: There is a 132 pattern in the sequence: [1, 4, 2].
+
+==================================================================
+🧠 My Initial Thoughts:
+
+    -> simple we need to check if any of three nested loops i,j,k satisfes condition nums[i] < nums[k] < nums[j]. return True
+    -> here mentioned i<j<k . we can directly check condition but instead to reduce number of iterations. 
+            * i from 0   to  n-2 (Because its cannot be equal or greater than j and k)
+            * j from i+1 to  n-1
+            * k from j+1 to  n
+
+      here is simple bruteforce based on these idea.
+      ```
+      for i in range(len(nums)-2):
+            for j in range(i+1,len(nums)-1):
+                for k in range(j+1,len(nums)):
+                    if nums[i] < nums[k] < nums[j]:
+                        return True
+      return False
+      ```  
+      results in more time limit exceeds. which is O(N^3) TC.
+
+    ***
+    Another better thought:
+          instead of taking outer loop for why cant i take min_num for i loop.? 
+          as it reduces one loop. as we can only compare that with inner loop j.
+
+          i mean initializing min_inf = float('-inf') works as i loop.
+          so now compare min_inf with nums[j] and k loop is asusual.
+
+          we can see nums[k] is between min_inf and nums[j] values. also as given in problem statement.
+          
+          ```
+          min_inf = float('inf')
+          for j in range(len(nums)-1):
+              min_inf = min(min_inf , nums[j])
+              for k in range(j+1,len(nums)):
+                  if min_inf < nums[k] < nums[j]:             
+                      return True
+          return False
+          ```
+
+  condition --> nums[i] < nums[k] <nums[j] 
+    - nums[k] is in range of nums[i] and nums[j].
+    - if we get nums[i] and nums[j] ,automatically nums[k] be between two integers.
+    - out of 3 integers,nums[i] should be less(minimum) 
+    - increase nums[i] and nums[j] as much possible to get nums[k] in that range.
+
+mistake i didn't notice before:
+      here we're taking minimum which takes O(N) per operation - as it checks all over loop. which affects TC badly.
+          min() + nested loop --> O(N^2) 
+                  need to optimize here while finding minimum . for that we go to prefix sum pattern. compare previous minium to curr.and update
+                  and then compare prefix_minimum with nums.here only one comparsion for each iteration so reduced bad affect of tc.
+      
+==================================================================
+💡 Approach / Intuition:
+
+- to reduce time complexity for scanning of elements each time. take prefix for minimum and it only has one comparsion. -> O(1) per iteration.
+
+ prefix_array for minimum: 
+       ```
+        min_prefix = [-1]*len(nums)
+        min_prefix[0] = nums[0]
+        for i in range(1,len(nums)):
+            min_prefix[i] = min(min_prefix[i-1] , nums[i])
+        ```
+        
+  example input:       6  12  3  4  6  11  20
+              minimum  6  6   3  3  3  3   3        just compares with current element with prefix[i] . so O(1) per operation to get minimum.
+
+    upto here, i reached easily. but stuck here.
+
+🔑 What did i done to move forward:
+
+   - i took help from chatgpt and it suggested me use stack for fixing nums[k]. and traverse from right.
+   - i dont understand why only from right. why not from left.
+   - after some time, i tried back and get to core idea. 
+       - we have to find nums[k] between nums[i] and nums[j]. 
+       - we can fix i and k until now okay. but j should be greater than i and k. placements are inefficent.
+
+  ***  If we go left to right:
+  
+          You might fix i and k early.
+          Then you need to search for a j in between them such that it:
+            . Appears after i
+            . Appears before k
+            . And satisfies nums[k] < nums[j]
+          
+          💥 This forces you to do:
+          Multiple nested searches.
+          Possibly go back-and-forth within subarrays. 
+          You can't optimize this easily with stacks — because you're constantly looking "between" two fixed ends.
+
+         Time Complexity shoots up — O(N^2) or worse, especially with naive scanning.
+
+  *** Why right to left is efficient:
+  
+        When we reverse:
+            - We fix j (middle element) going from right to left.
+            - Stack stores possible nums[k] values (third element) in decreasing order.  
+            - second variable keeps the best candidate for k.
+
+        At every step, we just check if there's an earlier nums[i] < second — that's O(1) per step.
+
+        ✅ So in reverse:
+          Finding j is natural (current index).
+          Finding k is fast (stack pop).
+          Checking i is just a comparison.
+
+       Time complexity becomes O(N) with stack → super efficient.
+
+
+  input array: 6  12  3  4  6  11  20
+  prefix_min   6  6   3  3  3  3   3
+
+                  Traverse from backward. and consider stack for fixing (2) and prefix_min to fix (3) array to fix (1).
+
+
+                                                                                            check if min_stack[i] >= stack[-1]
+at index 6:    
+                                                            stack is empty                                             
+              index    0  1   2  3  4  5   6                push to stack                                --
+         input array:  6  12  3  4  6  11  20                 [20]
+          prefix_min   6  6   3  3  3  3   3
+                                           ↑        
+          
+at index 5:
+        
+              index    0  1   2  3  4  5   6                 push to stack                           3 >= 11 ❌
+         input array:  6  12  3  4  6  11  20                  [20,11]
+          prefix_min   6  6   3  3  3  3   3
+                                       ↑        
+
+at index 4:
+        
+              index    0  1   2  3  4  5   6                 push to stack                            3 >= 6 ❌
+         input array:  6  12  3  4  6  11  20                  [20,11,6]
+          prefix_min   6  6   3  3  3  3   3
+                                    ↑        
+
+at index 3:
+        
+              index    0  1   2  3  4  5   6                 push to stack                  
+         input array:  6  12  3  4  6  11  20                  [20,11,6,4]                            3 >= 4 ❌
+          prefix_min   6  6   3  3  3  3   3
+                                 ↑        
+
+at index 2:
+        
+              index    0  1   2  3  4  5   6                 push to stack                            3 >= 3 ✅
+         input array:  6  12  3  4  6  11  20                  [20,11,6,4,3]                         pop 3 from stack
+          prefix_min   6  6   3  3  3  3   3
+                              ↑                                                       updated stack after pop : [20,11,6,4]
+
+                      check min_stack[i] < stack[-1] < nums[i]  3 < 4 < 3 ❌
+
+
+at index 1:
+        
+              index    0  1   2  3  4  5   6                 push to stack                            6 >= 4 ✅
+         input array:  6  12  3  4  6  11  20                  [20,11,6,4]                      pop 4,6 from stack
+          prefix_min   6  6   3  3  3  3   3
+                          ↑                                                           updated stack after pop : [20,11]
+
+                      check min_stack[i] < stack[-1] < nums[i]  6 < 11 < 12 ✅ found 132 pattern 
+                                                              return True
+    
+
+at index 0:
+        
+              index    0  1   2  3  4  5   6                 push to stack                  
+         input array:  6  12  3  4  6  11  20                  [20,11,6,4]
+          prefix_min   6  6   3  3  3  3   3
+                       ↑        
+
+## code using prefix + stack: 
+
+🧠 Key idea:
+- prefix_mn[i] → the ‘1’ in 132
+- stack[-1]   → the ‘2’ in 132
+- nums[i]     → the ‘3’ in 132
+
+      ```python
+        prefix_mn = [-1] * len(nums)
+        prefix_mn[0] = nums[0]
+        for i in range(1,len(nums)):
+            prefix_mn[i] = min(prefix_mn[i-1] , nums[i])
+        
+
+        stack = []
+        for i in range(len(nums)-1,-1,-1):
+            while stack and prefix_mn[i] >= stack[-1]:
+                stack.pop()
+            
+            if stack and prefix_mn[i] < stack[-1] < nums[i]:
+                return True
+
+            stack.append(nums[i])
+        return False
+
+🧠 Time Complexity : O(N)  -  Each element is pushed and popped from the stack at most once.
+🧠 Space Complexity: O(N)  -  Due to the extra prefix array and the stack.
+
+and we can do more optimized(chatgpt helped to strike that idea..)
+
+      - push into stack when found less than last top element (stack[-1]).
+      - if found greater than stack[-1], pop from stack by storing popped element as second(2)
+
+
+      Step-by-step:
+      
+          second = -inf
+          stack = []
+          
+          From right (i = 6 to 0):
+          
+                  i = 6, nums[6] = 20
+                      - stack empty → push 20
+                  
+                  i = 5, nums[5] = 11
+                      - 11 < 20 → nothing to pop → push 11
+                  
+                  i = 4, nums[4] = 6
+                      - 6 < 11 → nothing to pop → push 6
+                  
+                  i = 3, nums[3] = 4
+                      - 4 < 6 → nothing to pop → push 4
+                  
+                  i = 2, nums[2] = 3
+                      - 3 < 4 → nothing to pop → push 3
+                  
+                  i = 1, nums[1] = 12
+                      - 12 > 3 → pop → second = 3
+                      - 12 > 4 → pop → second = 4
+                      - 12 > 6 → pop → second = 6
+                      - 12 > 11 → pop → second = 11
+                      - push 12
+                  
+                  i = 0, nums[0] = 6
+                      - 6 < second (11) → ✅ Found pattern!
+
+
+==================================================================
+🛠️ Final Code (Python):
+
+```python
+# Final working code here
+        def find132pattern(nums):
+            n = len(nums)
+            prefix_min = [nums[0]] * n
+            
+            for i in range(1, n):
+                prefix_min[i] = min(prefix_min[i - 1], nums[i])
+            
+            stack = []
+            for j in range(n - 1, -1, -1):
+                while stack and stack[-1] <= prefix_min[j]:
+                    stack.pop()
+                
+                if stack and prefix_min[j] < stack[-1] < nums[j]:
+                    return True
+                
+                stack.append(nums[j])
+            
+            return False
+        
+
+
+==================================================================
+📊 Complexity & Approach Comparison
+==================================================================
+
+### ✅ Prefix-Min + Stack Approach:
+
+- **Time Complexity:** O(N)  
+- **Space Complexity:** O(N) — uses `prefix_min[]` + `stack[]`
+
+---
+
+### ✅ Optimized Stack with `second` Variable (No prefix array):
+
+- **Time Complexity:** O(N)  
+- **Space Complexity:** O(N) — only uses `stack[]`
+
+---
+
+### 🔍 Key Differences:
+
+| Aspect                 | Prefix-Min + Stack                | Optimized Stack + `second`       |
+|------------------------|-----------------------------------|----------------------------------|
+| 🧠 Intuition           | Tracks `nums[i]` via prefix array | Tracks `nums[k]` using `second`  |
+| 🧠 Focus               | `i` (left min) is precomputed     | `k` (mid-right value) tracked live |
+| 💾 Space               | O(N) prefix + O(N) stack          | O(N) stack only                  |
+| 🔄 Extra Preprocessing | ✅ Yes (prefix array)             | ❌ No                            |
+| 🔧 Code Simplicity     | Slightly more verbose             | More elegant & compact           |
+
+---
+
+### ✅ Recommendation:
+
+Prefer the **Optimized Stack with `second` variable** in interviews:
+
+- No preprocessing
+- Cleaner logic
+- Better demonstrates understanding of stack usage and pattern structure
+
+---
