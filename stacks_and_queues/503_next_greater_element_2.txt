@@ -18,9 +18,10 @@ If it doesn't exist, return `-1`.
 
 ---
 
-### my inital thought:
+### my inital thought: (modified version)
+
       based on previous next greater element I
-         - traversed from left to right by checking greater element in stack and if found smaller than curr i pop it.
+         - traversed from left to right by checking greater element in stack and if found smaller in stack than curr i pop it.
          - i traverse second time for circular array. as it comes 0 after reaching len(nums).
          - so i did loop reversed for first by adding into stack and second loop for checking.
        but i got stuck.
@@ -36,7 +37,7 @@ If it doesn't exist, return `-1`.
 
     again got stuck:
 
-              stack = []
+        stack = []
         ans = [0]*len(nums)
         for i in range(len(nums)-1,-1,-1):
             while stack and nums[i] > stack[-1]:
@@ -51,10 +52,10 @@ If it doesn't exist, return `-1`.
 
         output : [4,4,4,4,3] expected output: [2,3,4,-1,4]
 
-❌  mistake: 
+❌  mistake where i got stuck: 
         i overwrite result ans with second loop. i need to change this.
-              - no need to write already filled values.
-              - i need to append nums[i] to stack to rebuild stack just like i did in first loop.
+              - no need to write already filled values. 
+              - i need to append nums[i] to stack to rebuild stack just like i did in first loop for adding future elements into stack.
       
       ***** Use `>=` in Next Greater Element II to ensure duplicates aren’t wrongly treated as "greater" in circular wrap-around.
 
@@ -88,23 +89,13 @@ If it doesn't exist, return `-1`.
                 
                     return ans
 
-  
-
-
-
-
-
 
 ### 🧠 Key Insight:
 
-💡 Since the array is **circular**, simulate two passes (2 \* n) to handle wrap-around.
+💡 Since the array is **circular**, simulate two passes (2*n) to handle wrap-around.
 💡 We still use a **monotonic decreasing stack** to track **future greater elements**.
-💡 Always `stack.pop()` smaller/equal elements.
+💡 Always `stack.pop()` smaller/equal elements.  to do this check nums[i] >= stack[-1]
 💡 Use `i % n` to simulate circular indexing.
-
----
-
-
 
 ---
 
@@ -113,21 +104,17 @@ If it doesn't exist, return `-1`.
 ```python
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        res = [-1] * n
         stack = []
-
-        for i in range(2 * n - 1, -1, -1):
-            curr = nums[i % n]
-            while stack and stack[-1] <= curr:
+        ans = [-1]*len(nums)
+        n = len(nums)
+        for i in range(len(nums)-1,-1,-1):
+            i %= len(nums)
+            while stack and nums[i] >= stack[-1]:
                 stack.pop()
-
-            if i < n:
-                res[i] = stack[-1] if stack else -1
-
-            stack.append(curr)
-
-        return res
+            ans[i] = stack[-1] if stack else -1
+            if i<n:
+                stack.append(nums[i])
+        return ans
 ```
 
 ---
@@ -167,7 +154,7 @@ we can also solve from left to right but not so efficent:
             We use the stack to simulate circularity, by running a single reversed loop (2n → 0) and storing future elements in the stack.
 
 
-code using two loops: (simple but not efficient)
+code using two loops: (simple but not efficient) -- which i did earlier
 
         stack = []
         ans = [-1]*len(nums)
