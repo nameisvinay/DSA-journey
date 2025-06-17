@@ -70,6 +70,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
   - then str(nums[start])+ '->'+ str(nums[end])  or f"{start} -> {end}"
   - else start
 * [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) – Easy
+   - count till found 1. if not take maximum of count and reset count to new check
 * [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) – Easy
     - atleast one unique which mean k starts from 1.
 * [268. Missing Number](https://leetcode.com/problems/missing-number/) – Easy
