@@ -89,40 +89,7 @@ We can solve this using a **monotonic stack**:
 
 ---
 
-## ✅ Right-to-Left Stack (Preferred)
-
-        ### 🔁 Logic:
-        - Traverse `nums2` from end to start
-        - Maintain a decreasing stack
-        - For each element, the top of the stack is the next greater
-        - If stack is empty → no greater exists → assign `-1`
-        - we keep future elements in stack. so if current element is greater than stack element pop it.
-        - we need stack element to be greater than curr. to get next greater element
-
-    ### ✅ Code:
-        ```python
-        def nextGreaterElement(nums1, nums2):
-            stack = []
-            ans = {}
-        
-            for num in reversed(nums2):
-                while stack and stack[-1] <= num:
-                    stack.pop()
-                ans[num] = stack[-1] if stack else -1
-                stack.append(num)
-        
-            return [ans[num] for num in nums1]
-        ````
-
-        ### ✅ Pros:
-        
-        * Clean and efficient
-        * No need to handle leftovers
-        * Great for building full `value → next greater` map
-
----
-
-## ✅ Left-to-Right Stack (Also Works)
+## ✅ Left-to-Right Stack: (my initial approach using stack)
 
         ### 🔁 Logic:
         
@@ -150,6 +117,39 @@ We can solve this using a **monotonic stack**:
             
                 return [ans[num] for num in nums1]
             ```
+
+## ✅ Right-to-Left Stack (Preferred) -- from other user solutions
+
+        ### 🔁 Logic:
+        - Traverse `nums2` from end to start
+        - Maintain a decreasing stack
+        - For each element, the top of the stack is the next greater
+        - If stack is empty → no greater exists → assign `-1`
+        - we keep future elements in stack. so if current element is greater than stack element pop it.
+        - we need stack element to be greater than curr. to get next greater element
+
+    ### ✅ Code:
+        ```python
+        def nextGreaterElement(nums1, nums2):
+            stack = []
+            ans = {}
+        
+            for num in reversed(nums2):
+                while stack and stack[-1] <= num:
+                    stack.pop()
+                ans[num] = stack[-1] if stack else -1
+                stack.append(num)
+        
+            return [ans[num] for num in nums1]
+        ````
+
+        ### ✅ Pros:
+                * Clean and efficient
+                * No need to handle leftovers
+                * Great for building full `value → next greater` map
+
+---
+
 
 ### ⚠️ Note:
 
