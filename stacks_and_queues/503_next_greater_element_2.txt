@@ -67,6 +67,13 @@ If it doesn't exist, return `-1`.
               if ans[i] == -1:
                   ans[i] = stack[-1] if stack else -1
 
+❌ mistake 1: overwritten ans with second loop.
+✅ fix : fill values only when ans[i] == -1.
+
+❌ mistake 2: '>' will not pop duplicates and treat duplicates as greater element
+✅ fix : use '>=' ensures duplicates are not wrongly treated as greater
+
+
     final code: 
 
             def nextGreaterElements(nums):
@@ -104,7 +111,7 @@ If it doesn't exist, return `-1`.
 ```python
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
-        stack = []
+        stack = []   # stack stores values not indices
         ans = [-1]*len(nums)
         n = len(nums)
         for i in range(len(nums)-1,-1,-1):
@@ -112,7 +119,7 @@ class Solution:
             while stack and nums[i] >= stack[-1]:
                 stack.pop()
             ans[i] = stack[-1] if stack else -1
-            if i<n:
+            if i<n:    0 1 2 3 4 5 6     #appends only till i < n
                 stack.append(nums[i])
         return ans
 ```
@@ -175,7 +182,7 @@ code using two loops: (simple but not efficient) -- which i did earlier
         ans = [-1]*len(nums)
         stack = []
         n = len(nums)
-        for i in range(len(nums)*2):
+        for i in range(len(nums)*2):       0 1 2 3 4 5 6
             i %= n
             while stack and nums[stack[-1]] < nums[i]:
                 ans[stack.pop()] = nums[i]
@@ -186,6 +193,8 @@ code using two loops: (simple but not efficient) -- which i did earlier
 
   i %= n ensures index is always valid (within bounds),
   but we use `if i < n` to ensure each original index is pushed only once to stack during the first pass.
+
+
 
         
 
