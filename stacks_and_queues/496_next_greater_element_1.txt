@@ -1,0 +1,199 @@
+
+===========================================================================
+# 🧩 Problem: Next Greater Element I  
+🔗 [Leetcode 496](https://leetcode.com/problems/next-greater-element-i/)  
+📚 Topic: Stack (Monotonic Stack)  
+📈 Level: Easy  
+
+===========================================================================
+---
+
+## 📄 Description  
+You are given two arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`.  
+For each element in `nums1`, find the **next greater element** in `nums2`.  
+If it doesn't exist, return -1 for that element.
+
+---
+
+## 📥 Example  
+```
+
+Input: nums1 = \[4,1,2], nums2 = \[1,3,4,2]
+Output: \[-1,3,-1]
+Explanation:
+
+* For 4 → no greater to the right in nums2 → -1
+* For 1 → next greater is 3
+* For 2 → no greater → -1
+
+````
+
+---
+
+## 🔍 Initial idea: 
+
+    ## ❌ Brute Force (Initial Thought):
+              
+                We need to:  work with nums2. loop over array and check if any greater element than current is found.
+                            - if found we got one greater element. to avoid duplicates , use hashmap.
+                  
+                ans = {}
+                initalize found = False first.
+                if found any greater than current update it to True and break the loop and traverse for next element.
+
+                for i in range(len(nums2)):
+                    found = False
+                    for j in range(i+1,len(nums2)):
+                        if nums2[i] < nums2[j]:
+                            ans[nums2[i]] = nums2[j]            
+                            found = True
+                            break
+
+                expected -->   {1:3 , 3:4}
+
+                if we dont find any greater element than current simply place -1 at that index position. 
+          
+                          if not found:
+                              ans[nums2[i]] = -1        After traversal, assign -1 to all remaining items in stack
+    
+                       {1:3 , 3:4 , 4:-1 , 2:-1}
+
+            now compare with nums1 if any of nums1 element if found with greater element simply take that value.
+
+            [ans[i] for i in nums1] which is our required result
+
+---
+
+                    ```python
+                    # Brute-force: O(n1 * n2)
+                    ans = {}
+                    for i in range(len(nums2)):
+                        found = False
+                        for j in range(i+1,len(nums2)):
+                            if nums2[i] < nums2[j]:
+                                ans[nums2[i]] = nums2[j]
+                                found = True
+                                break
+                        if not found:
+                            ans[nums2[i]] = -1
+                     return [ans[i] for i in nums1]
+                    ````
+
+🔻 Inefficient: O(n1 * n2)
+
+---
+
+## ✅ Optimized Approach (Monotonic increasing Stack + HashMap)
+
+          Steps:
+          
+          1. Traverse `nums2`.
+          2. Maintain a **monotonic increasing stack**.
+          3. Build a hashmap: `num → next greater`.
+          4. For each `num` in `nums1`, just lookup the answer.
+          
+          ---
+          
+          ## 🔁 Stack Trace (Example: nums2 = [1, 3, 4, 2])
+          
+          ```
+          -->  Traverse from left to right
+
+             when stack element is less than current element .then place curr element at stack element poisition by popping it.
+                      
+          
+                  Final map: {2: -1, 4: -1, 3: 4, 1: 3}
+          ```
+      
+      ⚠️ Note: (left to right)
+      Works the same but needs extra cleanup
+      Good approach when you're processing in streaming fashion (online)
+
+---
+
+## ✅ Final Code (Python)
+
+        ```python
+        def nextGreaterElement(nums1, nums2):
+                ans = {}
+                stack = []
+                for num in nums2:
+                    while stack and stack[-1]<num:
+                        ans[stack.pop()] = num
+                    stack.append(num)
+                
+                #for i in stack:  #element still present in stack which mean no next greater element
+                #    ans[i] = -1
+                
+                #return [ans[i] for i in nums1]
+                return [ans.get(i,-1) for i in nums1]
+            ```
+
+---
+
+***       when using monotonic decreasing stack(right to left):
+                 we no need to care about leftover elements.
+
+      ## ✅ Right-to-Left Stack (Preferred)
+
+                  ### 🔁 Logic:
+                  - Traverse `nums2` from end to start
+                  - Maintain a decreasing stack
+                  - For each element, the top of the stack is the next greater
+                  - If stack is empty → no greater exists → assign `-1`
+                  
+                  ### ✅ Code:
+                  ```python
+                  def nextGreaterElement(nums1, nums2):
+                          stack = []
+                          ans = {}
+                      
+                          for num in reversed(nums2):
+                              while stack and stack[-1] <= num:
+                                  stack.pop()
+                              ans[num] = stack[-1] if stack else -1
+                              stack.append(num)
+                      
+                          return [ans[num] for num in nums1]
+                      
+                  ✅ Pros:
+                        Clean and efficient
+                        No need to handle leftovers       
+                        Great for building full value → next greater map
+
+
+## 🧠 Time & Space Complexity
+
+* **Time**: O(n1 + n2)
+* **Space**: O(n2) for stack and hashmap
+
+---
+
+## ⚠️ Mistakes & Learnings
+
+* ❌ Forgot to traverse `nums2` in reverse (essential for monotonic stack)
+* ❌ Tried solving `nums1` directly without preprocessing `nums2`
+* ✅ Learned how monotonic decreasing stacks work
+* ✅ Realized this pattern appears in many stack-based problems
+
+---
+
+## 🎯 Final Takeaway
+
+This problem uses a **reusable pattern** that appears in:
+
+* 🔁 Next Greater Element II (circular)
+* 🌡️ Daily Temperatures
+* 📉 Stock Span Problem
+* 🧱 Trapping Rain Water
+* 🏗️ Largest Rectangle in Histogram
+
+Mastering this pattern strengthens your DSA core significantly. 💪
+
+```
+
+---
+
+✅ You can now copy and paste **everything above** directly into your GitHub DSA notes as one complete file.  
+Want me to prepare the next one for `Next Greater Element II` or any other stack problem?
+```
