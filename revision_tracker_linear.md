@@ -90,10 +90,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
     - if i reached to len(nums)-1 its 1 bit. if goes out of index its 2bit
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
-* [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
-* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
-
+  
 ### 📁 Two Pointers
 
 * [344. Reverse String](https://leetcode.com/problems/reverse-string/) – Easy
@@ -127,6 +125,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) – Easy
 * [1991. Find the Middle Index in Array](https://leetcode.com/problems/find-the-middle-index-in-array/) – Easy
 * [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
+* [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
+* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
 
 ### 📁 Binary Search
 
