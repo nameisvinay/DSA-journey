@@ -1,0 +1,3 @@
+###
+
+💡 when we are looking for future elements (next greater), it's better to traverse from right to left(reversed).
