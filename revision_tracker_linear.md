@@ -78,6 +78,10 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) – Easy
     - place pointer at 0 and traverse till found != 0 in array if found swap with pointer and increment pointer.
 * [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
+    - initailize max_length = 1
+    - traverse from 1 to len(nums) and through increasing sequence.
+    - if found decreased num , take max_length = r-l+1
+    - traverse all over nums and return max_length
 * [717. 1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) – Easy
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
