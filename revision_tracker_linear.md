@@ -67,7 +67,10 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/) – Easy
 * [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) – Easy
 * [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) – Easy
+    - atleast one unique which mean k starts from 1.
 * [268. Missing Number](https://leetcode.com/problems/missing-number/) – Easy
+    - sum of n natural number
+    - another approach (xor for all 0 to n+1 and xor of each num in nums) xor of both is our result
 * [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) – Easy
 * [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
 * [717. 1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) – Easy
