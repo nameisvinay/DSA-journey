@@ -96,6 +96,8 @@ We can solve this using a **monotonic stack**:
         - Maintain a decreasing stack
         - For each element, the top of the stack is the next greater
         - If stack is empty → no greater exists → assign `-1`
+        - we keep future elements in stack. so if current element is greater than stack element pop it.
+        - we need stack element to be greater than curr. to get next greater element
 
     ### ✅ Code:
         ```python
@@ -206,8 +208,6 @@ This problem uses a **reusable pattern** that appears in:
 * 🏗️ Largest Rectangle in Histogram
 
 Mastering this pattern strengthens your DSA core significantly. 💪
-
-```
 
 ---
 
