@@ -83,6 +83,10 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
     - if found decreased num , take max_length = r-l+1
     - traverse all over nums and return max_length
 * [717. 1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) – Easy
+    - 0 -> 1bit | 1 -> 2bit
+    - initialize i = 0
+    - if i == 1 increment 2 because its 2bit. else 1
+    - if i reached to len(nums)-1 its 1 bit. if goes out of index its 2bit
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
 * [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
