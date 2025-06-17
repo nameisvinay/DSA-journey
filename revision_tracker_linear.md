@@ -65,10 +65,10 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 ### 📁 Arrays
 
 * [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/) – Easy
-      - start with 0. check when prev != curr. if found   (careful about condition check) if i==len or nums[i-1]+1 == nums[i] 
-      - check length from start if more than 1. i-start > 1
-      - then str(nums[start])+ '->'+ str(nums[end])  or f"{start} -> {end}"
-      - else start
+  - start with 0. check when prev != curr. if found   (careful about condition check) if i==len or nums[i-1]+1 == nums[i] 
+  - check length from start if more than 1. i-start > 1
+  - then str(nums[start])+ '->'+ str(nums[end])  or f"{start} -> {end}"
+  - else start
 * [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) – Easy
 * [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) – Easy
     - atleast one unique which mean k starts from 1.
