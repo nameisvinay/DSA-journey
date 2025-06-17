@@ -22,7 +22,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) – Easy
 * [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) – Easy
 * [933. Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) – Easy
-* [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard
+* [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard | remember first push and then check
 * [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
 * [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
 
