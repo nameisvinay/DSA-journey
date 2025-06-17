@@ -45,6 +45,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard
      - Remember first push and then check
 * [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
+     - pointer movement misleading at returning rear --> to get rear. rememebr queue[(rear-1+k)%k]
 * [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
 * [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
 * [456. 132 Pattern](https://leetcode.com/problems/132-pattern/) – Medium
