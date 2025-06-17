@@ -83,84 +83,101 @@ Explanation:
 
 ---
 
-## ✅ Optimized Approach (Monotonic increasing Stack + HashMap)
-
-          Steps:
-          
-          1. Traverse `nums2`.
-          2. Maintain a **monotonic increasing stack**.
-          3. Build a hashmap: `num → next greater`.
-          4. For each `num` in `nums1`, just lookup the answer.
-          
-          ---
-          
-          ## 🔁 Stack Trace (Example: nums2 = [1, 3, 4, 2])
-          
-          ```
-          -->  Traverse from left to right
-
-             when stack element is less than current element .then place curr element at stack element poisition by popping it.
-                      
-          
-                  Final map: {2: -1, 4: -1, 3: 4, 1: 3}
-          ```
-      
-      ⚠️ Note: (left to right)
-      Works the same but needs extra cleanup
-      Good approach when you're processing in streaming fashion (online)
+We can solve this using a **monotonic stack**:
+- Either **right-to-left** (preferred)  
+- Or **left-to-right** (also valid, but needs cleanup)
 
 ---
 
-## ✅ Final Code (Python)
+## ✅ Right-to-Left Stack (Preferred)
 
+        ### 🔁 Logic:
+        - Traverse `nums2` from end to start
+        - Maintain a decreasing stack
+        - For each element, the top of the stack is the next greater
+        - If stack is empty → no greater exists → assign `-1`
+
+    ### ✅ Code:
         ```python
         def nextGreaterElement(nums1, nums2):
-                ans = {}
-                stack = []
-                for num in nums2:
-                    while stack and stack[-1]<num:
-                        ans[stack.pop()] = num
-                    stack.append(num)
-                
-                #for i in stack:  #element still present in stack which mean no next greater element
-                #    ans[i] = -1
-                
-                #return [ans[i] for i in nums1]
-                return [ans.get(i,-1) for i in nums1]
-            ```
+            stack = []
+            ans = {}
+        
+            for num in reversed(nums2):
+                while stack and stack[-1] <= num:
+                    stack.pop()
+                ans[num] = stack[-1] if stack else -1
+                stack.append(num)
+        
+            return [ans[num] for num in nums1]
+        ````
+
+        ### ✅ Pros:
+        
+        * Clean and efficient
+        * No need to handle leftovers
+        * Great for building full `value → next greater` map
 
 ---
 
-***       when using monotonic decreasing stack(right to left):
-                 we no need to care about leftover elements.
+## ✅ Left-to-Right Stack (Also Works)
 
-      ## ✅ Right-to-Left Stack (Preferred)
+        ### 🔁 Logic:
+        
+        * Traverse from start to end
+        * Stack holds elements **waiting** for their next greater
+        * When a greater element comes, it becomes the NGE for stack top
+        * After traversal, assign `-1` to all remaining items in stack
+        
+        ### ✅ Code:
 
-                  ### 🔁 Logic:
-                  - Traverse `nums2` from end to start
-                  - Maintain a decreasing stack
-                  - For each element, the top of the stack is the next greater
-                  - If stack is empty → no greater exists → assign `-1`
-                  
-                  ### ✅ Code:
-                  ```python
-                  def nextGreaterElement(nums1, nums2):
-                          stack = []
-                          ans = {}
-                      
-                          for num in reversed(nums2):
-                              while stack and stack[-1] <= num:
-                                  stack.pop()
-                              ans[num] = stack[-1] if stack else -1
-                              stack.append(num)
-                      
-                          return [ans[num] for num in nums1]
-                      
-                  ✅ Pros:
-                        Clean and efficient
-                        No need to handle leftovers       
-                        Great for building full value → next greater map
+            ```python
+            def nextGreaterElement(nums1, nums2):
+                stack = []
+                ans = {}
+            
+                for num in nums2:
+                    while stack and num > stack[-1]: #stack holding future elements. so if curr > stack[-1] then no greater element.we pop
+                        prev = stack.pop()          #til we found greater than curr. if not found we assign -1. if found assign the value.
+                        ans[prev] = num
+                    stack.append(num)
+            
+                # Assign -1 for leftovers
+                while stack:
+                    ans[stack.pop()] = -1
+            
+                return [ans[num] for num in nums1]
+            ```
 
+### ⚠️ Note:
+
+* Works the same but needs **extra cleanup**
+* Good approach when you're processing in streaming fashion (online)
+
+---
+
+        ## 🧠 Summary
+        
+        | Direction     | Works? | Handle Leftovers? | Use Case                                  |
+        | ------------- | ------ | ----------------- | ----------------------------------------- |
+        | Right to Left | ✅ Yes  | ❌ No              | Full map building (`nums2`) – cleanest    |
+        | Left to Right | ✅ Yes  | ✅ Yes             | Useful for real-time stack logic problems |
+
+---
+
+
+## 🎯 Takeaway
+
+Mastering **both traversal directions** gives you flexibility across problems like:
+
+        * `Next Greater Element I & II`
+        * `Daily Temperatures`
+        * `Stock Span Problem`
+        * `Trapping Rain Water`
+        * `Largest Rectangle in Histogram`
+```
+
+---
 
 ## 🧠 Time & Space Complexity
 
@@ -194,6 +211,4 @@ Mastering this pattern strengthens your DSA core significantly. 💪
 
 ---
 
-✅ You can now copy and paste **everything above** directly into your GitHub DSA notes as one complete file.  
-Want me to prepare the next one for `Next Greater Element II` or any other stack problem?
 ```
