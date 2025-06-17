@@ -1,0 +1,205 @@
+Sure buddy! Here's a clean, **single-file GitHub-style markdown template** for:
+
+---
+
+## 🧩 Problem: Next Greater Element II
+
+🔗 **Link**: [Leetcode 503](https://leetcode.com/problems/next-greater-element-ii/)
+📚 **Topic**: Monotonic Stack
+📈 **Level**: Medium
+
+---
+
+### 📄 Description:
+
+Given a circular array `nums`, return **the Next Greater Number for every element**.
+The Next Greater Number of a number `x` is the **first greater number** to its **right** in **traversal order**, considering the array as circular.
+If it doesn't exist, return `-1`.
+
+---
+
+### my inital thought:
+      based on previous next greater element I
+         - traversed from left to right by checking greater element in stack and if found smaller than curr i pop it.
+         - i traverse second time for circular array. as it comes 0 after reaching len(nums).
+         - so i did loop reversed for first by adding into stack and second loop for checking.
+       but i got stuck.
+
+            for num in reversed(nums):
+            while stack and num > stack[-1]:
+                stack.pop()
+            ans[num] = stack[-1] if stack else -1
+            stack.append(num)
+
+    * --> i misunderstood here we are not using hashmap to take ans[num] ,we took array. so cannot use num as it is value, not index.so modify
+
+
+    again got stuck:
+
+              stack = []
+        ans = [0]*len(nums)
+        for i in range(len(nums)-1,-1,-1):
+            while stack and nums[i] > stack[-1]:
+                stack.pop()
+            ans[i] = stack[-1] if stack else -1
+            stack.append(nums[i])
+        
+        for i in range(len(nums)-1,-1,-1):
+            while stack and nums[i] > stack[-1]:
+                stack.pop()
+            ans[i] = stack[-1] if stack else -1
+
+        output : [4,4,4,4,3] expected output: [2,3,4,-1,4]
+
+❌  mistake: 
+        i overwrite result ans with second loop. i need to change this.
+              - no need to write already filled values.
+              - i need to append nums[i] to stack to rebuild stack just like i did in first loop.
+      
+      ***** Use `>=` in Next Greater Element II to ensure duplicates aren’t wrongly treated as "greater" in circular wrap-around.
+
+
+✅ fix : 
+      In NGE-II, pushing to stack in second loop simulates circular wrap-around. But to avoid overwriting, 
+      always use `if ans[i] == -1` before assigning.
+
+              if ans[i] == -1:
+                  ans[i] = stack[-1] if stack else -1
+
+    final code: 
+
+            def nextGreaterElements(nums):
+                    n = len(nums)
+                    ans = [-1] * n
+                    stack = []
+                
+                    for i in range(n - 1, -1, -1):
+                        while stack and nums[i] >= stack[-1]:
+                            stack.pop()
+                        ans[i] = stack[-1] if stack else -1
+                        stack.append(nums[i])
+                
+                    for i in range(n - 1, -1, -1):
+                        while stack and nums[i] >= stack[-1]:
+                            stack.pop()
+                        if ans[i] == -1:
+                            ans[i] = stack[-1] if stack else -1
+                        stack.append(nums[i])
+                
+                    return ans
+
+  
+
+
+
+
+
+
+### 🧠 Key Insight:
+
+💡 Since the array is **circular**, simulate two passes (2 \* n) to handle wrap-around.
+💡 We still use a **monotonic decreasing stack** to track **future greater elements**.
+💡 Always `stack.pop()` smaller/equal elements.
+💡 Use `i % n` to simulate circular indexing.
+
+---
+
+
+
+---
+
+### ✅ Final Code (Python):
+
+```python
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        res = [-1] * n
+        stack = []
+
+        for i in range(2 * n - 1, -1, -1):
+            curr = nums[i % n]
+            while stack and stack[-1] <= curr:
+                stack.pop()
+
+            if i < n:
+                res[i] = stack[-1] if stack else -1
+
+            stack.append(curr)
+
+        return res
+```
+
+---
+
+### 📌 Time & Space Complexity:
+
+| Complexity | Value  |
+| ---------- | ------ |
+| ⏱️ Time    | `O(n)` |
+| 🗂️ Space  | `O(n)` |
+
+---
+
+### 🧠 Key Takeaways:
+
+```markdown
+💡 Use i % n to simulate circular array access.
+💡 Right to left traversal gives us future elements via monotonic stack.
+💡 Simulate 2 passes (2n) to cover circularity.
+💡 Only fill answers for indices i < n.
+```
+
+---
+
+we can also solve from left to right but not so efficent:
+    
+      💡 In Left-to-Right NGE-II: (two loop method) 
+              - First loop fills the `ans[]` array and builds stack with unresolved indices.
+              - Second loop simulates circularity: we try to resolve remaining indices using start of array.
+              - No need to push in second loop — we're only filling in leftover answers, not building new state.
+
+      ✅ Your Insight (Refined for Notes):
+            ✔️ In Left-to-Right approach for NGE-II:
+            We traverse the array twice directly to simulate circularity and fill the answer array.
+            
+            🔁 In Right-to-Left approach for NGE-II:
+            We use the stack to simulate circularity, by running a single reversed loop (2n → 0) and storing future elements in the stack.
+
+
+code using two loops: (simple but not efficient)
+
+        stack = []
+        ans = [-1]*len(nums)
+    
+        #in first loop it checks for next greater element to right
+        for i in range(len(nums)):
+            while stack and nums[stack[-1]] < nums[i]:
+                ans[stack.pop()] = nums[i]
+            stack.append(i)
+        
+        #in second loop it checks for remaining in stacks with ans.
+        for i in range(len(nums)):
+            while stack and nums[stack[-1]] < nums[i]:
+                ans[stack.pop()] = nums[i]
+        return ans
+
+  more simpler code:
+        ans = [-1]*len(nums)
+        stack = []
+        n = len(nums)
+        for i in range(len(nums)*2):
+            i %= n
+            while stack and nums[stack[-1]] < nums[i]:
+                ans[stack.pop()] = nums[i]
+            
+            if i<n:
+                stack.append(i)      #append only indexes that are within len(nums)
+        return ans
+
+  i %= n ensures index is always valid (within bounds),
+  but we use `if i < n` to ensure each original index is pushed only once to stack during the first pass.
+
+        
+
+
