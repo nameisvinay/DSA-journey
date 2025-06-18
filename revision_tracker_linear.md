@@ -16,10 +16,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 * [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) – Hard
 * [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard
-     - Remember first push and then check
 * [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
-     - pointer movement
-     - to get rear. rememebr queue[(rear-1+k)%k]
 * [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
 * [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
 * [456. 132 Pattern](https://leetcode.com/problems/132-pattern/) – Medium
@@ -37,7 +34,6 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 ### ❌ Full Rework
 
-(To be filled when a problem needs full relearning or redo.)
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
 
