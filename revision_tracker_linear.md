@@ -138,7 +138,12 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 ### 📁 Prefix Sum
 
 * [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) – Easy
+     - loop from 1 to n
+     - prefix[i] += prefix[i-1] --> will update prefixs inplace
 * [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) – Easy
+     - check when left sum and right equal.then return pivot.
+     - rsum = total - nums[i] - left_sum
+     - if left_sum == right_sum return pivot
 * [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
 * [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) – Easy
 * [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) – Easy
