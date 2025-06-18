@@ -6,64 +6,11 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 ### ✅ Completed
 
-### 📁 Arrays
-
-* [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/) – Easy
-* [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) – Easy
-* [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) – Easy
-* [268. Missing Number](https://leetcode.com/problems/missing-number/) – Easy
-* [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) – Easy
-* [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
-* [717. 1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) – Easy
-* [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
-* [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
-* [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
-
-### 📁 Prefix Sum
-
-* [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) – Easy
-* [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) – Easy
-* [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
-* [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) – Easy
-* [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) – Easy
-* [1991. Find the Middle Index in Array](https://leetcode.com/problems/find-the-middle-index-in-array/) – Easy
-* [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
-* [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
-* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
-
-
-### 📁 Linkedlist
-* [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) – Easy  
-* [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) – Easy  
-* [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) – Medium  
-* [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) – Medium  
-* [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) – Hard  
-* [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) – Medium  
-* [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) – Medium  
-* [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) – Easy  
-* [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) – Easy
-
-### 📁 Queues
-
-* [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) – Easy
-* [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) – Easy
-* [933. Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) – Easy
-* [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard 
-* [622. Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) – Medium
-* [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) – Medium
-
-### 📁 Stacks
-
-* [155. Min Stack](https://leetcode.com/problems/min-stack/) – Medium
-* [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) – Easy
-* [496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) – Easy
-* [503. Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) – Medium
-* [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) – Medium
-* [735. Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) – Medium
-* [456. 132 Pattern](https://leetcode.com/problems/132-pattern/) – Medium
-* [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) – Hard
-* [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) – Hard
-
+   - 📁 Arrays
+   - 📁 Prefix Sum
+   - 📁 Linkedlist
+   - 📁 Queues
+   - 📁 Stacks
 
 ### 🔁 Revisit Needed
 
