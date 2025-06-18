@@ -18,11 +18,15 @@ Tracking my progress, understanding, and mistakes while solving prefix sum–bas
 
 ### ✅ Completed
 <!-- Add problems here after full confident revisits -->
+- [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
+- [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
 
 ---
 
 ### 🔁 Revisit Needed
 <!-- Add problems here if they require 2nd look or partial clarity -->
+- [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
+- [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
 
 ---
 
