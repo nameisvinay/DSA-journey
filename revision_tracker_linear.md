@@ -6,6 +6,19 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 
 ### ✅ Completed
 
+### 📁 Arrays
+
+* [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/) – Easy
+* [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) – Easy
+* [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) – Easy
+* [268. Missing Number](https://leetcode.com/problems/missing-number/) – Easy
+* [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) – Easy
+* [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
+* [717. 1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) – Easy
+* [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
+* [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
+* [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
+  
 ### 📁 Linkedlist
 * [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) – Easy  
 * [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) – Easy  
@@ -54,11 +67,17 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) – Hard
 * [496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) – Easy
 * [503. Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) – Medium
+* [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
+* [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
+* [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
+  
 
 
 ### ❌ Full Rework
 
 (To be filled when a problem needs full relearning or redo.)
+* [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
+* [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
 
 ---
 
