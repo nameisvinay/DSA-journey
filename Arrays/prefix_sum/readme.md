@@ -12,6 +12,7 @@ Tracking my progress, understanding, and mistakes while solving prefix sum–bas
 - [1991. Find the Middle Index in Array – Easy](https://leetcode.com/problems/find-the-middle-index-in-array/)
 - [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
 - [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
+- [2012. Sum of Beauty in the Array – Medium](https://leetcode.com/problems/sum-of-beauty-in-the-array/)  
 
   
 ---
@@ -26,13 +27,14 @@ Tracking my progress, understanding, and mistakes while solving prefix sum–bas
 - [1991. Find the Middle Index in Array – Easy](https://leetcode.com/problems/find-the-middle-index-in-array/)
 - [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
 - [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
-
+- [2012. Sum of Beauty in the Array – Medium](https://leetcode.com/problems/sum-of-beauty-in-the-array/)  
 ---
 
 ### 🔁 Revisit Needed
 <!-- Add problems here if they require 2nd look or partial clarity -->
 - [1109. Corporate Flight Bookings – Medium](https://leetcode.com/problems/corporate-flight-bookings/)
 - [1094. Car Pooling - Medium](https://leetcode.com/problems/car-pooling/)
+- [2012. Sum of Beauty in the Array – Medium](https://leetcode.com/problems/sum-of-beauty-in-the-array/)  
 
 ---
 
