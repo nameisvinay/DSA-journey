@@ -1,0 +1,122 @@
+Sure buddy! Here's your complete **GitHub-ready Markdown note** for:
+
+---
+
+````markdown
+==================================================================
+🧩 Problem: 915. Partition Array into Disjoint Intervals  
+🔗 Link   : https://leetcode.com/problems/partition-array-into-disjoint-intervals/  
+📚 Topic  : Arrays  
+📈 Level  : Medium  
+==================================================================
+
+### 📄 Description:
+Given an integer array `nums`, partition it into **two contiguous subarrays** `left` and `right` such that:
+
+- Every element in `left` is **less than or equal to** every element in `right`.
+- `left` and `right` are both **non-empty**.
+- Return the **smallest possible length** of `left` after such a partition.
+
+---
+
+### ✅ Constraints:
+- 2 ≤ `nums.length` ≤ 10⁵  
+- 0 ≤ `nums[i]` ≤ 10⁶  
+- A valid partition **always exists**.
+
+---
+
+### ✅ Approach: Greedy + Prefix Max
+We need to find the **smallest** left subarray such that:
+```text
+max(left) ≤ min(right)
+````
+
+#### 🔑 Key Intuition:
+
+* We maintain:
+
+  * `leftMax`: Maximum value in the current left partition.
+  * `overallMax`: Maximum value seen so far.
+* While iterating:
+
+  * If `nums[i] < leftMax`, this value **cannot be** in the right → **we extend left**.
+  * In this case, update:
+
+    * `leftMax = overallMax`
+    * `partitionIdx = i`
+
+---
+
+### 🧠 Dry Run:
+
+#### 🔢 Input:
+
+```py
+nums = [90, 47, 69, 10, 43, 92, 31, 73, 61, 97]
+```
+
+| i | nums\[i] | overallMax | leftMax | Condition (nums\[i] < leftMax) | Action                                  |
+| - | -------- | ---------- | ------- | ------------------------------ | --------------------------------------- |
+| 0 | 90       | 90         | 90      | -                              | Init                                    |
+| 1 | 47       | 90         | 90      | ✅ Yes                          | Extend left to i=1                      |
+| 2 | 69       | 90         | 90      | ✅ Yes                          | Extend left to i=2                      |
+| 3 | 10       | 90         | 90      | ✅ Yes                          | Extend left to i=3                      |
+| 4 | 43       | 90         | 90      | ✅ Yes                          | Extend left to i=4                      |
+| 5 | 92       | 92         | 90      | ❌ No                           | Update overallMax = 92                  |
+| 6 | 31       | 92         | 90      | ✅ Yes                          | Extend left to i=6, update leftMax = 92 |
+| 7 | 73       | 92         | 92      | ✅ Yes                          | Extend left to i=7                      |
+| 8 | 61       | 92         | 92      | ✅ Yes                          | Extend left to i=8                      |
+| 9 | 97       | 97         | 92      | ❌ No                           | Done                                    |
+
+✅ Final left partition ends at index `8` → length = `9`
+
+---
+
+### 🧪 Final Split:
+
+```text
+left  = [90, 47, 69, 10, 43, 92, 31, 73, 61]   (max = 92)
+right = [97]                                  (min = 97)
+```
+
+✔️ Valid partition: `92 ≤ 97`
+
+---
+
+### ✅ Code (Python):
+
+      ```python
+      def partitionDisjoint(nums):
+          leftMax = nums[0]
+          overallMax = nums[0]
+          partitionIdx = 0
+          
+          for i in range(1, len(nums)):
+              overallMax = max(overallMax, nums[i])
+              if nums[i] < leftMax:
+                  leftMax = overallMax
+                  partitionIdx = i
+          
+          return partitionIdx + 1
+      ```
+
+---
+
+### 🔁 Time & Space Complexity:
+
+* **Time:** O(n)
+* **Space:** O(1)
+
+---
+
+### 🧠 Takeaway:
+
+> Always extend `left` whenever an element breaks the condition.
+> Use `overallMax` to update `leftMax` only **when needed**.
+
+---
+
+```
+
+---
