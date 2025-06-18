@@ -49,3 +49,24 @@ Revisit these 30–40 problems every 1–2 weeks to stay sharp.
 * Use this as your go-to last-week prep before interviews
 
 ---
+
+## 🚀 Top 10 Speed Booster Problems (Linear DSA)
+
+These problems are handpicked to boost:
+- ⚡ Pattern recall
+- ⏱️ Typing + solving speed
+- 🧠 Edge case awareness
+
+| No. | Problem | Pattern | Difficulty | Why It's a Speed Booster | Revisit |
+|-----|---------|---------|------------|---------------------------|---------|
+| 1 | [1. Two Sum](https://leetcode.com/problems/two-sum/) | Hashing | Easy | Most asked, base for map-based problems | 🔄 |
+| 2 | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Two Pointers | Medium | Core template + max-boundary logic | 🔄 |
+| 3 | [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window | Medium | Dynamic window resizing + map usage | 🔄 |
+| 4 | [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) | Sliding Window | Medium | Shrinking window + tricky min updates | 🔄 |
+| 5 | [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | Monotonic Queue | Hard | Core deque mastery under time pressure | 🔄 |
+| 6 | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | Sorting + Greedy | Medium | Classic greedy merge pattern | 🔄 |
+| 7 | [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Stack | Hard | Stack + max area template logic | 🔄 |
+| 8 | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | Prefix Sum + HashMap | Medium | Prefix sum hash logic for subarrays | 🔄 |
+| 9 | [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | HashSet | Medium | Set lookup trick, no sort needed | 🔄 |
+| 10 | [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Cycle Detection / Binary Search | Medium | Advanced logic, multiple approaches | 🔄 |
+
