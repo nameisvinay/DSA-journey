@@ -18,7 +18,20 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
-  
+
+### 📁 Prefix Sum
+
+* [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) – Easy
+* [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) – Easy
+* [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) – Easy
+* [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) – Easy
+* [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) – Easy
+* [1991. Find the Middle Index in Array](https://leetcode.com/problems/find-the-middle-index-in-array/) – Easy
+* [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
+* [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
+* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
+
+
 ### 📁 Linkedlist
 * [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) – Easy  
 * [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) – Easy  
@@ -70,6 +83,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) – Medium
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
+* [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
+* [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
   
 
 
