@@ -50,7 +50,7 @@ At most 104 calls will be made to sumRange.
       - If 'left > 0': 
               "sumRange(left, right) = prefix[right] - prefix[left - 1]" 
       - If 'left == 0':
-              "sumRange = prefix[right]"
+              "sumRange = prefix[right]"   --->  ❌ Crashes for 'left = 0' (accesses "prefix[-1]")
 
 ---
 
