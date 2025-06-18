@@ -1,8 +1,4 @@
-Sure buddy! Here's your complete **GitHub-ready Markdown note** for:
 
----
-
-````markdown
 ==================================================================
 🧩 Problem: 915. Partition Array into Disjoint Intervals  
 🔗 Link   : https://leetcode.com/problems/partition-array-into-disjoint-intervals/  
@@ -11,11 +7,15 @@ Sure buddy! Here's your complete **GitHub-ready Markdown note** for:
 ==================================================================
 
 ### 📄 Description:
-Given an integer array `nums`, partition it into **two contiguous subarrays** `left` and `right` such that:
 
-- Every element in `left` is **less than or equal to** every element in `right`.
-- `left` and `right` are both **non-empty**.
-- Return the **smallest possible length** of `left` after such a partition.
+   Given an integer array nums, partition it into two (contiguous) subarrays left and right so that:
+   
+   Every element in left is less than or equal to every element in right.
+   left and right are non-empty.
+   left has the smallest possible size.
+   Return the length of left after such a partitioning.
+   
+   Test cases are generated such that partitioning exists.
 
 ---
 
@@ -26,31 +26,34 @@ Given an integer array `nums`, partition it into **two contiguous subarrays** `l
 
 ---
 
-### ✅ Approach: Greedy + Prefix Max
-We need to find the **smallest** left subarray such that:
-```text
-max(left) ≤ min(right)
-````
+### my initial idea:
 
-#### 🔑 Key Intuition:
+   left and right pointers at index 0
+   thought of updating every number with their previous greater number : 5 0 3 8 6
+                                                                         5 5 5 8 8
 
-* We maintain:
+    when greater meets stop left and move right.
+    but this intuition doesnot help me.
 
-  * `leftMax`: Maximum value in the current left partition.
-  * `overallMax`: Maximum value seen so far.
-* While iterating:
+    after that i look for hint in chatgpt without code.
 
-  * If `nums[i] < leftMax`, this value **cannot be** in the right → **we extend left**.
-  * In this case, update:
+then it suggested another input which helps me better understanding [90, 47, 69, 10, 43, 92, 31, 73, 61, 97]
 
-    * `leftMax = overallMax`
-    * `partitionIdx = i`
+### ✅ Approach:
 
----
+           -  initialize overall_max and left_max with nums[0]. 
+           -  check for next elements in an array if less than left_max or not . nums > left_maax.
+           -  if found update overall_max with new greater number.
+           -  but left_max remains at same position and partition too.
+           -  if found any later number found less than left_max then it mean we can extend left_max now update left_max with overall_max
+           -  update partition too
+           -  if found next overall_max and not found any less than left_max numbers then its end of left part.
+           -  now can return partition with + 1 as it is 0-indexed.
+
 
 ### 🧠 Dry Run:
 
-#### 🔢 Input:
+#### 🔢 Input: (took from chatgpt for better visualization)
 
 ```py
 nums = [90, 47, 69, 10, 43, 92, 31, 73, 61, 97]
@@ -75,10 +78,9 @@ nums = [90, 47, 69, 10, 43, 92, 31, 73, 61, 97]
 
 ### 🧪 Final Split:
 
-```text
 left  = [90, 47, 69, 10, 43, 92, 31, 73, 61]   (max = 92)
 right = [97]                                  (min = 97)
-```
+
 
 ✔️ Valid partition: `92 ≤ 97`
 
@@ -104,9 +106,8 @@ right = [97]                                  (min = 97)
 ---
 
 ### 🔁 Time & Space Complexity:
-
-* **Time:** O(n)
-* **Space:** O(1)
+                                * **Time:** O(n)
+                                * **Space:** O(1)
 
 ---
 
@@ -117,6 +118,3 @@ right = [97]                                  (min = 97)
 
 ---
 
-```
-
----
