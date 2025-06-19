@@ -1,0 +1,173 @@
+==================================================================
+🔁 Pattern: Floyd’s Cycle Detection in Arrays
+📚 Problem: [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
+📈 Level   : Medium
+==================================================================
+
+initial Idea:
+
+    Starting it seems very easy if solved using hash set.
+    simply by adding all elements to set and if found element which already exists in set.
+    then we found the duplicate return it.
+
+    set --> space complexity - O(N)
+
+    * But problem statement mentioned You’re not allowed to use extra space (so no set/hashmap)
+
+    Also we can do another linear complexity : nums[i-1] == nums[i] return nums[i] --> but to make repeated elements to be in adjacent
+    we need to sort.
+
+    * which cant be modified as mentioned in array.
+
+
+    so now points to remember : 
+                        -  There are n+1 elements, but only n possible values →
+                                    Pigeonhole Principle → at least one duplicate 🔁       
+                        -  You’re not allowed to use extra space (so no set/hashmap)
+                        -  You can’t sort the array, so sorting-based solution is invalid
+
+
+    Each nums[i] is in [1, n]
+    So you can treat:
+              i → nums[i] → nums[nums[i]] → ...      Like a linked list traversal 
+                                                    And if there’s a duplicate → some values must point to the same index
+                  
+                                    → That creates a cycle!
+                                    
+### 📌 Problem Summary:
+- Given `n + 1` integers where each integer is in the range `[1, n]`.
+- Exactly **one number is repeated**, possibly multiple times.
+- **Return the duplicate number** without modifying the array.
+- Must use only **O(1)** extra space and run in **O(n)** time.
+
+
+### 🧠 Apply Floyd’s Cycle Detection:
+
+Absolutely buddy! Let’s **fully walk through how the array behaves like a linked list** — step by step — and how we trace the cycle like Floyd’s algorithm does.
+
+---
+
+## 🧩 Given Input:
+
+```text
+Index:  0   1   2   3   4
+Value:  1   3   4   2   2
+```
+
+We treat each element as a **pointer to the next index**:
+
+* `nums[i]` gives the **next jump**
+* So if you're at index `i`, the next index is `nums[i]`
+
+---
+
+## 🔁 Step-by-Step: How the "Linked List" Forms
+
+Let’s start from `index 0`, and simulate the path as if we're walking through a linked list:
+
+
+  ### ▶️ Step 1:
+  
+              Start at index `0`:
+              → `nums[0] = 1`
+              So go to index `1`
+  
+  ---
+  
+  ### ▶️ Step 2:
+  
+              Now at index `1`:
+              → `nums[1] = 3`
+              Go to index `3`
+  
+  ---
+  
+  ### ▶️ Step 3:
+  
+              Now at index `3`:
+              → `nums[3] = 2`
+              Go to index `2`
+  
+  ---
+  
+  ### ▶️ Step 4:
+  
+              Now at index `2`:
+              → `nums[2] = 4`
+              Go to index `4`
+
+  ---
+  
+  ### ▶️ Step 5:
+  
+              Now at index `4`:
+              → `nums[4] = 2`
+              Go to index `2`
+  
+  ---
+  
+  ### ▶️ Step 6:
+  
+              Back at index `2` again
+              → `nums[2] = 4`
+              Go to index `4`
+            
+              → `nums[4] = 2`
+              → Go back to index `2`
+
+---
+
+### 🔁 Cycle Detected:
+
+    From here:   2 → 4 → 2 → 4 → 2 → ...
+
+A **cycle is formed** between index `2` and `4` (via values `4` and `2`)
+
+---
+
+## 🔁 Full Path:
+
+          Start from index 0
+          0 → 1 → 3 → 2 → 4 → 2 → 4 → 2 → ...
+                              ↑       ↓
+                              └───────┘
+
+---
+
+### 🎯 Why This Works:
+
+* Each value is a pointer (not a random number!)
+* Duplicate value (in this case, `2`) means **two different positions** are pointing to the same index
+* That causes the loop (just like a linked list cycle)
+
+---
+
+### 🧠 Floyd's Trick:
+
+    * `slow = nums[slow]` → 1 step
+    * `fast = nums[nums[fast]]` → 2 steps
+    * Eventually `slow == fast` inside the loop
+    * Then reset slow to `nums[0]` and both move 1 step to find where the loop **starts**
+
+---
+
+
+#### ✅ Phase 1: Detect Cycle (Meeting Point)
+
+          slow = nums[0]
+          fast = nums[0]
+          while True:
+              slow = nums[slow]           # 1 step
+              fast = nums[nums[fast]]     # 2 steps
+              if slow == fast:
+                  break
+
+#### phase 2: Find start of the cycle (starting point)
+          slow = nums[0]
+          while slow != fast:
+              slow = nums[slow]           # 1 step
+              fast = nums[fast]           # 1 step
+          return slow
+
+
+
