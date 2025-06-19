@@ -119,6 +119,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) – Easy
 * [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) – Medium
 * [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) – Medium
+* [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) - Medium
+* [2064. Minimized Maximum of Products Distributed to Any Store](https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/) - Medium
 
 ### 📁 Bit Manipulation
 
