@@ -159,25 +159,22 @@ start = 4
 
 ## ✅ Code (Python)
 
-```python
-class Solution:
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
-        res = [[]]
-        start = 0
-        
-        for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i - 1]:
-                temp_start = start
-            else:
-                temp_start = 0
+        def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+            nums.sort()
+            res = [[]]
+            start = 0
             
-            start = len(res)
-            for j in range(temp_start, len(res)):
-                res.append(res[j] + [nums[i]])
-        
-        return res
-```
+            for i in range(len(nums)):
+                if i > 0 and nums[i] == nums[i - 1]:
+                    temp_start = start
+                else:
+                    temp_start = 0
+                
+                start = len(res)
+                for j in range(temp_start, len(res)):
+                    res.append(res[j] + [nums[i]])
+            
+            return res
 
 ---
 
@@ -200,3 +197,58 @@ class Solution:
   * Backtracking with duplicates
 
 ---
+
+confused part: (revisit to remember)
+
+    >  When a duplicate is found**, we store the **previous 'start' ** (which points to where new subsets started in the last round)
+    >  into 'temp_start' **before** updating 'start' to the new length of the result.
+
+---
+
+### 🔁 Here’s the exact flow:
+
+        
+        if nums[i] == nums[i - 1]:         # 🟡 Duplicate found
+            temp_start = start             # ✅ Save previous boundary
+        else:
+            temp_start = 0                 # 🚀 Use all subsets if unique
+        
+        start = len(result)                # 🆕 Mark new start boundary
+        
+
+* So `temp_start` = **where we begin forming new subsets**
+* And `start` = **gets updated after we finish adding the new subsets**
+
+---
+
+### ✅ Let’s freeze this in a moment:
+
+nums = [1, 2, 2]
+
+    At 'i = 2' (duplicate 2):
+    
+    * Last time (when we added [2], [1,2]), we started from index 'start = 2'
+    * So now:
+  
+          temp_start = start = 2
+          start = len(result) = 4
+  
+
+Now we do:
+
+    for j in range(temp_start, len(result)):  # j in range(2, 4)
+        result.append(result[j] + [2])
+
+So:
+    * [2] + 2 → [2,2]
+    * [1,2] + 2 → [1,2,2]
+
+    ✅ Subsets formed from only the *new ones* from previous round.
+
+---
+
+### 📌 Final Recap:
+        > 👉 **'temp_start' lets you “lock” the last starting point**
+        > 👉 **'start' gets freshly updated each time**
+        > 👉 This combo gives you control over what to use, and avoids duplicates 💯
+
