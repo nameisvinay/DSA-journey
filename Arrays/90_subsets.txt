@@ -1,0 +1,202 @@
+Awesome buddy! Here's your complete **GitHub-style markdown note** for **Subsets II**, now with a **visual subset evolution diagram** 🧠📘 — clean, recruiter-friendly, and easy to paste into your repo.
+
+---
+
+````markdown
+==================================================================
+🧩 Problem: Subsets II
+🔗 Link    : https://leetcode.com/problems/subsets-ii/
+📚 Topic   : Recursion, Backtracking, Arrays
+📈 Level   : Medium
+==================================================================
+
+📄 Description:
+Given an integer array `nums` that may contain duplicates, return *all possible subsets (the power set)*.
+
+**The solution set must not contain duplicate subsets.**
+
+---
+
+### ✅ Constraints:
+- `1 <= nums.length <= 10`
+- `-10 <= nums[i] <= 10`
+
+---
+
+### 🧠 Intuition:
+
+This is a variation of the classic **Subsets** problem.  
+But because `nums` contains **duplicates**, we must avoid creating **duplicate subsets**.
+
+Instead of backtracking with visited sets, we use an **iterative subset construction** approach, and carefully track which subsets were added in the last iteration to avoid repetition.
+
+---
+
+### 🚀 Core Idea:
+
+We generate subsets by **iteratively adding each number to existing subsets**, but:
+
+    - If current number is a **duplicate**, we only combine it with the subsets created in the **previous step**
+    - We track the start index of those new subsets using `start = len(res)`
+    - For unique numbers, we combine with all subsets
+
+---
+
+## 🔄 Dry Run: 'nums = [1, 2, 2]'
+
+### 📌 After Sorting:
+
+        nums = [1, 2, 2]
+        res = [[]]
+
+---
+
+### 🔁 Iteration 1: 'nums[0] = 1'
+
+      Not a duplicate. Add '1' to all subsets.
+      
+      | Existing Subset | + [1] | New Subset |
+      | --------------- | ------ | ---------- |
+      |  []             | +[1]   | [1]       |
+      
+      
+      res = [
+        [ ]        # 0
+        [1]        # 1
+      ]
+      
+      'start = 2' (next index to track new additions)
+
+---
+
+### 🔁 Iteration 2: 'nums[1] = 2'
+
+Not a duplicate. Add '2' to all subsets.
+
+            | Existing Subset | +  [2] | New Subset |
+            | --------------- | ------ | ---------- |
+            |  []             | + [2]  |  [2]       |
+            |  [1]            | + [2]  |  [1,2]     |
+
+
+res = [
+  [ ]        # 0
+  [1]        # 1
+  [2]        # 2 ← added now
+  [1,2]      # 3 ← added now
+]
+
+start = 4
+
+---
+
+### 🔁 Iteration 3: 'nums[2] = 2' (⚠️ duplicate)
+
+    So, only add '2' to the subsets **created in the last iteration**:
+      → That is, only 'res[2]' and 'res[3]' → '[2]', '[1,2]'
+    
+          | Existing Subset | + [2] | New Subset |
+          | --------------- | ------ | ---------- |
+          |  [2]            | +[2]   | [2,2]     |
+          |  [1,2]          | +[2]   | [1,2,2]   |
+
+
+    res = [
+      [ ]         # 0
+      [1]         # 1
+      [2]         # 2
+      [1,2]       # 3
+      [2,2]       # 4 ← added now
+      [1,2,2]     # 5 ← added now
+    ]
+
+
+---
+
+## 🎨 Visual Subset Evolution Diagram
+
+          Iteration 0:  nums[0] = 1
+          ──────────────────────────────
+          res = 
+          [ ]       ← base
+          [1]       ← [] + 1
+          
+          start = 2
+          
+
+          Iteration 1:  nums[1] = 2
+          ──────────────────────────────
+          res = 
+          [ ]       ← base
+          [1]       ← from prev
+          [2]       ← [] + 2
+          [1,2]     ← [1] + 2
+          
+          start = 4
+          
+
+          Iteration 2:  nums[2] = 2 (duplicate)
+          ─────────────────────────────────────
+          res =
+          [ ]         ← base
+          [1]         ← from earlier
+          [2]         ← from last round
+          [1,2]       ← from last round
+          [2,2]       ← [2] + 2
+          [1,2,2]     ← [1,2] + 2
+          
+          start = 6
+
+
+---
+
+### ✅ Final Output:
+      
+        [[], [1], [2], [1,2], [2,2], [1,2,2]]
+      
+
+---
+
+## ✅ Code (Python)
+
+```python
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        res = [[]]
+        start = 0
+        
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i - 1]:
+                temp_start = start
+            else:
+                temp_start = 0
+            
+            start = len(res)
+            for j in range(temp_start, len(res)):
+                res.append(res[j] + [nums[i]])
+        
+        return res
+```
+
+---
+
+## 🧠 Time and Space Complexity
+
+      * **Time:**  O(2^n) → Number of subsets in power set
+      * **Space:** O(2^n) → Resultant subset list
+
+---
+
+## ✅ Key Takeaways
+
+    * Sort the input to handle duplicates correctly
+    * Use 'start = len(res)' to know which subsets were added in the previous round
+    * When encountering a duplicate, only extend the subsets added in the last round
+    * This technique is useful in similar problems like:
+
+  * `Combination Sum II`
+  * `Permutations II`
+  * Backtracking with duplicates
+
+---
