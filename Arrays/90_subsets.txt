@@ -51,101 +51,12 @@ We generate subsets by **iteratively adding each number to existing subsets**, b
 
 ---
 
-### 🔁 Iteration 1: 'nums[0] = 1'
+| Iteration | i | nums\[i] | Duplicate? | temp\_start | start (before append) | New Subsets Formed         | res after iteration                       |
+| --------- | - | -------- | ---------- | ----------- | --------------------- | -------------------------- | ----------------------------------------- |
+| 1         | 0 | 1        | ❌          | 0           | 1                     | `[] + [1]` → `[1]`         | `[ [], [1] ]`                             |
+| 2         | 1 | 2        | ❌          | 0           | 2                     | `[] + [2]`, `[1] + [2]`    | `[ [], [1], [2], [1,2] ]`                 |
+| 3         | 2 | 2        | ✅          | 2           | 4                     | `[2] + [2]`, `[1,2] + [2]` | `[ [], [1], [2], [1,2], [2,2], [1,2,2] ]` |
 
-      Not a duplicate. Add '1' to all subsets.
-      
-      | Existing Subset | + [1] | New Subset |
-      | --------------- | ------ | ---------- |
-      |  []             | +[1]   | [1]       |
-      
-      
-      res = [
-        [ ]        # 0
-        [1]        # 1
-      ]
-      
-      'start = 2' (next index to track new additions)
-
----
-
-### 🔁 Iteration 2: 'nums[1] = 2'
-
-Not a duplicate. Add '2' to all subsets.
-
-            | Existing Subset | +  [2] | New Subset |
-            | --------------- | ------ | ---------- |
-            |  []             | + [2]  |  [2]       |
-            |  [1]            | + [2]  |  [1,2]     |
-
-
-res = [
-  [ ]        # 0
-  [1]        # 1
-  [2]        # 2 ← added now
-  [1,2]      # 3 ← added now
-]
-
-start = 4
-
----
-
-### 🔁 Iteration 3: 'nums[2] = 2' (⚠️ duplicate)
-
-    So, only add '2' to the subsets **created in the last iteration**:
-      → That is, only 'res[2]' and 'res[3]' → '[2]', '[1,2]'
-    
-          | Existing Subset | + [2] | New Subset |
-          | --------------- | ------ | ---------- |
-          |  [2]            | +[2]   | [2,2]     |
-          |  [1,2]          | +[2]   | [1,2,2]   |
-
-
-    res = [
-      [ ]         # 0
-      [1]         # 1
-      [2]         # 2
-      [1,2]       # 3
-      [2,2]       # 4 ← added now
-      [1,2,2]     # 5 ← added now
-    ]
-
-
----
-
-## 🎨 Visual Subset Evolution Diagram
-
-          Iteration 0:  nums[0] = 1
-          ──────────────────────────────
-          res = 
-          [ ]       ← base
-          [1]       ← [] + 1
-          
-          start = 2
-          
-
-          Iteration 1:  nums[1] = 2
-          ──────────────────────────────
-          res = 
-          [ ]       ← base
-          [1]       ← from prev
-          [2]       ← [] + 2
-          [1,2]     ← [1] + 2
-          
-          start = 4
-          
-
-          Iteration 2:  nums[2] = 2 (duplicate)
-          ─────────────────────────────────────
-          res =
-          [ ]         ← base
-          [1]         ← from earlier
-          [2]         ← from last round
-          [1,2]       ← from last round
-          [2,2]       ← [2] + 2
-          [1,2,2]     ← [1,2] + 2
-          
-          start = 6
 
 
 ---
