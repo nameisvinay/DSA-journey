@@ -1,0 +1,27 @@
+my initial idea: 
+
+  As seems like previous solved find duplicate number problem.
+  so i did in same way.but i got stuck. logic is similar using pointers.
+
+      here array with positive and negative values. and circular array.
+      if negative move backward.
+      if positive move forward.
+              to do so, (i+nums[i]) % len(nums) - can help to take their places.
+
+      ❌  here i mistaken to compare with i and nums[i] if both same then cycle found.
+          the code i did wrong 
+          
+                  n = len(nums)
+                  for i in range(n):
+                      next_index = (i+nums[i])%n      
+                      if next_index == nums[i]:        ❌  my mistake: next_index is actually a index , nums[i] is value. so cannot compare value with index.
+                          return True
+                  return False
+
+              ---->  NOT VALID
+
+    Also consider length should be more than 1. if not circular happens with self array.
+
+  
+
+  
