@@ -207,24 +207,24 @@ So, no null pointers — **but**, we might go **out of bounds** if not careful.
 
 The problem guarantees:
 
-> The input array `nums` contains 'n + 1' numbers, where **each number is in the range [1, n]**
-
-This means:
-
-    * 'nums[i] will always return a valid index
-    * So:
-          nums[fast] → valid
-          nums[nums[fast]] → also valid
-
-    Thus, there's **no need to check for `None`** or `IndexError`.
+        > The input array 'nums' contains 'n + 1' numbers, where **each number is in the range [1, n].
+        
+        This means:
+        
+            * 'nums[i]' will always return a valid index
+            * So:
+                  nums[fast] → valid
+                  nums[nums[fast]] → also valid
+        
+            Thus, there's **no need to check for `None`** or `IndexError`.
 
 ---
 
 ### 🛑 But: If This Guarantee Didn't Exist?
 
-        If the problem *didn't* guarantee valid bounds, we **would** need:
+        If the problem didn't guarantee valid bounds, we would need:
 
-        while fast < len(nums) and nums[fast] < len(nums):
+                    while fast < len(nums) and nums[fast] < len(nums):
 ---
 
 ### 🔁 Summary:
