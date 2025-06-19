@@ -131,9 +131,9 @@ i always consfused here:
     * When encountering a duplicate, only extend the subsets added in the last round
     * This technique is useful in similar problems like:
 
-  * `Combination Sum II`
-  * `Permutations II`
-  * Backtracking with duplicates
+              - `Combination Sum II`
+              - `Permutations II`
+              -  Backtracking with duplicates
 
 ---
 
