@@ -170,4 +170,73 @@ A **cycle is formed** between index `2` and `4` (via values `4` and `2`)
           return slow   # ✅ Duplicate number (entry point of cycle)
 
 
+I tried to understand more by compare it with linked lists**.
+
+> 💡 Can we do something like `fast is None` or `fast.next is None` in arrays, like we do in linked lists?
+
+---
+
+### ❓ In Linked Lists:
+
+We usually write:
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+
+Why?
+
+* Because `fast.next` might be `None` → so we check for null pointers to **avoid crashing**
+
+---
+
+### ❓ But in Arrays:
+
+We **don’t use `.next`** — instead we follow **index-based hops**:
+
+```python
+fast = nums[nums[fast]]
+```
+
+So, no null pointers — **but**, we might go **out of bounds** if not careful.
+
+---
+
+### ✅ Why It’s Safe in Floyd’s Algo (for this problem):
+
+The problem guarantees:
+
+> The input array `nums` contains 'n + 1' numbers, where **each number is in the range [1, n]**
+
+This means:
+
+    * 'nums[i] will always return a valid index
+    * So:
+          nums[fast] → valid
+          nums[nums[fast]] → also valid
+
+    Thus, there's **no need to check for `None`** or `IndexError`.
+
+---
+
+### 🛑 But: If This Guarantee Didn't Exist?
+
+        If the problem *didn't* guarantee valid bounds, we **would** need:
+
+        while fast < len(nums) and nums[fast] < len(nums):
+---
+
+### 🔁 Summary:
+
+| Structure            | How we stay safe                                          |
+| -------------------- | --------------------------------------------------------- |
+| Linked List          | Check `fast` and `fast.next` is not `None`                |
+| Array (this problem) | Safe due to constraints: all values are in `[1, n]` range |
+
+---
+
+Simply,
+    > ❌ No need for `fast == None` or `fast.next == None` in arrays here
+    > ✅ Because 'nums[nums[fast]]' is **always within bounds** in this problem
 
