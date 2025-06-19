@@ -1,3 +1,7 @@
 ###
 
-💡 when we are looking for future elements (next greater), it's better to traverse from right to left(reversed).
+* Next greater
+ 💡 when we are looking for future elements (next greater), it's better to traverse from right to left(reversed).
+
+* subsets-II
+ 💡 len(res) actually gives us the index where we should start forming new subsets in the next step — especially when handling duplicates.
