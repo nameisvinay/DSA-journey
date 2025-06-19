@@ -153,21 +153,21 @@ A **cycle is formed** between index `2` and `4` (via values `4` and `2`)
 
 
 #### ✅ Phase 1: Detect Cycle (Meeting Point)
-
+          
           slow = nums[0]
           fast = nums[0]
           while True:
               slow = nums[slow]           # 1 step
               fast = nums[nums[fast]]     # 2 steps
               if slow == fast:
-                  break
+                  break    # ✅ Exit the loop when cycle is detected
 
 #### phase 2: Find start of the cycle (starting point)
           slow = nums[0]
           while slow != fast:
               slow = nums[slow]           # 1 step
               fast = nums[fast]           # 1 step
-          return slow
+          return slow   # ✅ Duplicate number (entry point of cycle)
 
 
 
