@@ -1,3 +1,29 @@
+==================================================================
+🔁 Problem: Circular Array Loop
+🔗 Link    : https://leetcode.com/problems/circular-array-loop/
+📚 Topic   : Arrays, Cycle Detection, Two Pointers
+📈 Level   : Medium
+==================================================================
+
+🧩 Description:
+You are given a **circular array** of integers where each element `nums[i]` represents the number of steps to move (forward if positive, backward if negative).
+
+Determine if the array contains a **cycle** that:
+- Is not a self-loop (length > 1),
+- Moves in only one direction (either all positive or all negative),
+- Is circular, i.e., wraps around.
+
+---
+
+✅ Constraints:
+- `1 <= nums.length <= 5000`
+- `-1000 <= nums[i] <= 1000`
+
+---
+
+🔍 Dry Run Example:
+For 'nums = [2, -1, 1, 2, 2]'
+
 my initial idea: 
 
   As seems like previous solved find duplicate number problem.
@@ -14,13 +40,237 @@ my initial idea:
                   n = len(nums)
                   for i in range(n):
                       next_index = (i+nums[i])%n      
-                      if next_index == nums[i]:        ❌  my mistake: next_index is actually a index , nums[i] is value. so cannot compare value with index.
+                      if next_index == nums[i]:  
+        ❌  my mistake: next_index is actually a index , nums[i] is value. so cannot compare value with index.
                           return True
                   return False
 
               ---->  NOT VALID
 
     Also consider length should be more than 1. if not circular happens with self array.
+    - Got stuck and took help prvious solved solutions.
+
+what i understood is:
+
+    🚩 Conditions for a valid loop:
+          1. All elements in the loop should move in one direction only.
+          2. Loop must consist of more than 1 element(no self-loops).
+          3. Movement must be circular.
+          4. We use Floyd's Tortoise and Hare algorithm to detect cycles.
+    
+    ---
+
+🧠 Intuition:
+    The problem is similar to detecting a cycle in a linked list, but in this case, the structure is an array,
+            we're using modulo to wrap around --> ()%len(nums)
+
+    key steps to follow:
+          - check self loop. check if curr index and index after movement. if same break the loop.
+          - check if slow and fast are at same index after more than one node. k>=1. return True
+          - move slow one step
+          - move fast one step and check direction
+          - again move fast one step and check direction
+          - increment length (for each loop)
+    -  now after end of array. mark index as visited and 0 as value in its index position and move pointer to next.
+          
+    ---
+
+Dry run: 
+
+  ### 🔢 Input:  nums = [2, -1, 1, 2, 2]
+
+---
+
+### 🧠 Goal:
+
+Detect if there’s a cycle that:
+
+    * Moves only in one direction (all `+ve` or all `-ve`)
+    * Has length > 1 (not self-loop)
+    * Is a **loop in circular array**
+
+---
+
+### 🧩 Code Recap:
+
+  def next_index(i):
+      return (i + nums[i]) % len(nums)
+  
+      for i in range(n):
+          if nums[i] == 0:
+              continue
+          slow = i
+          fast = i
+          length = 0
+          while True:
+              if slow == next_index(slow):
+                  break
+              if slow == fast and length >= 1:
+                  return True
+              slow = next_index(slow)
+              # direction check after 1st step
+              ...
+              # fast 2 steps with checks
+              ...
+              length += 1
+          # mark path visited
+    ...
+
+---
+
+## 🧪 Dry Run on `nums = [2, -1, 1, 2, 2]`
+
+    ### ▶️ Start with 'i = 0':
+    
+                            * 'nums[0] = 2' ➝ direction = positive ('> 0')
+                            * 'slow = 0', 'fast = 0', 'length = 0'
+
+---
+
+#### ✅ First Loop:
+
+          Self-loop check:
+                          slow = 0
+                          next_index(0) = (0+2)%5 = 2                     → not same → OK
+                                                      
+          
+          Move slow one step:
+                          slow = next_index(0) = 2
+          
+          Direction check for slow:
+                          nums[2] = 1 (positive) → same direction → OK
+          
+          Move fast one step:
+                          fast = next_index(0) = 2
+                          Check direction: nums[2] = 1 → OK
+          
+          Move fast second step:
+                          fast = next_index(2) = (2 + nums[2]) % 5 = (2 + 1)%5 = 3
+                          Check direction: nums[3] = 2 → OK
+          
+          Now:
+              slow = 2
+              fast = 3
+              length = 1
+
+---
+
+#### ✅ Second Loop:
+
+          Self-loop check:  slow != next_index(slow) → 2 vs (2+1)%5=3  → OK
+          
+          Check slow == fast ? → 2 ≠ 3 → OK
+          
+          Move slow:   slow = next_index(2) = 3
+                       Direction OK? nums[3]=2 → YES
+          
+          Move fast:   fast = next_index(3) → (3+2)%5 = 0
+                       Direction OK? nums[0] = 2 → YES
+          
+          fast =  next_index(0) → (0+2)%5 = 2
+                  Direction OK? nums[2] = 1 → YES
+          
+          Now:
+          slow = 3
+          fast = 2
+
+---
+
+#### ✅ Third Loop:
+
+          slow = next_index(3) = (3+2)%5 = 0
+          fast = next_index(2) = (2+1)%5 = 3, then
+          fast = next_index(3) = (3+2)%5 = 0
+          
+          Now slow = fast = 0 ✅    Cycle Found!
+          
+          Since length >= 1, and all directions match, we return:
+          
+                                                    ✅ return True
+        
+
+---
+
+## ✅ Conclusion
+
+This dry run confirms:
+
+    * Valid positive-direction loop: `0 → 2 → 3 → 0`
+    * Length = 3
+    * Not self-loop
+    * All directions consistent
+
+---
+
+
+
+final working code: 
+
+        n = len(nums)
+
+        def next_index(i):
+            return (i + nums[i]) % n
+
+        for i in range(n):
+            if nums[i] == 0:
+                continue  # Already visited
+
+            slow = i
+            fast = i
+            length = 0
+
+            while True:
+                # prevent one node cycle
+                if slow == next_index(slow):
+                    break
+                # pointers met
+                if slow == fast and length >= 1:
+                    return True
+    
+                slow = next_index(slow) # make 1 step
+                if (nums[i] > 0 and nums[slow] < 0) or (nums[i] < 0 and nums[slow] > 0): # make sure slow moves in correct direction
+                    break
+
+                # make 2 steps for fast and validate each step
+                fast = next_index(fast)
+                if (nums[i] > 0 and nums[fast] < 0) or (nums[i] < 0 and nums[fast] > 0):
+                    break
+                fast = next_index(fast)
+                if (nums[i] > 0 and nums[fast] < 0) or (nums[i] < 0 and nums[fast] > 0):
+                    break
+
+                length += 1
+
+            # mark the nodes as visited
+            curr = i
+            while nums[curr]!=0:
+                nums[curr] = 0
+                curr = next_index(curr)
+        return False
+
+📈 Time Complexity: O(n) - Each element is visited at most once.
+🧠 Space Complexity: O(1) - Constant extra space (in-place marking with 0).
+
+
+📌 Common Mistakes to Avoid:
+
+      - 🔁 Allowing self-loop: Must check next == current and skip it.
+      - ⬅️➡️ Not checking direction: All movements in loop must be same sign.
+      - ❌ Not marking visited nodes: May lead to TLE.
+
+
+📝 Key Learnings:
+
+    - Circular problems often require modulo math: (i + nums[i]) % n
+    - Floyd’s algorithm applies beyond just linked lists.
+    - Problem-solving needs strong pattern recognition from previous problems.
+
+
+📌 Related Patterns:
+
+      - 142. Linked List Cycle II
+      - Find the Duplicate Number (Floyd in arrays)
+      - Next Greater Element II (circular concept)
 
   
 
