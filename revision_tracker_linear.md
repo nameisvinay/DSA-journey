@@ -29,8 +29,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
 * [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
 * [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
-  
-
+* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
+* [457. Circular Array Loop](https://leetcode.com/problems/circular-array-loop/description/) - Medium
 
 ### ❌ Full Rework
 
@@ -79,6 +79,13 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [15. 3Sum](https://leetcode.com/problems/3sum/) – Medium
 * [18. 4Sum](https://leetcode.com/problems/4sum/) – Medium
 * [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) – Medium
+* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
+* [457. Circular Array Loop](https://leetcode.com/problems/circular-array-loop/description/) - Medium
+
+### 📁 Strings
+
+* [14.Longest Common prefix](https://leetcode.com/problems/longest-common-prefix/description/) - Easy
+
 
 ### 📁 Sliding Window
 
@@ -109,7 +116,6 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [1991. Find the Middle Index in Array](https://leetcode.com/problems/find-the-middle-index-in-array/) – Easy
 * [1109. Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/) – Medium
 * [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
-* [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
 
 ### 📁 Binary Search
 
@@ -209,4 +215,4 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
   
 ---
 
-📝 **Updated on:** 2025-06-19
+📝 **Updated on:** 2025-06-20
