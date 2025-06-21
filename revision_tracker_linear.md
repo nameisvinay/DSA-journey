@@ -40,6 +40,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/) – Medium
 * [915. Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) – Medium
 * [90. Subsets II](https://leetcode.com/problems/subsets-ii/) – Medium
+* [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard
+* [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
 
 ---
 
