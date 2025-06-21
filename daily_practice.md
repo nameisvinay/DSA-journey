@@ -20,7 +20,8 @@ Revisit each one deeply – start from **brute-force**, then **optimize step-by-
 Use the ✔️ checkbox to track your progress.
 
 Use smart spaced revisits:
-                  | Week       | Focus                                     | Goal                                       |
+
+            | Week       | Focus                                     | Goal                                       |
             | ---------- | ----------------------------------------- | ------------------------------------------ |
             | **Week 1** | Solve 8–10 problems from scratch          | Brute → Optimal thinking                   |
             | **Week 2** | Revisit same 8–10 deeply                  | Recall flow + optimize + edge case fluency |
