@@ -11,6 +11,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
    - 📁 Linkedlist
    - 📁 Queues
    - 📁 Stacks
+   - 📁 Binar Search
 
 ### 🔁 Revisit Needed
 
@@ -34,6 +35,9 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) – Medium
 * [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard
 * [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
+* [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) – Medium
+* [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) – Medium
+* [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) - Medium
 
 ### ❌ Full Rework
 
