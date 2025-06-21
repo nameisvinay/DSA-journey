@@ -46,6 +46,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [90. Subsets II](https://leetcode.com/problems/subsets-ii/) – Medium
 * [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard
 * [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
+* [2064. Minimized Maximum of Products Distributed to Any Store](https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/) - Medium
 
 ---
 
