@@ -31,6 +31,9 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [Sum of Beauty in the Array](https://leetcode.com/problems/sum-of-beauty-in-the-array/) – Medium
 * [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) – Medium
 * [457. Circular Array Loop](https://leetcode.com/problems/circular-array-loop/description/) - Medium
+* [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) – Medium
+* [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard
+* [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
 
 ### ❌ Full Rework
 
@@ -179,6 +182,8 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [2164. Sort Even and Odd Indices Independently](https://leetcode.com/problems/sort-even-and-odd-indices-independently/) – Easy
 * [1356. Sort Integers by The Number of 1 Bits](https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/) – Easy
 * [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) – Medium
+* [Kth Smallest](https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1) - Medium
+* [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
 
 ### 📁 Stacks
 
@@ -215,4 +220,4 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
   
 ---
 
-📝 **Updated on:** 2025-06-20
+📝 **Updated on:** 2025-06-21
