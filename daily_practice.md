@@ -20,10 +20,13 @@ Revisit each one deeply – start from **brute-force**, then **optimize step-by-
 Use the ✔️ checkbox to track your progress.
 
 Use smart spaced revisits:
-                        3rd day
-                        7th day
-                        14th day
-                        1 month later
+                  | Week       | Focus                                     | Goal                                       |
+            | ---------- | ----------------------------------------- | ------------------------------------------ |
+            | **Week 1** | Solve 8–10 problems from scratch          | Brute → Optimal thinking                   |
+            | **Week 2** | Revisit same 8–10 deeply                  | Recall flow + optimize + edge case fluency |
+            | **Week 3** | Solve next 8–10 + revisit 1st batch again | Mix of new + spaced recall                 |
+            | **Week 4** | Final 8–10 + revisit all 30 once more     | Final confidence round                     |
+            
 
 ---
 
