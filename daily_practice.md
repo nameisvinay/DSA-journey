@@ -81,3 +81,10 @@ This list is carefully curated to complement existing 100+ problems with *high-q
 - [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) – Hard
 - [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) – Medium
 - [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) – Medium *(already done — strong revisit value)*
+
+
+
+### 🧠 Why I Used This Pattern:
+- Needed to find max in subarray ⇒ used Sliding Window.
+- Repeating elements & ranges ⇒ used Hashmap.
+
