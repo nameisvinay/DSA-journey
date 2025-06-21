@@ -108,6 +108,101 @@ Use the ✔️ checkbox to track your progress.
 > ✅ Update 🔄 to ✔️ as you master each problem.
 
 
+----
+
+# 🚀 Top 30 DSA Problems for Pattern Mastery
+
+These 30 hand-picked problems cover all major linear patterns and will help you build deep understanding, speed, and pattern recognition.
+
+---
+
+## 📁 Arrays & Two Pointers
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 1  | Two Sum | [🔗](https://leetcode.com/problems/two-sum/) | Easy |
+| 2  | 3Sum | [🔗](https://leetcode.com/problems/3sum/) | Medium |
+| 3  | Remove Duplicates from Sorted Array | [🔗](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy |
+| 4  | Sort Colors (Dutch National Flag) | [🔗](https://leetcode.com/problems/sort-colors/) | Medium |
+| 5  | Product of Array Except Self | [🔗](https://leetcode.com/problems/product-of-array-except-self/) | Medium |
+
+---
+
+## 📁 Sliding Window & Subarrays
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 6  | Longest Substring Without Repeating Characters | [🔗](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium |
+| 7  | Minimum Window Substring | [🔗](https://leetcode.com/problems/minimum-window-substring/) | Hard |
+| 8  | Longest Repeating Character Replacement | [🔗](https://leetcode.com/problems/longest-repeating-character-replacement/) | Medium |
+| 9  | Permutation in String | [🔗](https://leetcode.com/problems/permutation-in-string/) | Medium |
+| 10 | Sliding Window Maximum | [🔗](https://leetcode.com/problems/sliding-window-maximum/) | Hard |
+
+---
+
+## 📁 Prefix Sum & Hashing
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 11 | Subarray Sum Equals K | [🔗](https://leetcode.com/problems/subarray-sum-equals-k/) | Medium |
+| 12 | Subarray Sums Divisible by K | [🔗](https://leetcode.com/problems/subarray-sums-divisible-by-k/) | Medium |
+| 13 | Valid Sudoku | [🔗](https://leetcode.com/problems/valid-sudoku/) | Medium |
+| 14 | Longest Consecutive Sequence | [🔗](https://leetcode.com/problems/longest-consecutive-sequence/) | Medium |
+
+---
+
+## 📁 Binary Search & Sorted Arrays
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 15 | Search in Rotated Sorted Array | [🔗](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium |
+| 16 | Find First and Last Position in Sorted Array | [🔗](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Medium |
+| 17 | Find Minimum in Rotated Sorted Array | [🔗](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium |
+
+---
+
+## 📁 Stack & Monotonic Stack
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 18 | Valid Parentheses | [🔗](https://leetcode.com/problems/valid-parentheses/) | Easy |
+| 19 | Largest Rectangle in Histogram | [🔗](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Hard |
+| 20 | Trapping Rain Water | [🔗](https://leetcode.com/problems/trapping-rain-water/) | Hard |
+
+---
+
+## 📁 Recursion & Backtracking
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 21 | Subsets | [🔗](https://leetcode.com/problems/subsets/) | Medium |
+| 22 | Subsets II | [🔗](https://leetcode.com/problems/subsets-ii/) | Medium |
+| 23 | Permutations | [🔗](https://leetcode.com/problems/permutations/) | Medium |
+| 24 | N-Queens | [🔗](https://leetcode.com/problems/n-queens/) | Hard |
+
+---
+
+## 📁 Linked List & Floyd’s Cycle
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 25 | Reverse Linked List | [🔗](https://leetcode.com/problems/reverse-linked-list/) | Easy |
+| 26 | Linked List Cycle | [🔗](https://leetcode.com/problems/linked-list-cycle/) | Easy |
+| 27 | Linked List Cycle II | [🔗](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium |
+| 28 | Remove Nth Node From End of List | [🔗](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium |
+
+---
+
+## 📁 Sorting + Binary Search Hybrid
+
+| #  | Problem | Link | Level |
+|----|---------|------|-------|
+| 29 | Reverse Pairs (Merge Sort Logic) | [🔗](https://leetcode.com/problems/reverse-pairs/) | Hard |
+| 30 | Median of Two Sorted Arrays | [🔗](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard |
+
+---
+
+> ✅ **Tip**: Revisit each from brute → optimal with dry runs and debugging notes. These 30 will boost your confidence for any unseen problem in interviews.
 
 ----
 
