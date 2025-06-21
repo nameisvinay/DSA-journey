@@ -19,6 +19,12 @@ This list is carefully curated to complement existing 100+ problems with *high-q
 Revisit each one deeply – start from **brute-force**, then **optimize step-by-step**.
 Use the ✔️ checkbox to track your progress.
 
+Use smart spaced revisits:
+                        3rd day
+                        7th day
+                        14th day
+                        1 month later
+
 ---
 
 ## ✅ Arrays & Prefix Sum
