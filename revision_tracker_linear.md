@@ -11,7 +11,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
    - 📁 Linkedlist
    - 📁 Queues
    - 📁 Stacks
-   - 📁 Binar Search
+   - 📁 Binary Search
 
 ### 🔁 Revisit Needed
 
