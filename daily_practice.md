@@ -2,7 +2,7 @@
 
 This list is carefully curated to complement existing 100+ problems with *high-quality*, *pattern-rich*, and *interview-critical* variants. Solving one per day alongside revision.
 
-      | 🔁 Problem Style         | 🔎 Patterns to Think About      |
+      | 🔁 Problem Style         | 🔎 Patterns to Think About       |
       | ------------------------ | ------------------------------- |
       | Searching something      | Binary Search, Hashing          |
       | Finding window/range     | Sliding Window                  |
