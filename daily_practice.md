@@ -14,75 +14,102 @@ This list is carefully curated to complement existing 100+ problems with *high-q
 
 ---
 
-### 🔁 Prefix + HashMap
+# 🚀 Top 30 DSA Problems for Mastery
 
-- [930. Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum/) – Medium
-- [525. Contiguous Array](https://leetcode.com/problems/contiguous-array/) – Medium
-- [1248. Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/) – Medium
-
----
-
-### 🔁 Sliding Window (Edge Cases + Hybrid Patterns)
-
-- [1658. Minimum Operations to Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/) – Medium
-- [1456. Maximum Number of Vowels in a Substring of Given Length](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) – Easy/Medium
-- [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) – Hard *(already done, revise if needed)*
+Revisit each one deeply – start from **brute-force**, then **optimize step-by-step**.
+Use the ✔️ checkbox to track your progress.
 
 ---
 
-### 🔁 Two Pointers + Edge Handling
-
-- [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) – Easy *(already done, revisit for in-place tricks)*
-- [75. Sort Colors](https://leetcode.com/problems/sort-colors/) – Medium *(Dutch Flag Problem — key variant)*
-- [2090. K Radius Subarray Averages](https://leetcode.com/problems/k-radius-subarray-averages/) – Medium
-
----
-
-### 🔁 Advanced Stack Variants
-
-- [316. Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/) – Hard *(Monotonic Stack + Greedy)*
-- [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/) – Medium *(Monotonic Stack)*
+## ✅ Arrays & Prefix Sum
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Two Sum | [Link](https://leetcode.com/problems/two-sum/) | Easy | 🔄 |
+| Best Time to Buy and Sell Stock | [Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | 🔄 |
+| Maximum Subarray (Kadane’s) | [Link](https://leetcode.com/problems/maximum-subarray/) | Medium | 🔄 |
+| Subarray Sum Equals K | [Link](https://leetcode.com/problems/subarray-sum-equals-k/) | Medium | 🔄 |
+| Product of Array Except Self | [Link](https://leetcode.com/problems/product-of-array-except-self/) | Medium | 🔄 |
 
 ---
 
-### 🔁 Binary Search on Answer
-
-- [410. Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/) – Hard
-- [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) – Medium
-- [1283. Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/) – Medium
-
----
-
-### 🔁 Bit Manipulation – Trickier Variants
-
-- [393. UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/) – Medium
-- [231. Power of Two](https://leetcode.com/problems/power-of-two/) – Easy *(already done)*
-- [201. Bitwise AND of Numbers Range](https://leetcode.com/problems/bitwise-and-of-numbers-range/) – Medium *(already done — review for MSB trick)*
+## 🔎 Binary Search & Variants
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Binary Search | [Link](https://leetcode.com/problems/binary-search/) | Easy | 🔄 |
+| Search in Rotated Sorted Array | [Link](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium | 🔄 |
+| Find Minimum in Rotated Sorted Array | [Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium | 🔄 |
+| Find Peak Element | [Link](https://leetcode.com/problems/find-peak-element/) | Medium | 🔄 |
 
 ---
 
-### 🔁 Greedy / Edge Greedy
-
-- [134. Gas Station](https://leetcode.com/problems/gas-station/) – Medium
-- [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) – Easy/Medium
-- [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) – Medium
-
----
-
-### 🔁 Sorting + Binary Search Hybrids
-
-- [315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) – Hard *(Merge Sort variant)*
-- [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard *(already done — revisit if needed)*
+## 🎯 Two Pointers / Sliding Window
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| 3Sum | [Link](https://leetcode.com/problems/3sum/) | Medium | 🔄 |
+| Container With Most Water | [Link](https://leetcode.com/problems/container-with-most-water/) | Medium | 🔄 |
+| Longest Substring Without Repeating Characters | [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | 🔄 |
+| Minimum Window Substring | [Link](https://leetcode.com/problems/minimum-window-substring/) | Hard | 🔄 |
+| Longest Repeating Character Replacement | [Link](https://leetcode.com/problems/longest-repeating-character-replacement/) | Medium | 🔄 |
 
 ---
 
-### 🔁 Hashing Edge Problems
+## 📚 Sorting & Greedy
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Merge Intervals | [Link](https://leetcode.com/problems/merge-intervals/) | Medium | 🔄 |
+| Non-overlapping Intervals | [Link](https://leetcode.com/problems/non-overlapping-intervals/) | Medium | 🔄 |
+| Minimum Number of Arrows to Burst Balloons | [Link](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/) | Medium | 🔄 |
 
-- [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) – Hard
-- [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) – Medium
-- [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) – Medium *(already done — strong revisit value)*
+---
+
+## 🧱 Stack
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Valid Parentheses | [Link](https://leetcode.com/problems/valid-parentheses/) | Easy | 🔄 |
+| Next Greater Element II | [Link](https://leetcode.com/problems/next-greater-element-ii/) | Medium | 🔄 |
+| Largest Rectangle in Histogram | [Link](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Hard | 🔄 |
+| Trapping Rain Water | [Link](https://leetcode.com/problems/trapping-rain-water/) | Hard | 🔄 |
+
+---
+
+## 🔗 Linked List
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Reverse Linked List | [Link](https://leetcode.com/problems/reverse-linked-list/) | Easy | 🔄 |
+| Linked List Cycle II | [Link](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium | 🔄 |
+| Reverse Nodes in k-Group | [Link](https://leetcode.com/problems/reverse-nodes-in-k-group/) | Hard | 🔄 |
+
+---
+
+## 🧠 Bit Manipulation & Hashing
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Single Number II | [Link](https://leetcode.com/problems/single-number-ii/) | Medium | 🔄 |
+| Find the Duplicate Number | [Link](https://leetcode.com/problems/find-the-duplicate-number/) | Medium | 🔄 |
+| Longest Consecutive Sequence | [Link](https://leetcode.com/problems/longest-consecutive-sequence/) | Medium | 🔄 |
+
+---
+
+## 🔁 Recursion / Backtracking
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Subsets II | [Link](https://leetcode.com/problems/subsets-ii/) | Medium | 🔄 |
+| Permutations | [Link](https://leetcode.com/problems/permutations/) | Medium | 🔄 |
+
+---
+
+## 🧩 Bonus – Divide and Conquer
+| Problem | Link | Level | Revisit |
+|--------|------|--------|---------|
+| Reverse Pairs (Merge Sort) | [Link](https://leetcode.com/problems/reverse-pairs/) | Hard | 🔄 |
+
+---
+
+> ✅ Update 🔄 to ✔️ as you master each problem.
 
 
+
+----
 
 ### 🧠 Why I Used This Pattern:
 - Needed to find max in subarray ⇒ used Sliding Window.
