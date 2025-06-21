@@ -2,6 +2,16 @@
 
 This list is carefully curated to complement existing 100+ problems with *high-quality*, *pattern-rich*, and *interview-critical* variants. Solving one per day alongside revision.
 
+      | 🔁 Problem Style         | 🔎 Patterns to Think About      |
+      | ------------------------ | ------------------------------- |
+      | Searching something      | Binary Search, Hashing          |
+      | Finding window/range     | Sliding Window                  |
+      | Count pairs / inversions | Merge Sort, Two Pointers        |
+      | Next/previous element    | Stack                           |
+      | Subsets/combination      | Backtracking, Recursion         |
+      | Circular / wrap-around   | Modulo + Fast/Slow Pointers     |
+      | K-group or Reverse       | Linked List with extra handling |
+
 ---
 
 ### 🔁 Prefix + HashMap
