@@ -147,6 +147,7 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [476. Number Complement](https://leetcode.com/problems/number-complement/) – Easy
 * [1009. Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/) – Easy
 * [2643. Row With Maximum Ones](https://leetcode.com/problems/range-product-queries-of-powers/) – Medium
+* [1356. Sort Integers by The Number of 1 Bits](https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/) – Easy
 
 ### 📁 Hashing
 
@@ -180,7 +181,6 @@ Tracking my revision progress across multiple DSA topics from Arrays to LinkedLi
 * [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) – Easy
 * [493. Reverse Pairs](https://leetcode.com/problems/reverse-pairs/) – Hard
 * [2164. Sort Even and Odd Indices Independently](https://leetcode.com/problems/sort-even-and-odd-indices-independently/) – Easy
-* [1356. Sort Integers by The Number of 1 Bits](https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/) – Easy
 * [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) – Medium
 * [Kth Smallest](https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1) - Medium
 * [Count Inversions](https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1) - Medium
