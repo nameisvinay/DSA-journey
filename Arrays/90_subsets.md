@@ -53,12 +53,14 @@ We generate subsets by **iteratively adding each number to existing subsets**, b
     initally, result = [[]] --> start = 0   []
 
 At iteration 1: 0th index :
+```
                     nums[0] = 1  not duplicate(traverse from 0) => temp_start = 0
                     start = len(res) => 1
                                 j -> (temp_start , len(res))            
                                     result.append([nums[i]] + result[j])
 
                 result   =  [] + [1] --> [[],[1]]
+```
 
 At iteration 2: 1st index :
                     nums[1] = 2  not duplicate(traverse from 0) => temp_start = 0
