@@ -1,4 +1,4 @@
-
+````md
 ==================================================================
 🧩 Problem: Range Sum Query - Immutable  
 🔗 Link    : https://leetcode.com/problems/range-sum-query-immutable/  
@@ -38,6 +38,7 @@ Constraints:
 0 <= left <= right < nums.length
 At most 104 calls will be made to sumRange.
 
+````
 ---
 
 ### 🧠 Approach: Prefix Sum
