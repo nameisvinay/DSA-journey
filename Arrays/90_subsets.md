@@ -63,14 +63,17 @@ At iteration 1: 0th index :
 ```
 
 At iteration 2: 1st index :
+```
                     nums[1] = 2  not duplicate(traverse from 0) => temp_start = 0
                     start = len(res) => 2 
                                 j -> (temp_start , len(res))
                                     result.append([nums[i]] + result[j])
 
                 result   =  [[],[1]] + [2] --> []+[2], [1]+[2] --> [[],[1],[2],[1,2]]
+```
 
 At iteration 3: 2nd index :
+```
                     nums[1] = 2  duplicate Found => 
                     temp_start = start (previous start as index point) 
                                 j -> (temp_start , len(res))
@@ -78,10 +81,12 @@ At iteration 3: 2nd index :
                     from traverse loop from index 2(start)
 
                 result   =  [[],[1],[2],[1,2],[2,2],[1,2,2]
+```
 
 ### ✅ Final Output:
-      
+      ```
                 [[], [1], [2], [1,2], [2,2], [1,2,2]]
+                ```
 
 
 i always consfused here:
