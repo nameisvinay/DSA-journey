@@ -1,3 +1,4 @@
+````md
 ==================================================================
 🧩 Problem: Sum of Beauty in the Array
 🔗 Link   : https://leetcode.com/problems/sum-of-beauty-in-the-array/
@@ -27,6 +28,7 @@ Return the sum of beauty of all nums[i] where 1 <= i <= nums.length - 2.
   - The beauty of nums[1] equals 1.
   - The beauty of nums[2] equals 0.
 
+`````
 ---------------------------------------------------
 
 🧠 My inital idea:
