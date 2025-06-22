@@ -1,10 +1,12 @@
 ---
+````md
+============================================
 # 🧩 Problem: Insert Interval
 🔗 [Leetcode 57](https://leetcode.com/problems/insert-interval/)  
 📚 Topic: Intervals, Arrays  
 📈 Level: Medium  
 
----
+=============================================
 
 ## 📄 Description:
 You are given an array of non-overlapping intervals sorted by their start times. Insert a new interval into the array and merge if necessary so that the result remains sorted and non-overlapping.
@@ -16,6 +18,7 @@ You are given an array of non-overlapping intervals sorted by their start times.
 - Merge any overlapping intervals after insertion.
 - Optimize for O(n) time.
 
+````
 ---
 
 ### my initial idea:
