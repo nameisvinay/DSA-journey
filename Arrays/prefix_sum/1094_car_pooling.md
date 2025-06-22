@@ -1,4 +1,7 @@
+
+
 `````md
+
 ==================================================================
 🧩 Problem: 1094. Car Pooling  
 🔗 Link   : https://leetcode.com/problems/car-pooling/  
@@ -34,8 +37,8 @@ Output: true
     0 <= fromi < toi <= 1000
     1 <= capacity <= 105
 
----
 `````
+---
 
 ### inital idea: (bruteforce)
               
