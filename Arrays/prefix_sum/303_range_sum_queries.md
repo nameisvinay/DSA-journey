@@ -46,6 +46,7 @@ At most 104 calls will be made to sumRange.
 #### 🔸 Prefix Sum Concept:
           To avoid repeated summation, we precompute the cumulative sum in a 'prefix[]' array.
 
+```
 - prefix[i] = sum(nums[0] ... nums[i])
 - Then:  
       - If 'left > 0': 
@@ -53,6 +54,7 @@ At most 104 calls will be made to sumRange.
       - If 'left == 0':
               "sumRange = prefix[right]"   --->  ❌ Crashes for 'left = 0' (accesses "prefix[-1]")
 
+```
 ---
 
 ### ✅ Final Code (0-based Prefix + Edge Case Check)  --- 0-indexed 
@@ -90,6 +92,7 @@ At most 104 calls will be made to sumRange.
 
 ### 🔍 Dry Run Example
 
+```
 nums = [3, 7, 2, 5]
 
 #### Prefix Array (1-based):
@@ -101,6 +104,7 @@ nums = [3, 7, 2, 5]
 * sumRange(1, 2) = prefix[2+1] - prefix[1] = 12 - 3 = 9 ✅
 * sumRange(0, 3) = prefix[3+1] - prefix[0] = 17 - 0 = 17 ✅
 
+```
 ---
 
 ### ⚠️ Mistakes to Avoid
