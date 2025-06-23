@@ -117,5 +117,4 @@ Result: [3, 3, 5, 5, 6, 7]
 
 ---
 
-Let me know if you'd like to add **pointer diagrams** or commit this directly to a GitHub folder format!
 ```
