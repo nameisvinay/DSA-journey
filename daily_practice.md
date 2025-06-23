@@ -34,20 +34,20 @@ Use smart spaced revisits:
 ## ✅ Arrays & Prefix Sum
 | Problem | Link | Level | Revisit |
 |--------|------|--------|---------|
-| Two Sum | [Link](https://leetcode.com/problems/two-sum/) | Easy | 🔄 |
+| Two Sum | [Link](https://leetcode.com/problems/two-sum/) | Easy | ✔️ |
 | Best Time to Buy and Sell Stock | [Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | 🔄 |
 | Maximum Subarray (Kadane’s) | [Link](https://leetcode.com/problems/maximum-subarray/) | Medium | 🔄 |
 | Subarray Sum Equals K | [Link](https://leetcode.com/problems/subarray-sum-equals-k/) | Medium | 🔄 |
-| Product of Array Except Self | [Link](https://leetcode.com/problems/product-of-array-except-self/) | Medium | 🔄 |
+| Product of Array Except Self | [Link](https://leetcode.com/problems/product-of-array-except-self/) | Medium | ✔️ |
 
 ---
 
 ## 🔎 Binary Search & Variants
 | Problem | Link | Level | Revisit |
 |--------|------|--------|---------|
-| Binary Search | [Link](https://leetcode.com/problems/binary-search/) | Easy | 🔄 |
+| Binary Search | [Link](https://leetcode.com/problems/binary-search/) | Easy | ✔️ |
 | Search in Rotated Sorted Array | [Link](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium | 🔄 |
-| Find Minimum in Rotated Sorted Array | [Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium | 🔄 |
+| Find Minimum in Rotated Sorted Array | [Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium | ✔️ |
 | Find Peak Element | [Link](https://leetcode.com/problems/find-peak-element/) | Medium | 🔄 |
 
 ---
@@ -55,7 +55,7 @@ Use smart spaced revisits:
 ## 🎯 Two Pointers / Sliding Window
 | Problem | Link | Level | Revisit |
 |--------|------|--------|---------|
-| 3Sum | [Link](https://leetcode.com/problems/3sum/) | Medium | 🔄 |
+| 3Sum | [Link](https://leetcode.com/problems/3sum/) | Medium | ✔️ |
 | Container With Most Water | [Link](https://leetcode.com/problems/container-with-most-water/) | Medium | 🔄 |
 | Longest Substring Without Repeating Characters | [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | 🔄 |
 | Minimum Window Substring | [Link](https://leetcode.com/problems/minimum-window-substring/) | Hard | 🔄 |
@@ -78,7 +78,7 @@ Use smart spaced revisits:
 | Valid Parentheses | [Link](https://leetcode.com/problems/valid-parentheses/) | Easy | 🔄 |
 | Next Greater Element II | [Link](https://leetcode.com/problems/next-greater-element-ii/) | Medium | 🔄 |
 | Largest Rectangle in Histogram | [Link](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Hard | 🔄 |
-| Trapping Rain Water | [Link](https://leetcode.com/problems/trapping-rain-water/) | Hard | 🔄 |
+| Trapping Rain Water | [Link](https://leetcode.com/problems/trapping-rain-water/) | Hard | ✔️ |
 
 ---
 
@@ -111,7 +111,7 @@ Use smart spaced revisits:
 ## 🧩 Bonus – Divide and Conquer
 | Problem | Link | Level | Revisit |
 |--------|------|--------|---------|
-| Reverse Pairs (Merge Sort) | [Link](https://leetcode.com/problems/reverse-pairs/) | Hard | 🔄 |
+| Reverse Pairs (Merge Sort) | [Link](https://leetcode.com/problems/reverse-pairs/) | Hard | ✔️ |
 
 ---
 
