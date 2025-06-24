@@ -103,6 +103,14 @@ Explanation: `"cbebebe"` is the longest valid substring with 3 distinct characte
 ```
 
 ---
+```
+# O(n) time, O(k) space
+
+✅ Your Current Approach:
+      Time Complexity: O(n)
+      Space Complexity: O(k)
+  We maintain a window [start...end] that always has at most k distinct characters using a hashmap seen to store frequencies.
+```
 
 📝 **Takeaway**:
 This problem improves your grip on sliding window logic + hashmap usage, and builds a good base for more complex window variants.
