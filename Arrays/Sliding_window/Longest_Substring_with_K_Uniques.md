@@ -94,6 +94,13 @@ Explanation: `"cbebebe"` is the longest valid substring with 3 distinct characte
 * Longest substring with **exactly k** distinct characters
 * Longest substring with **at most k vowels**
 * Longest substring with **k unique characters** with no repeating
+```
+  | Condition      | Meaning                                  | Window Adjustment Logic                           |
+| -------------- | ---------------------------------------- | ------------------------------------------------- |
+| **At Most K**  | You can have **≤ K** distinct characters | Shrink window only when distinct chars **> K**    |
+| **At Least K** | You need **≥ K** distinct characters     | Shrink only when distinct chars **< K**           |
+| **Exactly K**  | You need **== K** distinct characters    | Shrink when **> K**, and count only when **== K** |
+```
 
 ---
 
