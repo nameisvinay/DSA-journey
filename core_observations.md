@@ -18,3 +18,10 @@
     | You want to **narrow** to one point (like min/first/last) | `while l < r`  |
  ```
 
+```
+| Condition      | Meaning                                  | Window Adjustment Logic                           |
+| -------------- | ---------------------------------------- | ------------------------------------------------- |
+| **At Most K**  | You can have **≤ K** distinct characters | Shrink window only when distinct chars **> K**    |
+| **At Least K** | You need **≥ K** distinct characters     | Shrink only when distinct chars **< K**           |
+| **Exactly K**  | You need **== K** distinct characters    | Shrink when **> K**, and count only when **== K** |
+```
