@@ -99,8 +99,3 @@ Explanation: `"cbebebe"` is the longest valid substring with 3 distinct characte
 
 📝 **Takeaway**:
 This problem improves your grip on sliding window logic + hashmap usage, and builds a good base for more complex window variants.
-
-```
-
----
-
