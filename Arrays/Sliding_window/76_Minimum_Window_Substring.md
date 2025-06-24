@@ -1,4 +1,4 @@
-
+```md
 =============================================================
 # 🧩 Problem: Minimum Window Substring
 
@@ -6,21 +6,20 @@
 📚 Topic: Sliding Window, Hashing
 📈 Level: Hard
 ==============================================================
----
+
 
 ## 📄 Description:
 
 Given two strings `s` and `t`, return the **minimum window substring** of `s` such that every character in `t` (including duplicates) is included in the window.
 If no such window exists, return an empty string `""`.
 
----
 
 ## ✅ Constraints:
 
 * Strings `s` and `t` consist of English letters.
 * You must find the smallest substring in `s` that contains all characters of `t` **with the correct frequency**.
 
----
+````
 
 ## 🧠 My Thought Process:
 
