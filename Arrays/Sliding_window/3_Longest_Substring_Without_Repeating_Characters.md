@@ -8,7 +8,7 @@
 ==================================================================
 
 ## ✅ Problem Statement
-Given a string `s`, find the length of the longest substring **without repeating characters**.
+Given a string `s`, find the length of the longest substring without repeating characters**.
 
 ---
 
@@ -17,11 +17,11 @@ Given a string `s`, find the length of the longest substring **without repeating
 I wanted to maintain a window with **unique characters**. The idea is to expand the window (`end`) as long as characters are not repeated. But when a duplicate is found, shrink the window from the start (`start`) until the duplicate character is removed.
 
 ### 🧠 Thought Process:
-- Use a **Set** to store current window's characters.
+- Use a Set to store current window's characters.
 - Maintain two pointers: `start` and `end`.
 - For every character at `end`:
-  - If it's **not in the set**, add it and move forward.
-  - If it's **in the set**, remove from the start until duplicate is gone.
+  - If it's not in the set**, add it and move forward.
+  - If it's in the set**, remove from the start until duplicate is gone.
 - Keep tracking the **max length**.
 
 ---
@@ -45,7 +45,7 @@ Final max length = 3 ("abc")
 
 ## 🧪 Mistake I Made Initially
 
-At first, I forgot to update `max_length` **after the loop ends**. That caused incorrect output for inputs where the last substring was the longest.
+At first, I forgot to update `max_length` after the loop ends. That caused incorrect output for inputs where the last substring was the longest.
 
 ```python
 # Forgot this:
@@ -88,11 +88,4 @@ class Solution:
 
 ---
 
-```
-# O(n) time, O(k) space
-
-✅ Your Current Approach:
-      Time Complexity: O(n)
-      Space Complexity: O(k)
-  We maintain a window [start...end] that always has at most k distinct characters using a hashmap seen to store frequencies.
 ```
