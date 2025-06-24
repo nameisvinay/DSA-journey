@@ -87,5 +87,18 @@ class Solution:
 * There are multiple ways to slide the window — both eager and lazy updates work, depending on where you check `max_length`.
 
 ---
+```
+🧠 Time & Space Complexity
+        Time Complexity: O(n)
+              Each character is visited at most twice (once by end, once by start).
+        
+        Space Complexity: O(min(n, m))
+              Where n is the length of the string
+                    m is the size of the character set.
 
+        For example:
+              If input has lowercase letters only: O(26)
+              If ASCII: O(128)
+              If Unicode: can be more.
+```
 ```
