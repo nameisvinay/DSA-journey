@@ -87,3 +87,12 @@ class Solution:
 * There are multiple ways to slide the window — both eager and lazy updates work, depending on where you check `max_length`.
 
 ---
+
+```
+# O(n) time, O(k) space
+
+✅ Your Current Approach:
+      Time Complexity: O(n)
+      Space Complexity: O(k)
+  We maintain a window [start...end] that always has at most k distinct characters using a hashmap seen to store frequencies.
+```
