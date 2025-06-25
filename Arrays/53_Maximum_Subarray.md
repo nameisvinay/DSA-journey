@@ -1,0 +1,133 @@
+```md
+=================================================================
+# 🔥 53. Maximum Subarray
+
+🔗 [Leetcode Link](https://leetcode.com/problems/maximum-subarray/)
+📚 Topic: Greedy / Kadane’s Algorithm
+📈 Level: Easy–Medium
+================================================================
+
+## 🧩 Problem
+
+Given an integer array `nums`, I need to find the **contiguous subarray** with the largest sum and return its sum.
+
+---
+
+## 🚶‍♂️ Brute Force (Initial Thought)
+
+I started by thinking of trying **all possible subarrays**, summing each one, and tracking the maximum.
+
+```python
+max_sum = float('-inf')
+for i in range(len(nums)):
+    curr_sum = 0
+    for j in range(i, len(nums)):
+        curr_sum += nums[j]
+        max_sum = max(max_sum, curr_sum)
+return max_sum
+```
+
+### 🔸 Time Complexity: `O(n^2)`
+
+### 🔸 Space Complexity: `O(1)`
+
+Works, but too slow for large inputs.
+
+---
+
+## 🧠 My Greedy Insight (Early Break)
+
+Then I realized:
+
+> *If the current subarray sum becomes negative, why continue? It can’t help the next elements.*
+
+So I modified the brute-force by adding an early break if the sum went negative **after the first element**:
+
+```python
+max_sum = float('-inf')
+for i in range(len(nums)):
+    curr_sum = 0
+    for j in range(i, len(nums)):
+        curr_sum += nums[j]
+        if i < j and curr_sum < 0:
+            break
+        else:
+            max_sum = max(max_sum, curr_sum)
+return max_sum
+```
+
+### ✅ Advantage:
+
+* Faster than full brute-force
+* Still gives correct answer in most cases
+
+### ❌ Limitation:
+
+* Still `O(n^2)` in worst case
+* Can miss better subarrays if negative numbers appear early but later improve the total
+
+---
+
+## 💡 Realization → Kadane’s Algorithm
+
+After exploring, I noticed:
+
+> *Instead of trying from every index, I can just **carry a rolling sum**. If the sum becomes negative — reset!*
+
+This gave me the optimal approach — **Kadane’s**:
+
+---
+
+## ✅ Kadane’s Algorithm
+
+```python
+max_sum = nums[0]
+curr_sum = 0
+
+for num in nums:
+    curr_sum += num
+    max_sum = max(max_sum, curr_sum)
+    if curr_sum < 0:
+        curr_sum = 0
+return max_sum
+```
+
+---
+
+## 🔍 Dry Run Example:
+
+Input: `[-2,1,-3,4,-1,2,1,-5,4]`
+
+| num | curr\_sum | max\_sum |
+| --- | --------- | -------- |
+| -2  | -2 → 0    | -2       |
+| 1   | 1         | 1        |
+| -3  | -2 → 0    | 1        |
+| 4   | 4         | 4        |
+| -1  | 3         | 4        |
+| 2   | 5         | 5        |
+| 1   | 6         | 6 ✅      |
+| -5  | 1         | 6        |
+| 4   | 5         | 6        |
+
+Final result: **6**, subarray: `[4, -1, 2, 1]`
+
+---
+
+## ⏱ Time: `O(n)`
+
+## 🧠 Space: `O(1)`
+
+---
+
+## 📌 What I Learned:
+
+| Version             | Time              | Idea                               |
+| ------------------- | ----------------- | ---------------------------------- |
+| Brute-force         | `O(n^2)`          | Try all subarrays                  |
+| Early-break version | `O(n^2)` (better) | Stop when subarray sum < 0         |
+| ✅ Kadane’s (final)  | `O(n)`            | Reset when sum < 0 — greedy expand |
+
+I didn’t know Kadane’s name at first, but while refining brute-force and thinking greedily, I was already walking toward it.
+
+---
