@@ -29,6 +29,9 @@
 
 💡 Arrays:
 ```
-* 🔹 **Direct value iteration (`for val in arr`) is faster than index-based access (`arr[i]`)** when the index isn't needed.
-* 🔹 **Using built-in `min()` / `max()` is faster than manual `if` checks** for comparisons during iteration.
+💡 **Performance Tip**
+
+- ✅ Prefer `for val in arr` over `for i in range(len(arr))` → avoids indexing overhead.
+- ✅ Use `min(a, b)` / `max(a, b)` instead of manual `if` checks → faster and cleaner.
+
 ```
