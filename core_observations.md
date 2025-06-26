@@ -26,3 +26,9 @@
 | **At Least K** | You need **≥ K** distinct characters     | Shrink only when distinct chars **< K**           |
 | **Exactly K**  | You need **== K** distinct characters    | Shrink when **> K**, and count only when **== K** |
 ```
+
+💡 Arrays:
+```
+* 🔹 **Direct value iteration (`for val in arr`) is faster than index-based access (`arr[i]`)** when the index isn't needed.
+* 🔹 **Using built-in `min()` / `max()` is faster than manual `if` checks** for comparisons during iteration.
+```
