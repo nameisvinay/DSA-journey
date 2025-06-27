@@ -14,14 +14,3 @@ Tracking my progress, understanding, and mistakes while solving sliding window p
 [16. 3Sum Closest – Medium](https://leetcode.com/problems/3sum-closest/)  
 [2958. Length of Longest Subarray With at Most K Frequency – Medium](https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/)  
 [424. Longest Repeating Character Replacement – Medium](https://leetcode.com/problems/longest-repeating-character-replacement/)  
-
-✅ Completed  
-
-
-🔁 Revisit Needed  
-
-
-❌ Full Rework  
-
-
-📝 Updated on: 2025-06-16
