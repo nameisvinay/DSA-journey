@@ -18,19 +18,4 @@ Tracking my progress, understanding, and mistakes while solving hashing-based pr
 
 ---
 
-### ✅ Completed
-_(Add completed problems here as you finish them)_
-
----
-
-### 🔁 Revisit Needed
-_(Add revisit-needed problems here if required)_
-
----
-
-### ❌ Full Rework
-_(Add here if any problem needs full rework)_
-
----
-
 📝 Updated on: 2025-06-16
