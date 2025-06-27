@@ -20,6 +20,8 @@
 
 💡 Sliding window:
 ```
+The sliding window only works when all elements are non-negative, like in problems such as Minimum Size Subarray Sum.
+
 | Condition      | Meaning                                  | Window Adjustment Logic                           |
 | -------------- | ---------------------------------------- | ------------------------------------------------- |
 | **At Most K**  | You can have **≤ K** distinct characters | Shrink window only when distinct chars **> K**    |
@@ -35,3 +37,4 @@
 - ✅ Use `min(a, b)` / `max(a, b)` instead of manual `if` checks → faster and cleaner.
 
 ```
+
