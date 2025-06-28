@@ -67,6 +67,75 @@ Which means:
 * Count how many times this sum has occurred.
 
 ---
+dry run:
+```
+nums = [1, 2, 3],  k = 3
+```
+---
+
+We use a **prefix sum** and a hash map (`prefix_sum_count`) to track how many times a given **prefix sum** has occurred.
+
+At each step:
+
+* We keep a `current_sum`
+* We check if `current_sum - k` has appeared before — if yes, then a subarray summing to `k` ends here.
+* We also store how many times each `current_sum` has appeared.
+
+---
+
+### 🧮 Let's walk through step by step:
+
+Initialize:
+
+* `count = 0`
+* `prefix_sum = 0`
+* `prefix_sum_count = {0: 1}`
+
+---
+
+#### 1. `num = 1`
+
+* `prefix_sum = 0 + 1 = 1`
+* `prefix_sum - k = 1 - 3 = -2` → not in map
+* Update map: `{0:1, 1:1}`
+
+---
+
+#### 2. `num = 2`
+
+* `prefix_sum = 1 + 2 = 3`
+* `prefix_sum - k = 3 - 3 = 0` → in map! → add `prefix_sum_count[0] = 1` to count
+* `count = 1`
+* Update map: `{0:1, 1:1, 3:1}`
+
+---
+
+#### 3. `num = 3`
+
+* `prefix_sum = 3 + 3 = 6`
+* `prefix_sum - k = 6 - 3 = 3` → in map! → add `prefix_sum_count[3] = 1` to count
+* `count = 2`
+* Update map: `{0:1, 1:1, 3:1, 6:1}`
+
+---
+
+### 🧾 Final map: `{0:1, 1:1, 3:1, 6:1}`
+
+So your `{0:2, 1:1, 3:1}` is **not correct**.
+
+**Issue**:
+
+* You're saying `0:2`, but `prefix_sum = 0` only appears once initially.
+* You’re missing `6:1` which comes from the full array sum.
+
+---
+
+### ✅ Final answer = `2` subarrays:
+
+* `[1, 2]` → sum = 3
+* `[3]` → sum = 3
+
+---
 
 ✅ Final Optimized Code (Prefix Sum + HashMap):
 
