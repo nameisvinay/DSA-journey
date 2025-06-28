@@ -121,13 +121,6 @@ Initialize:
 
 ### 🧾 Final map: `{0:1, 1:1, 3:1, 6:1}`
 
-So your `{0:2, 1:1, 3:1}` is **not correct**.
-
-**Issue**:
-
-* You're saying `0:2`, but `prefix_sum = 0` only appears once initially.
-* You’re missing `6:1` which comes from the full array sum.
-
 ---
 
 ### ✅ Final answer = `2` subarrays:
