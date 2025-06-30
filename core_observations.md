@@ -36,5 +36,9 @@
 - ✅ Prefer `for val in arr` over `for i in range(len(arr))` → avoids indexing overhead.
 - ✅ Use `min(a, b)` / `max(a, b)` instead of manual `if` checks → faster and cleaner.
 
+💡 **Performance Tip**
+- ✅ **Index-based append** (e.g., `arr[i] = x`) is **faster** when memory is pre-allocated because it directly writes to a known position.
+- ⚠️ **`.append()` or `.push()`** is **slightly slower** due to internal checks and resizing, but it's **safer and more flexible**.
+
 ```
 
