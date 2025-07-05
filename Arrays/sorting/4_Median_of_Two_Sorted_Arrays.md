@@ -2,7 +2,7 @@
 ```markdown
 # 🧠 Problem: Median of Two Sorted Arrays
 
-### Leetcode Link: [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+[![LeetCode - Problem 4](https://img.shields.io/badge/LeetCode-Problem%204-blue)](https://leetcode.com/problems/median-of-two-sorted-arrays/) `Hard`
 
 ---
 
@@ -207,7 +207,3 @@ Output: 2.0
 * Carefully partition both arrays
 * Handle edge cases using `float('-inf')` / `float('inf')`
 * Make sure to avoid index errors at boundary conditions
-
-```
-
----
