@@ -1,150 +1,80 @@
 
+
 ```markdown
-# 🧠 Problem: Median of Two Sorted Arrays
+==================================================================
+🧩 Problem: Median of Two Sorted Arrays  
+🔗 Link    : https://leetcode.com/problems/median-of-two-sorted-arrays/  
+📚 Topic   : Binary Search, Divide and Conquer  
+📈 Level   : Hard  
+==================================================================
 
-[![LeetCode - Problem 4](https://img.shields.io/badge/LeetCode-Problem%204-blue)](https://leetcode.com/problems/median-of-two-sorted-arrays/) `Hard`
+📄 Description:  
+Given two sorted arrays `nums1` and `nums2` of size `m` and `n`, return the **median** of the two sorted arrays.  
+The overall run time complexity should be **O(log(min(m, n)))**.
 
 ---
 
-## ✅ Problem Summary
+## ✅ My Understanding:
 
-Given two sorted arrays `nums1` and `nums2`, return the **median** of the merged array in `O(log(min(n, m)))` time.
+At first, I thought of merging both arrays and finding the median. But that takes **O(n + m)** time — too slow for large inputs.  
+So I looked for an optimized approach and found the **binary search on partition** trick.
 
 ---
 
-## 🚀 Intuition Behind the Binary Search Approach
+## 🧠 Key Idea:
 
-Instead of merging arrays (which is `O(n+m)`), we can apply **binary search** on the **smaller array**, and partition both arrays at suitable points so that:
+Use **binary search** on the **shorter array**, and find a partition such that:
 
 ```
 
-max(left half) ≤ min(right half)
+max(left part) <= min(right part)
 
 ````
-
----
-
-## 📌 Goal of Partition
-
-Divide both arrays such that:
-- Left half contains the first half of total elements
-- Right half contains the rest
-- And both halves are **validly ordered**
-
----
-
-## 🧮 Formula for Partition
 
 Let:
-- `m1` = partition index in `nums1` (from binary search)
-- `m2` = partition index in `nums2` so that left half has `(n + m + 1) // 2` elements
+- `m1` = partition in `nums1`
+- `m2` = derived partition in `nums2` such that left half has `(n + m + 1) // 2` elements
+- Use `float('-inf')` and `float('inf')` to handle out-of-bound edge cases
 
+We maintain:
 ```python
-m2 = (len(nums1) + len(nums2) + 1) // 2 - m1
+l1 = nums1[m1-1] if m1 > 0 else -inf
+r1 = nums1[m1]   if m1 < len(nums1) else inf
+
+l2 = nums2[m2-1] if m2 > 0 else -inf
+r2 = nums2[m2]   if m2 < len(nums2) else inf
 ````
 
-Why +1?
+---
 
-* Ensures correct partitioning for both even/odd total lengths.
+## 🔄 Binary Search Steps (My Thought Process):
+
+1. Always binary search on the **smaller array**
+2. Calculate `m1` and `m2` to partition both arrays
+3. Check if:
+
+   * `l1 <= r2` and `l2 <= r1` → valid partition
+   * If total length is even → return average of `max(l1, l2)` and `min(r1, r2)`
+   * If odd → return `max(l1, l2)`
+4. If partition is not valid:
+
+   * If `l1 > r2`, move left → `h = m1 - 1`
+   * Else, move right → `l = m1 + 1`
 
 ---
 
-## 🎯 Conditions to Check
+## ⚠️ Bug I Faced Initially:
 
-* Let:
-
-```python
-l1 = nums1[m1 - 1] if m1 > 0 else float('-inf')
-r1 = nums1[m1]     if m1 < len(nums1) else float('inf')
-
-l2 = nums2[m2 - 1] if m2 > 0 else float('-inf')
-r2 = nums2[m2]     if m2 < len(nums2) else float('inf')
-```
-
-* Check partition validity:
-
-```python
-if l1 <= r2 and l2 <= r1:
-    # valid partition
-```
-
-* Else, move binary search window:
-
-```python
-if l1 > r2:
-    h = m1 - 1  # move left
-else:
-    l = m1 + 1  # move right
-```
+I was mistakenly updating `h = m2 - 1` instead of `h = m1 - 1`, which is incorrect since binary search is on `nums1`.
+Also missed handling edge cases like when `nums1 = []` — caused index errors.
+✅ Fixed it by guarding edges with `-inf` and `inf`.
 
 ---
 
-## 🖼️ Visual Illustration
-
-### Example:
+## ✅ Final Code (Accepted):
 
 ```python
-nums1 = [1, 3]
-nums2 = [2, 4, 5, 6]
-```
-
-Total elements = 6 → Half = 3
-
-### Let's say:
-
-* `m1 = 1` → partitioning `nums1` as `[1] | [3]`
-* `m2 = 2` → partitioning `nums2` as `[2, 4] | [5, 6]`
-
-```
-nums1:   [1] | [3]
-nums2: [2, 4] | [5, 6]
-           ↑     ↑
-         l1=1   r1=3
-         l2=4   r2=5
-```
-
-Check:
-
-```
-l1 <= r2 → 1 <= 5 ✅
-l2 <= r1 → 4 <= 3 ❌
-```
-
-Not valid → so we need to **move m1 right** → `l = m1 + 1`
-
----
-
-## ⚠️ Edge Case Handling
-
-1. **Empty Array:**
-
-```python
-nums1 = [], nums2 = [1, 2, 3]
-```
-
-→ `m1 = 0`, so `l1 = -inf`, `r1 = inf` → prevents index error
-
-2. **m1 = 0** or **m1 = len(nums1)**:
-   We set:
-
-```python
-l1 = -inf if m1 == 0
-r1 = inf  if m1 == len(nums1)
-```
-
-3. **Always binary search on the smaller array**
-
-```python
-if len(nums1) > len(nums2):
-    return self.findMedianSortedArrays(nums2, nums1)
-```
-
----
-
-## ✅ Code: Python (with edge safety)
-
-```python
-def findMedianSortedArrays(self, nums1, nums2):
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
     if len(nums1) > len(nums2):
         return self.findMedianSortedArrays(nums2, nums1)
 
@@ -152,19 +82,18 @@ def findMedianSortedArrays(self, nums1, nums2):
 
     while l <= h:
         m1 = (l + h) // 2
-        m2 = (len(nums1) + len(nums2) + 1) // 2 - m1 # +1 to handle even and odd 
+        m2 = (len(nums1) + len(nums2) + 1) // 2 - m1
 
-        #handling of out of bounds if m1 goes beyond 0 then take min as float('-inf')
         l1 = nums1[m1 - 1] if m1 > 0 else float('-inf')
-        r1 = nums1[m1] if m1 < len(nums1) else float('inf')
+        r1 = nums1[m1]     if m1 < len(nums1) else float('inf')
 
         l2 = nums2[m2 - 1] if m2 > 0 else float('-inf')
-        r2 = nums2[m2] if m2 < len(nums2) else float('inf')
+        r2 = nums2[m2]     if m2 < len(nums2) else float('inf')
 
         if l1 <= r2 and l2 <= r1:
-            if (len(nums1) + len(nums2)) % 2 == 0: #length is even so take below
+            if (len(nums1) + len(nums2)) % 2 == 0:
                 return (max(l1, l2) + min(r1, r2)) / 2
-            else:  #length is odd so pick max(l1,l2)
+            else:
                 return max(l1, l2)
         elif l1 > r2:
             h = m1 - 1
@@ -174,36 +103,35 @@ def findMedianSortedArrays(self, nums1, nums2):
 
 ---
 
-## 🧪 Test Cases
+## 🔍 Dry Run (Example):
 
 ```python
-Input: nums1 = [1, 3], nums2 = [2]
-Output: 2.0
+nums1 = [1, 3]
+nums2 = [2]
 
-Input: nums1 = [1, 2], nums2 = [3, 4]
-Output: 2.5
+Total length = 3 → half = 2
+m1 = 1, m2 = 1
 
-Input: nums1 = [], nums2 = [1]
-Output: 1.0
+nums1: [1] | [3]
+nums2: [2] | []
 
-Input: nums1 = [2], nums2 = []
-Output: 2.0
+l1 = 1, r1 = 3
+l2 = 2, r2 = inf
+
+Check: l1 <= r2 and l2 <= r1 → 1 <= inf and 2 <= 3 ✅
+Total is odd → return max(l1, l2) = max(1, 2) = 2
 ```
 
 ---
 
-## 🧠 Time & Space Complexity
+## 💡 What I Learned:
 
-| Type  | Value               |
-| ----- | ------------------- |
-| Time  | `O(log(min(n, m)))` |
-| Space | `O(1)`              |
+* Do binary search on the smaller array only
+* Use virtual `-inf` and `inf` for out-of-bounds on edges
+* Use total size formula `(n + m + 1) // 2` to divide left & right
+* Dry run edge cases like:
+
+  * `nums1 = []`, `nums2 = [1]`
+  * Even vs odd total lengths
 
 ---
-
-## ✅ Summary
-
-* Use binary search on the **shorter array**
-* Carefully partition both arrays
-* Handle edge cases using `float('-inf')` / `float('inf')`
-* Make sure to avoid index errors at boundary conditions
