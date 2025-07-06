@@ -66,18 +66,6 @@ def josephus_iterative(n, k):
 
 why loop from 2?
 because it is 1 based indexing and also (anything mod 1) is always 0 which breaks the logic 
----
-
-## ⚖️ Small Difference I Observed:
-
-| Aspect                     | Recursive                                   | Iterative                                     |
-|----------------------------|---------------------------------------------|-----------------------------------------------|
-| Indexing                   | Needs manual conversion to 1-based          | Add `+1` at the end of loop                   |
-| Base Case                  | Defined for `n == 1`                        | Loop starts from `i = 2`                      |
-| Expansion Direction        | Top-down (reduces `n` each call)            | Bottom-up (builds from `n = 2` to `n`)        |
-| Traceability               | Feels more like mathematical recurrence     | Easier to understand and track computation    |
-
-This helped me decide when to use each depending on the clarity I need.
 
 ---
 
@@ -147,6 +135,17 @@ I was stuck on why we do `+k - 1` and then `+1`.
 
 That made everything clear.
 
+## ⚖️ Small Difference I Observed:
+
+| Aspect                     | Recursive                                   | Iterative                                     |
+|----------------------------|---------------------------------------------|-----------------------------------------------|
+| Indexing                   | Needs manual conversion to 1-based          | Add `+1` at the end of loop                   |
+| Base Case                  | Defined for `n == 1`                        | Loop starts from `i = 2`                      |
+| Expansion Direction        | Top-down (reduces `n` each call)            | Bottom-up (builds from `n = 2` to `n`)        |
+| Traceability               | Feels more like mathematical recurrence     | Easier to understand and track computation    |
+
+This helped me decide when to use each depending on the clarity I need.
+
 ---
 
 ## 💡 What I Learned:
@@ -158,7 +157,6 @@ That made everything clear.
 
 ---
 
-Yes buddy, **exactly!** 🎯
 
 > 🔁 **In the recursive formula**:
 >
