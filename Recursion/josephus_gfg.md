@@ -1,4 +1,4 @@
-
+same technique but 0-indexed in leetcode - 1823. Find the Winner of the Circular Game
 ```md
 ==================================================================
 🧩 Problem: Josephus Problem
