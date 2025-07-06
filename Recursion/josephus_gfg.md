@@ -34,36 +34,6 @@ Works fine for small `n`, but this is **O(n^2)** due to `pop()` in a list.
 
 ---
 
-## 🧠 Recursive Formula (Classic Josephus)
-
-I found the recursive formula from hints and tutorials:
-
-- For 0-based indexing:  
-  `f(n) = (f(n-1) + k) % n`
-- Base case: `f(1) = 0`
-- To convert to 1-based answer, we do:
-
-```python
-def findTheWinner(n, k):
-    if n == 1:
-        return 1
-    return ((findTheWinner(n - 1, k) + k - 1) % n) + 1
-```
-
----
-
-## ❓ Confusing Part I Faced:
-
-I was stuck on why we do `+k - 1` and then `+1`.
-
-> 🧠 Explanation:
-> - We do `+k-1` because counting starts from the **current person**.
-> - We add `+1` at the end to convert from **0-based to 1-based** answer.
-
-That made everything clear.
-
----
-
 ## 🔄 Iterative Version (Fast & Clean)
 
 Then I found this clean iterative method:
@@ -124,6 +94,39 @@ josephus(4, 2) = (2 + 2) % 4 = 0
 
 ```
 
+## 🧠 Recursive Formula (Classic Josephus)
+
+I found the recursive formula from hints and tutorials:
+
+- For 0-based indexing:  
+  `f(n) = (f(n-1) + k) % n`
+- Base case: `f(1) = 0`
+- To convert to 1-based answer, we do:
+
+```python
+def findTheWinner(n, k):
+    if n == 1:
+        return 1
+    return ((findTheWinner(n - 1, k) + k - 1) % n) + 1
+```
+
+---
+
+1. **Go deep** until `n == 1`.
+2. **Start solving on the way back** using the formula `(josephus(n-1, k) + k) % n`.
+
+
+
+## ❓ Confusing Part I Faced:
+
+I was stuck on why we do `+k - 1` and then `+1`.
+
+> 🧠 Explanation:
+> - We do `+k-1` because counting starts from the **current person**.
+> - We add `+1` at the end to convert from **0-based to 1-based** answer.
+
+That made everything clear.
+
 ---
 
 ## 💡 What I Learned:
@@ -134,3 +137,61 @@ josephus(4, 2) = (2 + 2) % 4 = 0
 - Recursive gives intuition, iterative gives clarity.
 
 ---
+
+Yes buddy, **exactly!** 🎯
+
+> 🔁 **In the recursive formula**:
+>
+> ```python
+> josephus(n - 1, k) + k) % n
+> ```
+>
+> 👉 The `k - 1` is **implicitly handled** by the recurrence logic — **you don’t need to subtract 1 manually.**
+
+---
+
+## ✅ Why `k - 1` is Not Needed in Recursion?
+
+Because the recursion builds upon a **previous survivor's position** after one person is eliminated. Let’s break it down with an example:
+
+---
+
+### 🔍 Example: `n = 5, k = 3`
+
+Let’s look at the final recursive form:
+
+```python
+josephus(5, 3)
+= (josephus(4, 3) + 3) % 5
+= ((josephus(3, 3) + 3) % 4 + 3) % 5
+...
+```
+
+At every recursive step:
+
+* We're **shifting the position of the survivor** by `+k`, and wrapping it around with `% n`.
+* That shift already assumes **one person is eliminated** in the prior step, so we’re moving forward **by `k` positions** from the survivor of the reduced circle.
+
+---
+
+## 💬 In contrast (Iterative or Simulation):
+
+We do:
+
+```python
+index = (index + k - 1) % len(people)
+```
+
+Here, we manually subtract 1 because:
+
+* We're **eliminating** the `k-th` person, counting from the current index (which is `1-based`).
+* So to get the correct index to remove, we subtract 1.
+
+---
+
+## 💡 Summary
+
+| Approach               | Formula                         | Notes                            |
+| ---------------------- | ------------------------------- | -------------------------------- |
+| Recursive (0-based)    | `(josephus(n - 1, k) + k) % n`  | `k - 1` is implicitly handled    |
+| Iterative / Simulation | `(index + k - 1) % len(people)` | `-1` needed to get correct index |
