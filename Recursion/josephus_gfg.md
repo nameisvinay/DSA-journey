@@ -46,6 +46,8 @@ def josephus_iterative(n, k):
     return res + 1  # 1-based indexing
 ```
 
+why loop from 2?
+because it is 1 based indexing and also (anything mod 1) is always 0 which breaks the logic 
 ---
 
 ## ⚖️ Small Difference I Observed:
