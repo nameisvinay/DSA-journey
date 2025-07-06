@@ -99,13 +99,29 @@ n = 5, k = 3
 Base:
 f(1) = 0
 
-Backtrack:
-f(2) = (0 + 3) % 2 = 1
-f(3) = (1 + 3) % 3 = 1
-f(4) = (1 + 3) % 4 = 0
-f(5) = (0 + 3) % 5 = 3
+josephus(4, 2)
+↳ josephus(3, 2)
+   ↳ josephus(2, 2)
+      ↳ josephus(1, 2)
+         ↳ returns 0   ← base case
 
-Final answer = 3 + 1 = 4 (1-based)
+then back up:
+josephus(2, 2) = (0 + 2) % 2 = 0
+josephus(3, 2) = (0 + 2) % 3 = 2
+josephus(4, 2) = (2 + 2) % 4 = 0
+
+
+josephus(1, 2) = 0
+
+josephus(2, 2) = (0 + 2) % 2 = 0  
+→ survivor at index 0 among 2 people
+
+josephus(3, 2) = (0 + 2) % 3 = 2  
+→ survivor at index 2 among 3 people
+
+josephus(4, 2) = (2 + 2) % 4 = 0  
+→ survivor at index 0 among 4 people
+
 ```
 
 ---
