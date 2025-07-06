@@ -18,6 +18,16 @@ There are `n` friends sitting in a circle, numbered from 1 to n. They start pass
 
 At first, I tried to **simulate** the process literally by rotating a list and eliminating every `k`-th person.
 
+People: [1, 2, 3, 4, 5]
+Counting starts at 1, every 3rd person is eliminated.
+
+→ Eliminate 3 (position 3)
+→ Eliminate 1 (position 1)
+→ Eliminate 5 (position 5)
+→ Eliminate 2 (position 2)
+→ Winner is 4 (position 4)
+
+
 ```python
 def brute_force_josephus(n, k):
     people = list(range(1, n + 1))
@@ -45,6 +55,14 @@ def josephus_iterative(n, k):
         res = (res + k) % i
     return res + 1  # 1-based indexing
 ```
+
+| `i` | Expression    | `res` Calculation | New `res` |
+| --- | ------------- | ----------------- | --------- |
+| 2   | `(0 + 3) % 2` | `3 % 2` = 1       | 1         |
+| 3   | `(1 + 3) % 3` | `4 % 3` = 1       | 1         |
+| 4   | `(1 + 3) % 4` | `4 % 4` = 0       | 0         |
+| 5   | `(0 + 3) % 5` | `3 % 5` = 3       | 3         |
+
 
 why loop from 2?
 because it is 1 based indexing and also (anything mod 1) is always 0 which breaks the logic 
