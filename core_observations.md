@@ -44,3 +44,7 @@
 
 ```
 
+💡 BackTracking:
+```
+- In backtracking, if you modify a list and store it — always use `.copy()` to avoid mutation bugs.
+```
