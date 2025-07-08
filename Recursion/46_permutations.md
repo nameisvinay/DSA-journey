@@ -164,3 +164,108 @@ This small change took me over 2 hours to digest — but once I got it, everythi
 
 ✅ I now fully understand iterative permutation generation and slicing. Next up, I’ll explore the **recursive backtracking** version too!
 
+
+```
+## 🔄 Recursive Backtracking (Final Working Solution)
+
+This recursive idea is clean:
+
+1. Start from index `fi = 0`.
+2. Swap each index with `fi`.
+3. Recurse for `fi + 1`.
+4. Backtrack (undo the swap).
+5. When `fi == len(nums) - 1`, it means one full permutation is ready.
+
+```python
+def permute(nums):
+    def backtrack(fi):
+        if fi == len(nums) - 1:
+            result.append(nums.copy())  # ✅ safe copy
+            return
+        for i in range(fi, len(nums)):
+            nums[i], nums[fi] = nums[fi], nums[i]   # swap
+            backtrack(fi + 1)                        # recurse
+            nums[i], nums[fi] = nums[fi], nums[i]   # backtrack
+
+    result = []
+    backtrack(0)
+    return result
+```
+
+---
+
+## 🧠 Dry Run for nums = [1, 2, 3]
+
+```text
+Level 0 (fi = 0): [1, 2, 3]
+    ↳ Swap i=0, fi=0 → [1, 2, 3]
+        Level 1 (fi = 1):
+            ↳ Swap i=1, fi=1 → [1, 2, 3]
+                Level 2 (fi = 2): ✅ Append [1,2,3]
+            ↳ Backtrack → [1, 2, 3]
+            ↳ Swap i=2, fi=1 → [1, 3, 2]
+                Level 2 (fi = 2): ✅ Append [1,3,2]
+            ↳ Backtrack → [1, 2, 3]
+    ↳ Swap i=1, fi=0 → [2, 1, 3]
+        ... and so on
+```
+
+---
+
+## ❌ Common Mistake I Made:
+
+```python
+result.append(nums)  # ❌ WRONG
+```
+- This appends the **reference** to nums.
+- So all entries in `result` will point to the **same list**, which gets mutated on future swaps.
+
+✅ Fix:
+```python
+result.append(nums.copy())  # snapshot
+```
+Or use:
+- `result.append(nums[:])`
+- `result.append(list(nums))`
+
+---
+
+## 🔍 Visualizing the Problem:
+
+Think of recursion as a tree:
+```
+            []
+      /     |     \
+   [1]    [2]    [3]
+   / \     / \    / \
+[1,2][1,3] ... etc
+```
+Every level adds one more number, exploring all positions by swapping.
+
+---
+
+## 💡 What I Learned:
+
+- Backtracking is just trying all options and undoing afterward.
+- **`.copy()` is crucial** to preserve valid results at the moment they are complete.
+- Recursion works cleanly if base + recursive + backtrack are in sync.
+- Brute force with loops is okay for understanding but not scalable.
+
+---
+
+> ✅ **Golden Rule:**
+> In backtracking, if you modify a list and store it — always use `.copy()` to avoid mutation bugs.
+
+---
+
+## ✅ Output Example:
+```python
+Input : [1,2,3]
+Output:
+[
+  [1,2,3], [1,3,2],
+  [2,1,3], [2,3,1],
+  [3,1,2], [3,2,1]
+]
+```
+````
