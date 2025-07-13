@@ -49,4 +49,6 @@
 - In backtracking, if you modify a list and store it — always use `.copy()` to avoid mutation bugs.
 - 🔐 If something is mutable (like a list), it’s not hashable.
      Use immutable structures (like tuple) to store them in hash-based collections like sets and dictionaries.
+- Sorting is mandatory to catch duplicates in adjacent
+
 ```
