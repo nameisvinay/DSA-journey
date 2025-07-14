@@ -52,3 +52,8 @@
 - Sorting is mandatory to catch duplicates in adjacent
 
 ```
+
+💡 Trees:
+```
+- Treat if not root: as a required safety seatbelt for all tree problems 🚗🌲 — not just for correctness, but to prevent your code from crashing outright.
+```
