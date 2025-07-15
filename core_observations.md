@@ -56,4 +56,8 @@
 💡 Trees:
 ```
 - Treat if not root: as a required safety seatbelt for all tree problems 🚗🌲 — not just for correctness, but to prevent your code from crashing outright.
+-  ✅ pop() → "Now it's your turn to be processed"
+   ✅ append() → "Get in line! I’ll process you later"
+   ✅ This continues until all nodes are visited (in BFS style: left to right, level by level)
+
 ```
