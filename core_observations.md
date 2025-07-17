@@ -50,7 +50,13 @@
 - 🔐 If something is mutable (like a list), it’s not hashable.
      Use immutable structures (like tuple) to store them in hash-based collections like sets and dictionaries.
 - Sorting is mandatory to catch duplicates in adjacent
-
+- 🔸 Backtracking by itself:
+      ✔️ TC = O(choices^depth)
+      ✔️ SC = O(depth) ← only recursion
+      
+      🔸 Backtracking generating all outputs:
+      ✔️ TC = O(number_of_results × length_of_each_result)
+      ✔️ SC = same as TC (if storing all results)
 ```
 
 💡 Trees:
