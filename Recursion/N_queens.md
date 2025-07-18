@@ -5,6 +5,8 @@
 
 ## 🧾 Problem Statement
 
+**Leetcode Link:** [N-Queens – Leetcode 51](https://leetcode.com/problems/n-queens/)
+
 Place `n` queens on an `n x n` chessboard such that no two queens attack each other. Return all possible board configurations.
 
 Each solution must be a list of strings where:
@@ -171,3 +173,4 @@ Because:
 * Optimized one avoids redundant checks, reducing overhead significantly.
 
 ---
+
