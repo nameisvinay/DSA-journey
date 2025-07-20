@@ -72,8 +72,16 @@ flow after coding:
   3. now check for either it was not yet visited and number you choose is within range. mark it as visited.
   4. till 'i' reach to end(length of points).after every new iteration increment arrow count.
 
+❗ Why it's slower:
+  1.  Unnecessary min/max updates: You're modifying start and end in both if and else. These are not needed to count arrows — just extra          comparisons.
+  2.  The min(start, curr_start) and max(end, curr_end) calls add constant-time overhead in every iteration.
+  3.  You're simulating an actual merge process — which is heavier than needed for just counting arrows.
+  4.  This approach is a hybrid between interval merging and greedy.
 
-###Optimal approach(Greedy)
+
+
+
+###Optimal approach(Greedy): #2 min() / max() ops	Merge + Greedy	Slower
 
 ```python
         points.sort()
@@ -102,7 +110,7 @@ flow after coding:
 
 #optimal --> tc -> O(nlogn) and sc -> o(1)  or O(n)-(if used new space)
 
-🔥 Greedy Approach (Accepted):
+🔥 Greedy Approach (Accepted): #1 comparison + 1 assignment	Pure Greedy	⚡ Faster
 Sort all intervals by their end, and shoot an arrow at the end of the first balloon. Then skip all balloons that overlap with that shot.
 
 ```python
@@ -117,5 +125,13 @@ def findMinArrowShots(points):
             prev_end = end  # shoot arrow at the end of this interval
 
     return arrows
+
+✅ Why it's faster:
+ 1. Only 1 comparison per iteration: start > prev_end
+ 2. No min, no max, no unnecessary variables
+ 3. Fully greedy: it always shoots the arrow at the rightmost possible point (end), and only if needed.
+ 4. It doesn’t track or merge intervals — just counts how many non-overlapping clusters exist.
+
+
 
 ```
