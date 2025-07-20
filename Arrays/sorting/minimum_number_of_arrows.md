@@ -7,6 +7,8 @@
 📈 Level   : Medium
 ==================================================================
 
+---
+
 📄 Description:
  Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis.
  A balloon with xstart and xend is burst by an arrow shot at x if x_start <= x <= x_end. There is no limit to the number of arrows that can be shot.
@@ -79,7 +81,7 @@ flow after coding:
   4.  This approach is a hybrid between interval merging and greedy.
 
 
-
+---
 
 ###Optimal approach(Greedy): #2 min()/max() -> ops	Merge + Greedy	Slower
 
@@ -110,6 +112,8 @@ flow after coding:
 
 #optimal --> tc -> O(nlogn) and sc -> o(1)  or O(n)-(if used new space)
 
+
+
 🔥 Greedy Approach (Accepted): #1 comparison+ 1 assignment ->	Pure Greedy	-> ⚡ Faster
 Sort all intervals by their end, and shoot an arrow at the end of the first balloon. Then skip all balloons that overlap with that shot.
 
@@ -133,6 +137,8 @@ def findMinArrowShots(points):
  4. It doesn’t track or merge intervals — just counts how many non-overlapping clusters exist.
 
 
+
+
 IMPORTANT THING TO REMEMBER FOR NEXT TIME:
     1. merge based on points[1]. because it is the last possible chance for arrow to burst ballon.
     2. if previous end is less than current start. then it doesnot overlap which mean we need new arrow to burst. so increment arrow count.
@@ -142,4 +148,17 @@ IMPORTANT THING TO REMEMBER FOR NEXT TIME:
  "Pick end of current balloon, and shoot only when needed."
 
 
-```
+
+          | Approach                                           | Time Complexity | Space  | Correctness |
+          | -------------------------------------------------- | --------------- | ------ | ----------- |
+          | Merge-style (`sort by start`, track `start`/`end`) | `O(n log n)`    | `O(1)` | ✅ Correct   |
+          | Greedy (`sort by end`, single `end` pointer)       | `O(n log n)`    | `O(1)` | ✅ Correct   |
+
+
+
+⚡ Difference in ms:
+     - The greedy sort-by-end version avoids extra operations like min() and max() and is tighter in control flow, so it runs faster by a           few milliseconds.
+     - But this is not a big deal in interviews or even production unless you're optimizing for millions of intervals.
+
+
+
