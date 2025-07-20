@@ -73,8 +73,6 @@ flow after coding:
   4. till 'i' reach to end(length of points).after every new iteration increment arrow count.
 
 
----
-
 ###Optimal approach(Greedy)
 
 ```python
