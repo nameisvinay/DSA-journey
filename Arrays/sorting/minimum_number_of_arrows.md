@@ -42,7 +42,6 @@ though this was correct optimal approach but realized all are merging into one s
 
 suprising my two idea works one for bruteforce and other is optimal greedy.
 
----
 
 ###bruteforce 
 ```python
@@ -67,6 +66,13 @@ suprising my two idea works one for bruteforce and other is optimal greedy.
             arrow += 1
         return arrow
 
+flow after coding:
+  1. loop over condition of checking till all points to visit.
+  2. initalize with i = 0. for picking number within in points[x,y] range.
+  3. now check for either it was not yet visited and number you choose is within range. mark it as visited.
+  4. till 'i' reach to end(length of points).after every new iteration increment arrow count.
+
+
 ---
 
 ###Optimal approach(Greedy)
@@ -90,3 +96,5 @@ suprising my two idea works one for bruteforce and other is optimal greedy.
             merge.append([start,end])
 
         return arrow
+
+#optimal --> tc -> O(nlogn) and sc -> o(1)  or O(n)-(if used new space)
