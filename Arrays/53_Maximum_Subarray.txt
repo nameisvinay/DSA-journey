@@ -72,7 +72,7 @@ return max_sum
 
 After exploring, I noticed:
 
-> *Instead of trying from every index, I can just **carry a rolling sum**. If the sum becomes negative — reset!*
+> *Instead of trying from every index, I can just **carry a rolling sum**. If the sum becomes negative — reset!* because negative doesnot help
 
 This gave me the optimal approach — **Kadane’s**:
 
