@@ -138,4 +138,8 @@ IMPORTANT THING TO REMEMBER FOR NEXT TIME:
     2. if previous end is less than current start. then it doesnot overlap which mean we need new arrow to burst. so increment arrow count.
     3. keep track of end position because it is last possibility to burst. intialize with float('-inf').
     4. update end with prev_end after every new greater start found.
+
+ "Pick end of current balloon, and shoot only when needed."
+
+
 ```
