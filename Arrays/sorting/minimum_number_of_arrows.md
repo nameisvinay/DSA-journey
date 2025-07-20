@@ -133,5 +133,9 @@ def findMinArrowShots(points):
  4. It doesn’t track or merge intervals — just counts how many non-overlapping clusters exist.
 
 
-
+IMPORTANT THING TO REMEMBER FOR NEXT TIME:
+    1. merge based on points[1]. because it is the last possible chance for arrow to burst ballon.
+    2. if previous end is less than current start. then it doesnot overlap which mean we need new arrow to burst. so increment arrow count.
+    3. keep track of end position because it is last possibility to burst. intialize with float('-inf').
+    4. update end with prev_end after every new greater start found.
 ```
