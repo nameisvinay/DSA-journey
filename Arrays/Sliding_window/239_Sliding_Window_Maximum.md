@@ -108,13 +108,3 @@ Result: [3, 3, 5, 5, 6, 7]
 * Deque helps achieve **O(n)** time for max sliding window.
 
 ---
-
-## 📌 Tags:
-
-`Sliding Window` `Deque` `Monotonic Queue` `Two Pointer Variant` `Hard` `Optimized`
-
-```
-
----
-
-```
