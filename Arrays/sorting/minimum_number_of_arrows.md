@@ -81,7 +81,7 @@ flow after coding:
 
 
 
-###Optimal approach(Greedy): #2 min() / max() ops	Merge + Greedy	Slower
+###Optimal approach(Greedy): #2 min()/max() -> ops	Merge + Greedy	Slower
 
 ```python
         points.sort()
@@ -110,7 +110,7 @@ flow after coding:
 
 #optimal --> tc -> O(nlogn) and sc -> o(1)  or O(n)-(if used new space)
 
-🔥 Greedy Approach (Accepted): #1 comparison + 1 assignment	Pure Greedy	⚡ Faster
+🔥 Greedy Approach (Accepted): #1 comparison+ 1 assignment ->	Pure Greedy	-> ⚡ Faster
 Sort all intervals by their end, and shoot an arrow at the end of the first balloon. Then skip all balloons that overlap with that shot.
 
 ```python
