@@ -95,4 +95,25 @@ flow after coding:
 
         return arrow
 
+flow after coding:
+ 1. start from 1st point.initalize start , end = points[0]
+ 2. loop from next points. by comparing with start and end. also update for everytime
+ 3. if current_start is greater than previous end. increment arrow count. and replace minimum of current end and previous end in place of       previous end.
+
 #optimal --> tc -> O(nlogn) and sc -> o(1)  or O(n)-(if used new space)
+
+🔥 Greedy Approach (Accepted):
+Sort all intervals by their end, and shoot an arrow at the end of the first balloon. Then skip all balloons that overlap with that shot.
+
+```python
+def findMinArrowShots(points):
+    points.sort(key=lambda x: x[1])  # sort by end point
+    arrows = 0
+    prev_end = float('-inf')
+
+    for start, end in points:
+        if start > prev_end:  # need new arrow
+            arrows += 1
+            prev_end = end  # shoot arrow at the end of this interval
+
+    return arrows
