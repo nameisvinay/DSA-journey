@@ -21,6 +21,8 @@ If no such window exists, return an empty string `""`.
 
 ````
 
+Takeaway: When the window is valid (all freq ≤ 0), try to shrink it by moving start. Watch when freq becomes positive again.
+
 ## 🧠 My Thought Process:
 
 ### ✔️ Initial Idea:
@@ -218,5 +220,10 @@ until we again include the missing character(s) and form a valid window.
 
 > ❌ Don't move `start` blindly.
 > ✅ After breaking, only `end` should move until the window becomes valid again.
+
+❓ Doubt:
+Should I move the end pointer continuously until all freq values are ≤ 0?
+Or should I check the window validity at each step as I move end?
+
 
 ---
