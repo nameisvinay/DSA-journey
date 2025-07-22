@@ -198,3 +198,25 @@ t = "ABC"
 * ASCII array version is faster for contests but less general.
 
 ---
+
+after one month my stucking points:
+
+**🔍 Personal Thought While Solving:**
+
+❓ *My idea:*
+
+> After breaking out of the valid window (when `freq[s[start]] > 0`),
+> **Should I just keep moving `start` toward `end`** while increasing the frequencies?
+
+🟡 But here's the **realization**:
+No — once the window is invalid (missing a required character),
+🔸 We should **stop moving `start`**,
+🔸 And instead **resume expanding `end`**
+until we again include the missing character(s) and form a valid window.
+
+📌 In short:
+
+> ❌ Don't move `start` blindly.
+> ✅ After breaking, only `end` should move until the window becomes valid again.
+
+---
