@@ -21,67 +21,51 @@ If no such window exists, return an empty string `""`.
 
 ````
 
-Takeaway: When the window is valid (all freq ≤ 0), try to shrink it by moving start. Watch when freq becomes positive again.
-
-## 🧠 My Thought Process:
-
-### ✔️ Initial Idea:
-
-* Use a frequency dictionary `seen` to store how many of each character are needed from `t`.
-* Slide a window over `s` using two pointers `start` and `end`.
-* When a required character is found, decrement its count in `seen`.
-* When the window has all required characters (i.e., all values in `seen` are `<= 0`), try to shrink it to minimize length.
-* Track `min_length` and `min_start` to return the final substring.
+**🧠 Core Idea:**
+Use two pointers (`start`, `end`) and a frequency map to track how many characters are still needed.
+Shrink the window only **when all required chars are covered** (i.e., all `freq.values() <= 0`).
+Update the minimum window during that time.
 
 ---
 
-## ❌ Bugs I Faced and Fixed:
+### ✅ One-Line Takeaway:
 
-### 🔸 Mistake 1:
-
-Used:
-
-```python
-while all(val == 0 for val in seen.values()):
-```
-
-This failed for extra characters (e.g., more A’s than needed), since some values became `-1`.
-
-### ✅ Fix:
-
-```python
-while all(val <= 0 for val in seen.values()):
-```
-
-This ensures all required chars are matched (and maybe more, which is still valid).
+> Move `end` to build a valid window, then move `start` to shrink the window **as long as it's valid**, and track the smallest length.
+> Takeaway: When the window is valid (all freq ≤ 0), try to shrink it by moving start. Watch when freq becomes positive again.
 
 ---
 
-### 🔸 Mistake 2:
+### 🔁 Window Movement Logic (Tracked for Revision):
 
-Used:
+* **Start expanding:**
+  Slide `end` and reduce `freq[s[end]]` if it's a required char.
 
-```python
-return s[start:start + min_length]
-```
+* **When window is valid:**
+  All values in `freq` ≤ 0 → means current window has all required chars.
 
-But `start` had moved forward during shrinking.
-
-### ✅ Fix:
-
-Track `min_start` when `min_length` is updated:
-
-```python
-min_start = start
-```
-
-Return using `min_start`:
-
-```python
-return s[min_start:min_start + min_length]
-```
+* **Now try to shrink:**
+  Move `start` forward **while still valid**.
+  If `freq[s[start]]` increases above 0, break.
+  Before breaking, update `min_len` and `start_idx`.
 
 ---
+
+### ❗ Points Where I Got Stuck (Self-reflection):
+
+1. ✅ I didn't know **how to handle logic after shrinking the window**.
+
+   > 🔸 *Note: After increasing `start`, just break the loop and continue expanding `end`.*
+
+2. ❓ I was unsure if I should keep moving `start` until `end` again.
+
+   > 🔸 *Note: No. After one invalidation (any freq > 0), stop shrinking.*
+
+3. ⚠️ I forgot the condition to **move `start` only if the window is still valid**.
+
+   > 🔸 *Note: Only move `start` while `freq.values() <= 0`.*
+
+---
+
 
 ## ✅ Final Working Code (Hashmap-Based)
 
@@ -116,7 +100,7 @@ def minWindow(s: str, t: str) -> str:
 
 ---
 
-## ✅ CP Style Version (Array-Based Optimized)
+## ✅ CP Style Version (Array-Based Optimized) - Faster than hash based approach
 
 ### 🧠 Logic:
 
@@ -148,10 +132,11 @@ def minWindow(s: str, t: str) -> str:
                 min_len = end - start
                 start_idx = start
 
-            if mp[ord(s[start])] == 0:
-                count += 1
             mp[ord(s[start])] += 1
+            if mp[ord(s[start])] > 0:
+                count += 1
             start += 1
+        end += 1
 
     return "" if min_len == float('inf') else s[start_idx:start_idx + min_len]
 ```
@@ -176,18 +161,6 @@ t = "ABC"
 | 🕒 Time    | `O(N)` – Each character is visited at most twice    |
 | 💾 Space   | `O(K)` for hashmap version, `O(256)` for CP version |
 
----
-
-## 🆚 My Version vs Instructor's Version
-
-| Feature                        | My Version (`dict`, `<=0`)         | Instructor’s Version (`mp[256]`)      |
-| ------------------------------ | ---------------------------------- | ------------------------------------- |
-| **Data structure**             | `dict` / `Counter`                 | Fixed-size `int[256]` array           |
-| **Character handling**         | Works with any character (Unicode) | Works best only with ASCII (0–255)    |
-| **Readability**                | Easier to read & debug             | Bit harder, less intuitive            |
-| **Efficiency (constant-wise)** | Slightly slower due to hashing     | Slightly faster due to array indexing |
-| **Flexibility**                | Works for all scripts/languages    | Breaks for non-ASCII chars            |
-| **Interview suitability**      | ✅ Preferred in interviews          | ⚠️ More common in contests/CP         |
 
 ---
 
@@ -196,6 +169,8 @@ t = "ABC"
 * Sliding window + frequency map is the key to optimal substring problems.
 * Use `val <= 0` to handle extra matches.
 * Track exact start index of the minimal valid window.
+
+
 * Hashmap version is preferred for readability and flexibility.
 * ASCII array version is faster for contests but less general.
 
