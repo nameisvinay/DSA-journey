@@ -201,29 +201,34 @@ t = "ABC"
 
 ---
 
-after one month my stucking points:
+* after 10days my stucking points:
 
-**🔍 Personal Thought While Solving:**
+        **🔍 Personal Thought While Solving:**
+        
+        ❓ *My idea:*
+        
+        > After breaking out of the valid window (when `freq[s[start]] > 0`),
+        > **Should I just keep moving `start` toward `end`** while increasing the frequencies?
+        
+        🟡 But here's the **realization**:
+        No — once the window is invalid (missing a required character),
+        🔸 We should **stop moving `start`**,
+        🔸 And instead **resume expanding `end`**
+        until we again include the missing character(s) and form a valid window.
+        
+        📌 In short:
+        
+        > ❌ Don't move `start` blindly.
+        > ✅ After breaking, only `end` should move until the window becomes valid again.
+        
+        ❓ Doubt:
+        Should I move the end pointer continuously until all freq values are ≤ 0?
+        Or should I check the window validity at each step as I move end?
 
-❓ *My idea:*
 
-> After breaking out of the valid window (when `freq[s[start]] > 0`),
-> **Should I just keep moving `start` toward `end`** while increasing the frequencies?
+Another approach:
 
-🟡 But here's the **realization**:
-No — once the window is invalid (missing a required character),
-🔸 We should **stop moving `start`**,
-🔸 And instead **resume expanding `end`**
-until we again include the missing character(s) and form a valid window.
-
-📌 In short:
-
-> ❌ Don't move `start` blindly.
-> ✅ After breaking, only `end` should move until the window becomes valid again.
-
-❓ Doubt:
-Should I move the end pointer continuously until all freq values are ≤ 0?
-Or should I check the window validity at each step as I move end?
-
-
+- if we find s[end] in freq then decrement count.
+- when count becomes equals to 0. shrink from front.
+- if freq[s[start]] starts grows when it moves to above 0 then increment count.
 ---
