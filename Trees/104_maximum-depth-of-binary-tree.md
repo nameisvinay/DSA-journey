@@ -15,6 +15,25 @@ my mistakes:
 1. i forgot to include base conditions.
 2. looping for child nodes inside parent node loop.
 
+```python
+  if root == None:
+      return 0
+
+  depth = 0
+  queue = []
+  queue.append(root)
+  while queue:
+      for _ in range(len(queue)):
+          node = queue.pop(0)
+          if node.left != None:
+              queue.append(node.left)
+          if node.right != None:
+              queue.append(node.right)
+      depth += 1
+  
+  return depth
+
+
 
 problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/ - Maximum depth of binary tress.
 
@@ -28,3 +47,11 @@ problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description
 Depth first search(DFS) -
 
             1. recurse both child nodes till it end. and add 1 at every step because if was 0-indexed.
+
+```python
+if root == None:
+      return 0
+
+left = self.maxDepth(root.left)
+right = self.maxDepth(root.right)
+return max(left,right)+1
