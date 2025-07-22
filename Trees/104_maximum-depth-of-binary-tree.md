@@ -34,7 +34,7 @@ my mistakes:
   return depth
 
 
-
+```
 problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/ - Maximum depth of binary tress.
 
       - is exactly same but here instead of storing in level and result we just need to count of levels. 
@@ -48,10 +48,11 @@ Depth first search(DFS) -
 
             1. recurse both child nodes till it end. and add 1 at every step because if was 0-indexed.
 
+
 ```python
 if root == None:
       return 0
 
-left = self.maxDepth(root.left)
+left = self.maxDepth(root.left)  
 right = self.maxDepth(root.right)
-return max(left,right)+1
+return max(left,right)+1 #take maximum depth from both nodes
