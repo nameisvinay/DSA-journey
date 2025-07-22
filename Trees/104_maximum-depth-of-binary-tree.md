@@ -23,3 +23,8 @@ problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description
   make sure previous problm we placed level inside root loop. for reseting for every child nodes.
 
 - but here we need to count depth one by one so always make an eye to place count in beginning. not wihtin loops. and count after every new root node.
+
+
+Depth first search(DFS) -
+
+            1. recurse both child nodes till it end. and add 1 at every step because if was 0-indexed.
