@@ -68,6 +68,7 @@ Update the minimum window during that time.
 
 
 ## ✅ Final Working Code (Hashmap-Based)
+Used when: The input may contain any characters, strings, or dynamic data.
 
 ```python
 def minWindow(s: str, t: str) -> str:
@@ -101,6 +102,7 @@ def minWindow(s: str, t: str) -> str:
 ---
 
 ## ✅ CP Style Version (Array-Based Optimized) - Faster than hash based approach
+but Used when: Input is restricted to a known, limited character set like 'a' to 'z' or 'A' to 'Z'
 
 ### 🧠 Logic:
 
