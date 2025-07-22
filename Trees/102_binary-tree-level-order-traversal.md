@@ -36,7 +36,7 @@ my mistakes:
 
 problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/ - Maximum depth of binary tress.
 
-      - is exactly same but here instead of storing in level and result we just need to count of levels. 
+      - is exactly same but here instead of storing child nodes in level and result we just need to count of levels. 
 
   make sure previous problm we placed level inside root loop. for reseting for every child nodes.
 
