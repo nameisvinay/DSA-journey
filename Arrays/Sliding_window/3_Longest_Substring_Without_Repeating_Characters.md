@@ -59,21 +59,18 @@ max_length = max(max_length, end - start)
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        seen = set()
+        max_length = 0
         start = 0
         end = 0
-        max_length = 0
-
-        while end < len(s):
-            while s[end] in seen:
-                max_length = max(max_length, end - start)
-                seen.remove(s[start])
-                start += 1
+        hs = set()
+        while end<len(s):
+            if s[end] not in hs:
+                hs.add(s[end])
+                end += 1
             else:
-                seen.add(s[end])
-            end += 1
-
-        max_length = max(max_length, end - start)  # Final update
+                hs.remove(s[start])
+                start += 1
+            max_length = max(max_length , end-start)
         return max_length
 ```
 
