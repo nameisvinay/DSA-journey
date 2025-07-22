@@ -54,7 +54,7 @@ max_length = max(max_length, end - start)
 
 ---
 
-## ✅ Final Code (My Version)
+## ✅ Final Code (My Version): HashSet - "Move `start` step-by-step"
 
 ```python
 class Solution:
@@ -75,6 +75,34 @@ class Solution:
 ```
 
 ---
+
+Another approach(HashMap):  "Jump `start` directly" 
+
+  -  move end pointer and update hm[s[end]] with end index.
+  -  if found already existed character,it means we found repeated. then directly move START pointer next to next to current end index.
+  -  also make sure that end index must be greater than start inital index(previous placing to next of end).
+
+
+## ✅ Final Code
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+        hm = {}
+        start = 0
+        end = 0
+        max_len = 0
+        while end < len(s):
+            if s[end] in hm and start <= hm[s[end]]:
+                start = hm[s[end]] + 1
+            hm[s[end]] = end
+
+            max_len = max(max_len , end - start+1)
+            end += 1
+        return max_len
+
+
 
 ## 🧾 Key Learnings
 
@@ -98,3 +126,11 @@ class Solution:
               If ASCII: O(128)
               If Unicode: can be more.
 ```
+| Feature              | HashMap Approach                 | HashSet Approach                 |
+| -------------------- | -------------------------------- | -------------------------------- |
+| Time Complexity      | O(N)                             | O(N)                             |
+| Space Complexity     | O(N)                             | O(N)                             |
+| Style                | Jump `start` directly            | Move `start` step-by-step        |
+| Use Case             | Need to know last index of char  | Just need to know if char exists |
+| Avg Speed (Practice) | Slightly better (fewer ops)      | Slightly more operations         |
+| Code Readability     | More math-like, slightly complex | Simple loop logic                |
