@@ -59,3 +59,5 @@ def isValidBST(self, root):
 
 * Every node is compared not just with its immediate parent
 * But also with the **entire valid range** for its subtree
+* We validate by maintaining bounds, not comparing siblings directly.
+* Every subtree must also satisfy the BST condition based on its valid range.
