@@ -8,7 +8,25 @@ Problem : https://leetcode.com/problems/binary-tree-level-order-traversal/
 5. take empty level to store child nodes.
 6. after every one iteration of both child nodes. append them into level
 
+```python
+if root == None:
+      return []
 
+result = []
+queue = []
+queue.append(root)
+while queue:
+level = []
+for _ in range(len(queue)):
+    node = queue.pop(0)
+    level.append(node.val)
+    if node.left != None:
+        queue.append(node.left)
+    if node.right != None:
+        queue.append(node.right)
+result.append(level)
+return result
+```
 
 my mistakes:
 
@@ -23,3 +41,4 @@ problem : https://leetcode.com/problems/maximum-depth-of-binary-tree/description
   make sure previous problm we placed level inside root loop. for reseting for every child nodes.
 
 - but here we need to count depth one by one so always make an eye to place count in beginning. not wihtin loops. and count after every new root node.
+
