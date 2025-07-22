@@ -61,3 +61,64 @@ def isValidBST(self, root):
 * But also with the **entire valid range** for its subtree
 * We validate by maintaining bounds, not comparing siblings directly.
 * Every subtree must also satisfy the BST condition based on its valid range.
+
+My mistake:
+    - i confused in passing treenode directly comparing with left and right child values.
+    - passing root.left.val instead of root.left.
+    - That means now you're passing an int as root, which breaks the next recursion step, since the function expects a TreeNode (to access         .left, .right, .val).
+
+---
+
+### 🔍 We are comparing **values** (i.e., integers), not the actual TreeNode objects.
+
+So:
+
+* `low`, `high` → are integers (like `-inf`, `inf`)
+* `root.val` → is also an integer (the value inside the TreeNode)
+
+---
+
+### ✅ That’s why we write:
+
+```python
+if not low < root.val < high:
+    return False
+```
+
+Because all 3 — `low`, `root.val`, and `high` — are **integers**.
+
+---
+
+### ❌ But doing this is wrong:
+
+```python
+if not low < root < high:  # ❌
+```
+
+That compares an `int < TreeNode < int`, which Python doesn't allow.
+
+---
+
+### 🔁 And when calling recursively:
+
+We pass the **TreeNode** itself:
+
+```python
+isvalid(low, root.left, root.val)
+```
+
+because inside that call, you'll again need `root.left.val` and `root.left.left`, etc.
+
+---
+
+### 🔥 Recap:
+
+| Purpose        | Value needed     |
+| -------------- | ---------------- |
+| For comparison | Use `root.val` ✅ |
+| For recursion  | Use `root` ✅     |
+
+---
+
+You cracked it, buddy 💥
+Now this concept is locked into your brain like a pro!
