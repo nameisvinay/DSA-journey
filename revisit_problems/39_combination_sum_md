@@ -1,0 +1,44 @@
+
+---
+
+### 🧠 **Combination Sum – Summary Note (Leetcode 39)**
+link: https://leetcode.com/problems/combination-sum/
+
+
+**🎯 Goal:**
+Find all combinations that sum to the `target`.
+You can **reuse the same number** multiple times.
+
+---
+
+### 🔑 **Key Ideas:**
+
+* Use **backtracking** to explore all possible combinations.
+* Start from the current index to **allow reuse**.
+* If `total == target`: ✅ valid path → add to result.
+* If `total > target`: ❌ invalid → stop that path.
+* After recursive call, always **pop** to backtrack.
+
+---
+
+### 🔁 Loop Behavior:
+
+* Loop from `start` to end of candidates.
+* Add current number.
+* Recurse with updated total.
+* Pop after recursion (backtrack step).
+
+---
+
+### ⚠️ Common Pitfall:
+
+* ❌ Don’t pop inside `if total > target` — it's handled after recursion.
+
+---
+
+### 🧮 Dry Run Example:
+
+`candidates = [2, 3, 6, 7]`, `target = 7`
+Valid outputs: `[2,2,3]`, `[7]`
+
+---
